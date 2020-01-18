@@ -1,0 +1,1148 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+<link href="~/Areas/XiTong/Content/pustyles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/axure_rp_page.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/jquery-ui-themes.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/styles.css" rel="stylesheet" />
+    <style>
+        #rolestatus {
+            width: 85px;
+            height: 22px;
+            font-family: 'Arial';
+            font-size: 13px;
+            color: #000000;
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+
+        .role_tab {
+            margin-top: 10px;
+        }
+
+        .msg {
+            font-size: 15px;
+            color: red;
+        }
+    </style>
+
+}
+@section myscript{
+}
+@section rightdiv{
+    <!-- Unnamed (形状) -->
+<div id="u16" class="ax_形状">
+    <img id="u16_img" class="img " src="~/images/u16.png" />
+    <!-- Unnamed () -->
+    <div id="u17" class="text"></div>
+</div>
+
+<!-- 导航 (动态面板) -->
+<div id="u18" class="ax_动态面板" data-label="导航">
+    <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+        <!-- Unnamed (形状) -->
+        <div id="u19" class="ax_形状">
+            <img id="u19_img" class="img " src="~/images/u62.png" />
+            <!-- Unnamed () -->
+            <div id="u20" class="text"></div>
+        </div>
+
+        <!-- 1 (形状) -->
+        <div id="u21" class="ax_文本" data-label="1">
+            <img id="u21_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u22" class="text">
+                <p><span>角色管理</span></p>
+            </div>
+        </div>
+
+        <!-- 2 (形状) -->
+        <div id="u23" class="ax_文本" data-label="2">
+            <img id="u23_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u24" class="text">
+                <p><span>用户管理</span></p>
+            </div>
+        </div>
+
+        <!-- 3 (形状) -->
+        <div id="u25" class="ax_文本" data-label="3">
+            <img id="u25_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u26" class="text">
+                <p><span>角色权限配置</span></p>
+            </div>
+        </div>
+
+        <!-- 4 (形状) -->
+        <div id="u27" class="ax_文本" data-label="4">
+            <img id="u27_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u28" class="text">
+                <p><span>系统配置</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u29" class="ax_文本">
+            <img id="u29_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u30" class="text">
+                <p><span>杆塔管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u31" class="ax_文本">
+            <img id="u31_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u32" class="text">
+                <p><span>线路管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u33" class="ax_文本">
+            <img id="u33_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u34" class="text">
+                <p><span>缺陷管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u35" class="ax_文本">
+            <img id="u35_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u36" class="text">
+                <p><span>巡检任务</span><span>管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u37" class="ax_文本">
+            <img id="u37_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u38" class="text">
+                <p><span>消缺任务管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u39" class="ax_文本">
+            <img id="u39_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u40" class="text">
+                <p><span>系统管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u41" class="ax_文本">
+            <img id="u41_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u42" class="text">
+                <p><span>信息统计</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u43" class="ax_文本">
+            <img id="u43_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u44" class="text">
+                <p><span>我的工作平台</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div style="width:100%;background-color:#f4f4f4;margin-top:70px;">
+        <div class="container">
+            <div class="row">
+                <p style="margin-left:40px;margin-top:15px;">
+                    系统管理>>&nbsp;用户管理
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <p style="margin-top:20px;float:left;">
+                        用户名称:&nbsp;<input style="width:100px;border:1px solid #dddddd;" type="text" id="username" />&nbsp;&nbsp;&nbsp;&nbsp;
+                        启用状态:&nbsp;<select id="userstatus" style="border:1px solid #dddddd;">
+                            <option value="no">
+                                --请选择--
+                            </option>
+                            <option value="1">
+                                正常
+                            </option>
+                            <option value="0">冻结</option>
+                        </select>
+                    </p>
+                    <div id="u47" class="ax_形状" data-label="Styled Button">
+                        <img id="u47_img" class="img " src="~/Areas/XiTong/imgs/styled_button_u117.png" />
+                        <!-- Unnamed () -->
+                        <div id="u48" class="text">
+                            <p><span @@click="selectuser">查询</span></p>
+                        </div>
+                    </div>
+                    <div id="u240" class="ax_形状" data-label="Styled Button">
+                        <img id="u240_img" class="img " src="~/Areas/XiTong/imgs/styled_button_u240.png" />
+                        <!-- Unnamed () -->
+                        <div @@click="dialogFormVisible = true" id="u241" class="text">
+                            <p><span>添加用户</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <table class="table table-bordered table-hover table-striped role_tab">
+                        <tr>
+                            <th>
+                                用户账号
+                            </th>
+                            <th>
+                                用户名称
+                            </th>
+                            <th>
+                                角色名称
+                            </th>
+                            <th>
+                                邮箱
+                            </th>
+                            <th>
+                              最后登录时间
+                            </th>
+                            <th>
+                                状态(正常/冻结)
+                            </th>
+                            <th>
+                                操作
+                            </th>
+                        </tr>
+                        <tbody>
+                            <tr v-for="item in userlist">
+                                <td>
+                                    {{item.usercode}}
+                                </td>
+                                <td>
+                                    {{item.username}}
+                                </td>
+                                <td>
+                                    {{item.rolename}}
+                                </td>
+                                <td>
+                                    {{item.email}}
+                                </td>
+                                <td>
+                                    {{item.lastlogintime|timeFilter}}
+                                </td>
+                               
+                                <td>
+                                    <span v-if="item.userstatus==1">
+                                       正常
+                                    </span>
+                                    <span v-if="item.userstatus==0">
+                                      冻结
+                                    </span>
+                                </td>
+                                <td><a v-if="item.userstatus==0" @@click="showwarndialog(item,$event)">正常</a>
+                                    <a v-if="item.userstatus==1" @@click="showwarndialog(item,$event)">冻结</a>&nbsp;|&nbsp;<a @@click="showupddialog(item)">修改</a>
+                                    |&nbsp;<a @@click="comdel(item,$event)">删除</a>&nbsp;|&nbsp;<a @@click="openlogrecord(item.usercode)">Log日志</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p v-if="userlist.length==0" style="width:100px;margin-left:300px;font-size:15px;color:#666;margin-bottom:10px;">
+                        暂无数据
+                    </p>
+                    <el-pagination @@size-change="handleSizeChange"
+                                   @@current-change="handleCurrentChange"
+                                   :current-page="currentPage4"
+                                   :page-sizes="[100, 200, 300, 400]"
+                                   :page-size="6"
+                                   layout="total, prev, pager, next, jumper"
+                                   :total="count">
+                    </el-pagination>
+
+
+                    <!--添加模态框区域-->
+                    <el-dialog title="添加用户" :visible.sync="dialogFormVisible">
+                        <table class="table">
+                            <tr>
+                                <td style="padding-top:20px;"><b>登录账号:</b></td>
+                                <td><el-input id="txtid" @@blur="checkuserid" v-model="userid" style="width:220px;" auto-complete="off"></el-input></td>
+                                <td style="width:220px;padding-top:20px;"><div id="msgid" class="msg">&nbsp;</div></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:20px;"><b style="margin-top:10px;">用户名称:</b></td>
+                                <td><el-input id="txtname" @@blur="checkusername" v-model="username" style="width:220px;" auto-complete="off"></el-input></td>
+                                <td style="width:220px;padding-top:20px;"><p id="msgname" class="msg">&nbsp;</p></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:20px;"><b style="margin-top:10px;">密码:</b></td>
+                                <td><el-input id="txtpwd" type="password" v-model="userpwd" style="width:220px;" auto-complete="off"></el-input></td>
+                                <td style="width:220px;padding-top:20px;">
+                                    <p>默认密码为123456</p>
+                                <p id="msgpwd" class="msg">&nbsp;</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:20px;"><b style="margin-top:10px;">角色:</b></td>
+                                <td>
+                                    <el-select @@change="selectrole" v-model="rolename" style="width:220px;" clearable placeholder="请选择">
+                                        <el-option v-for="item in rolelist"
+                                                   :key="item.id"
+                                                   :label="item.roleName"
+                                                   :value="item.id">
+                                        </el-option>
+                                    </el-select>
+                              </td>
+                                <td style="width:220px;padding-top:20px;"><p id="msgrolename" class="msg">&nbsp;</p></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:20px;"><b style="margin-top:10px;">入职时间:</b></td>
+                                                    <td><el-date-picker id="txtoverdate" v-model="overdate"
+                                                        @@blur="checkoverdate"
+                                    align="right"
+                                   
+                                    placeholder="选择日期"
+                                    :picker-options="pickerOptions1" value-format="yyyy-MM-dd">
+                    </el-date-picker></td>
+                                <td style="width:220px;padding-top:20px;"><p id="msgoverdate" class="msg">&nbsp;</p></td>
+                            </tr>
+                            <tr>
+                                <td><b style="margin-top:10px;">离职时间:</b></td>
+                                <td>
+                                    <el-date-picker id="txtoutdate" v-model="outdate"
+                                                    align="right"
+                                                 
+                                                    @@blur="checkoutdate"
+                                                    placeholder="选择日期"
+                                                    :picker-options="pickerOptions1" value-format="yyyy-MM-dd">
+                                    </el-date-picker>
+                                </td>
+                                <td style="padding-top:20px;"><div id="msgoutdate" class="msg">&nbsp;</div></td>
+                            </tr>
+                            <tr>
+                                <td><b style="margin-top:10px;">使用状态:</b></td>
+                                <td>
+                                    <el-radio v-model="radio" label="1">正常</el-radio>
+                                    <el-radio v-model="radio" label="0">冻结</el-radio>
+                                </td>
+                                <td style="padding-top:20px;"><div id="msgradio" class="msg">&nbsp;</div></td>
+                            </tr>
+                        </table>
+                        <div slot="footer" class="dialog-footer">
+                            <el-button @@click="dialogFormVisible = false">取 消</el-button>
+                            <el-button type="primary" @@click="adduser">确 定</el-button>
+                        </div>
+                    </el-dialog>
+                    <!--end-->
+                    <!--修改模态框区域-->
+                    <el-dialog title="修改用户" :visible.sync="dialogFormVisible2">
+                        <table class="table">
+                            <tr>
+                                <td style="padding-top:20px;"><b>登录账号:</b></td>
+                                <td>
+                                    <div v-if="updrolename=='系统管理员'">
+                                        <el-input  id="txtid" @@blur="checkupdid" v-model="updid" style="width:220px;" auto-complete="off"></el-input>
+                                    </div>
+                                    <div v-if="updrolename!='系统管理员'">
+                                        <el-input :disabled="true" id="txtid" @@blur="checkupdid" v-model="updid" style="width:220px;" auto-complete="off"></el-input>
+                                    </div>
+                                </td>
+                                <td style="width:220px;padding-top:20px;"><div id="msgupdid" class="msg">&nbsp;</div></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:20px;"><b style="margin-top:10px;">用户名称:</b></td>
+                                <td>
+                                    <div v-if="updrolename=='系统管理员'">
+                                        <el-input id="txtname" @@blur="checkupdname" v-model="updname" style="width:220px;" auto-complete="off"></el-input>
+                                    </div>
+                                    <div v-if="updrolename!='系统管理员'">
+                                        <el-input :disabled="true" id="txtname" @@blur="checkupdname" v-model="updname" style="width:220px;" auto-complete="off"></el-input>
+                                    </div>
+                                </td>
+                                <td style="width:220px;padding-top:20px;"><p id="msgupdname" class="msg">&nbsp;</p></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:20px;"><b style="margin-top:10px;">密码:</b></td>
+                                <td><el-input id="txtpwd" v-model="updpwd" style="width:220px;" auto-complete="off"></el-input></td>
+                                <td style="width:220px;padding-top:20px;">
+                                  
+                                    <p id="msgupdpwd" class="msg">&nbsp;</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:20px;"><b style="margin-top:10px;">角色:</b></td>
+                                <td>
+                                    <el-select  v-model="updrolename" style="width:220px;" clearable placeholder="请选择">
+                                        <el-option v-for="item in rolelist"
+                                                   :key="item.id"
+                                                   :label="item.roleName"
+                                                   :value="item.id">
+                                        </el-option>
+                                    </el-select>
+                                </td>
+                                <td style="width:220px;padding-top:20px;"><p id="msgupdrolename" class="msg">&nbsp;</p></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top:20px;"><b style="margin-top:10px;">入职时间:</b></td>
+                                <td>
+                                    <el-date-picker id="txtoverdate" v-model="updoverdate"
+                                                   
+                                                    align="right"
+                                                    placeholder="选择日期"
+                                                    :picker-options="pickerOptions1" value-format="yyyy-MM-dd">
+                                    </el-date-picker>
+                                </td>
+                                <td style="width:220px;padding-top:20px;"><p id="msgupdoverdate" class="msg">&nbsp;</p></td>
+                            </tr>
+                            <tr>
+                                <td><b style="margin-top:10px;">离职时间:</b></td>
+                                <td>
+                                    <el-date-picker id="txtoutdate" v-model="updoutdate"
+                                                    align="right"
+                                                   
+                                                    placeholder="选择日期"
+                                                    :picker-options="pickerOptions1" value-format="yyyy-MM-dd">
+                                    </el-date-picker>
+                                </td>
+                                <td style="padding-top:20px;"><div id="msgupdoutdate" class="msg">&nbsp;</div></td>
+                            </tr>
+                            <tr>
+                                <td><b style="margin-top:10px;">使用状态:</b></td>
+                                <td>
+                                    <el-radio-group v-model="updradio">
+                                        <el-radio :label="1">启用</el-radio>
+                                        <el-radio :label="0">不启用</el-radio>
+                                    </el-radio-group>
+                                </td>
+                                <td style="padding-top:20px;"><div id="msgupdstatus" class="msg">&nbsp;</div></td>
+                            </tr>
+                        </table>
+                        <div slot="footer" class="dialog-footer">
+                            <el-button @@click="dialogFormVisible2 = false">取 消</el-button>
+                            <el-button type="primary" @@click="upduser">确 定</el-button>
+                        </div>
+                    </el-dialog>
+                    <!--end-->
+
+                    <el-dialog title="警告"
+                               :visible.sync="dialogVisible"  :before-close="handleClose"
+                               width="30%">
+                        <div slot="footer" class="dialog-footer" style="margin-top:-60px;">
+                            <div slot="footer" style="margin-top:-60px;">
+                                <p style="font-size:16px;color:#666;">
+                                    <span style="position:relative;left:-140px;" id="warninfo"></span>
+                                </p>
+                                <div style="margin-top:20px;">
+
+                                    <el-button @@click="dialogVisible = false">取 消</el-button>
+                                    <el-button type="primary" @@click="changestatus">确 定</el-button>
+                                </div>
+                            </div>
+                            </div>
+</el-dialog>
+
+                    <el-dialog title="提示"
+                               :visible.sync="dialogVisible2"
+                               width="30%"
+                               before-close="handleClose">
+                        <span>确定删除该用户?</span>
+                        <span slot="footer" class="dialog-footer">
+                            <el-button @@click="dialogVisible2 = false">取 消</el-button>
+                            <el-button type="primary" @@click="deldata">确 定</el-button>
+                        </span>
+                    </el-dialog>
+
+                    <!--Logo模态框区域-->
+                    <el-dialog title="查看LOGO日志" :visible.sync="dialogFormVisible3">
+                       <div  style="margin-left:10px;">
+                           <span style="margin-right:8px;"><b>操作时间:</b></span><el-date-picker @@blur="getdate" v-model="logodate"
+                                        type="datetimerange"
+                                        :picker-options="pickerOptions2"
+                                        range-separator="至"
+                                        start-placeholder="开始日期"
+                                        end-placeholder="结束日期"
+                                        align="right" value-format="yyyy-MM-dd HH:mm:ss">
+                        </el-date-picker>
+                          
+                               <el-button @@click="getlogselectdata" style="margin-left:6px;" type="primary" plain>查询</el-button>
+                         
+
+                        </div>
+                       <table style="margin-top:8px;" class="table table-bordered table-striped table-hover">
+                           <tr>
+                             <th>
+                                 序号
+                             </th>
+                               <th>
+                                   用户名
+                               </th>
+                               <th>
+                                   操作信息
+                               </th>
+                               <th>
+                                   操作时间 
+                               </th>
+                              
+                           </tr>
+                           <tbody>
+                               <tr v-for="log in loglist">
+                                   <td>
+                                       {{log.id}}
+                                   </td>
+                                   <td>
+                                       {{log.userCode}}
+                                   </td>
+                                   <td>
+                                       {{log.operateInfo}}
+                                   </td>
+                                   <td>
+                                       {{log.operateDateTime|timeFilter}}
+                                   </td>
+                               </tr>
+                           </tbody>
+                       </table>
+                        <p v-if="loglist.length==0" style="width:100%;margin:0px auto;font-size:15px;color:#666;">
+                            暂无数据
+                        </p>
+                        <el-pagination  @@size-change="handleSizeChange2"
+                                       @@current-change="handleCurrentChange2"
+                                       :current-page="currentPage5"
+                                       :page-sizes="[100, 200, 300, 400]"
+                                       :page-size="6"
+                                       layout="total,prev, pager, next, jumper"
+                                       :total="logcount">
+                        </el-pagination>
+                       
+                    </el-dialog>
+                    <!--end-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section vuescript{
+
+    <script>
+
+    var eles;
+    var pageindex = 1;
+    var logpageindex = 1;
+    var _this = this;
+    var username="";
+    var status="";
+   var vue= new Vue({
+        el: "#app",
+        data: {
+            userlist: [],   //用户信息集合 
+            rolelist: [],  //角色信息集合
+            loglist:[],
+            currentPage4: 1,
+            currentPage5:1,
+            count: 0,
+            logcount:0,
+            dialogFormVisible: false,
+            dialogFormVisible2: false,
+            dialogFormVisible3:false,
+            dialogVisible: false,
+            dialogVisible2:false,
+            form: {
+                delivery: false
+            },
+            formLabelWidth: '120px',
+            userid: "",
+            username: "",
+            userpwd:"",
+            rolename: "",
+            radio: "1",
+            overdate: "",
+            outdate: "",
+            pickerOptions1: {
+                disabledDate(time) {
+                    return time.getTime() > Date.now();
+                },
+                shortcuts: [{
+                    text: '今天',
+                    onClick(picker) {
+                        picker.$emit('pick', new Date());
+                    }
+                }, {
+                    text: '昨天',
+                    onClick(picker) {
+                        const date = new Date();
+                        date.setTime(date.getTime() - 3600 * 1000 * 24);
+                        picker.$emit('pick', date);
+                    }
+                }, {
+                    text: '一周前',
+                    onClick(picker) {
+                        const date = new Date();
+                        date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+                        picker.$emit('pick', date);
+                    }
+                }]
+            },
+            pickerOptions2: {
+                shortcuts: [{
+                    text: '最近一周',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }, {
+                    text: '最近一个月',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }, {
+                    text: '最近三个月',
+                    onClick(picker) {
+                        const end = new Date();
+                        const start = new Date();
+                        start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                        picker.$emit('pick', [start, end]);
+                    }
+                }]
+            },
+            logodate:"",
+            updid: "",
+            updname: "",
+            updpwd: "",
+            updrolename: "",
+            updoverdate: "",
+            updoutdate: "",
+            updradio: "",
+            uid: "",
+            usercode:"",
+            users: {},
+            logodate2:"",
+            logpagecount: 0
+        }, methods: {
+            getdate:function(){
+                console.log(this.logodate);
+            },
+            myload:function() {
+                var param = new URLSearchParams();
+                param.append("pageindex", pageindex);
+                axios.post("/XiTong/User/GetData", param).then(function (response) {
+                    vue.userlist = response.data.userlist;
+                    vue.count = response.data.usercount;
+                    vue.rolelist = response.data.rolelist;
+                    console.log(vue.userlist);
+                })
+            },
+            //显示日志记录
+            openlogrecord:function(usercode){
+                this.usercode = usercode;
+                this.dialogFormVisible3 = true;
+                var param = new URLSearchParams();
+                param.append("pageindex", logpageindex);
+                param.append("usercode", usercode);
+                axios.post("/XiTong/User/GetLogData", param).then(function (response) {
+                    vue.loglist = response.data.loglist;
+                    vue.logcount = response.data.logcount;
+                    vue.logpagecount = response.data.logpagecount;
+                   
+                })
+            },
+            //查询方法
+            getlogselectdata: function () {
+                $("#logmsg").text("");           
+                if (this.logodate!=null) {
+                    if (this.logodate.length > 0) {
+                        this.logodate2 = this.logodate;
+                        var startdate = this.logodate[0];
+                        var enddate = this.logodate[1];
+                        //创建参数对象 
+                        var param = new URLSearchParams();
+                        param.append("pageindex", 1);
+                        param.append("usercode", this.usercode);
+                        param.append("startdate", startdate);
+                        param.append("enddate", enddate);
+                        axios.post("/XiTong/User/GetLogDataByDate", param).then(function (response) {
+                            vue.loglist = response.data.loglist;
+                            vue.logcount = response.data.logcount;
+                            vue.logpagecount = response.data.logpagecount;
+                            vue.currentPage5 = 1;
+                            console.log(vue.currentPage5);
+                        })
+                    } else {
+                        var param = new URLSearchParams();
+                        param.append("pageindex", 1);
+                        param.append("usercode", this.usercode);
+                        axios.post("/XiTong/User/GetLogData", param).then(function (response) {
+                            vue.loglist = response.data.loglist;
+                            vue.logcount = response.data.logcount;
+                            vue.logpagecount = response.data.logpagecount;
+
+                        })
+                    }
+                    
+
+                } else {
+                    var param = new URLSearchParams();
+                    param.append("pageindex", 1);
+                    param.append("usercode", this.usercode);
+                    axios.post("/XiTong/User/GetLogData", param).then(function (response) {
+                        vue.loglist = response.data.loglist;
+                        vue.logcount = response.data.logcount;
+                        vue.logpagecount = response.data.logpagecount;
+
+                    })
+                }
+            },
+            //显示警告提示框
+            showwarndialog:function(item,event){
+                var ele = event.currentTarget;
+                console.log(ele);
+                this.users = item;
+                var vas = $(ele).text();
+               
+                if (vas =='正常') {                  
+                    $("#warninfo").text("确定恢复该用户正常使用吗?");
+                } else {
+                    $("#warninfo").text("确定冻结该用户吗?");
+                   
+                }
+                this.dialogVisible = true;
+            },
+            selectuser: function () {
+              pageindex = 1;
+             if ($("#username").val() != "" || $("#userstatus").val() != "no") {
+            username = $("#username").val();
+            status = $("#userstatus").val();
+            //创建参数对象 
+            var param = new URLSearchParams();
+            //添加参数 
+            param.append("username", username);
+            param.append("status",status);
+            param.append("pageindex", pageindex);
+            //发送ajax请求 
+            axios.post("/XiTong/User/SelectData", param).then(function (response) {
+                vue.userlist = response.data.userlist;
+                vue.count = response.data.usercount;
+                console.log(vue.userlist);
+                       
+            })
+             } else {
+                 status = "";
+                 var param = new URLSearchParams();
+                 //添加参数 
+                 param.append("pageindex", pageindex);
+                 //发送ajax请求 
+                 axios.post("/XiTong/User/SelectData", param).then(function (response) {
+                     vue.userlist = response.data.userlist;
+                     vue.count = response.data.usercount;
+                     console.log(vue.userlist);
+
+                 })
+        }
+    },
+            handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+    },
+            handleCurrentChange(val) {
+                //创建参数对象 
+                var param = new URLSearchParams();
+                //添加参数 
+                if (username != "") {
+                    param.append("username", username);
+                   
+                }
+                if (status != "") {
+                    param.append("status", status);
+
+                }
+                param.append("pageindex", val);
+                //发送ajax请求 
+                axios.post("/XiTong/User/SelectData", param).then(function (response) {
+                    vue.userlist = response.data.userlist;
+                    vue.count = response.data.usercount;
+                })
+      
+            },
+            handleSizeChange2(val) {
+                console.log(`每页 ${val} 条`);
+            },
+            handleCurrentChange2(val) {
+                console.log(this.currentPage5);
+                if (val >= 1 && val <= this.logpagecount) {
+                    //创建参数对象 
+                    var param = new URLSearchParams();
+                    param.append("pageindex", val);
+                    param.append("usercode", this.usercode);
+                    console.log(this.logodate2);
+                    if (this.logodate2.length > 0) {
+                        var startdate = this.logodate2[0];
+                        var enddate = this.logodate2[1];
+                        param.append("startdate", startdate);
+                        param.append("enddate", enddate);
+                    }
+                    axios.post("/XiTong/User/GetLogDataByDate", param).then(function (response) {
+                        vue.loglist = response.data.loglist;
+                        vue.logcount = response.data.logcount;
+                    })
+                    console.log(val);
+                }
+
+            },
+         selectrole:function(vas){
+            },
+    checkuserid: function () {
+        $("#msgid").removeClass("haveid");
+        $("#msgid").text(" ");
+        //非空判断 
+        if (this.userid != "") {
+            //获取userid的值 
+            //并发送ajax请求 
+            var param = new URLSearchParams();
+            param.append("userid", this.userid);
+            axios.post("/XiTong/User/CheckInfo", param).then(function (response) {
+                if (response.data == false) {
+                    $("#msgid").text("该用户编号已存在");
+                    $("#msgid").addClass("haveid");
+                }
+            })
+        } else {
+            $("#msgid").text("用户ID不能为空!");
+        }
+    },
+    checkusername: function () {
+        $("#msgname").removeClass("havename");
+        $("#msgname").text(" ");
+        //非空判断 
+        if (this.username != "") {
+            //获取roleid的值 
+            //并发送ajax请求 
+            var param = new URLSearchParams();
+            param.append("username", this.rolename);
+            axios.post("/XiTong/User/CheckInfo", param).then(function (response) {
+                if (response.data == false) {
+                    $("#msgname").text("该用户名称已存在");
+                    $("#msgname").addClass("havename");
+                }
+            })
+        } else {
+            $("#msgname").text("用户名称不能为空!");
+        }
+
+    },
+    checkuserpwd: function () {
+        $("#msgpwd").text(" ");
+
+        if (this.userpwd.length) {
+            $("#msgrolename").text("用户角色名称不能为空!");
+        }
+    },
+    checkrolename: function () {
+        $("#msgrolename").text(" ");
+
+        if (this.rolename == "") {
+            $("#msgrolename").text("用户角色名称不能为空!");
+        }
+    },
+    adduser: function () {
+        console.log(this.overdate);
+        $("#msgid").text("");
+        $("#msgname").text("");
+        $("#msgpwd").text("");
+        $("#msgrolename").text("");
+        $("#msgoverdate").text("");
+        $("#msgoutdate").text("");
+        $("#msgstatus").text("");
+        if (this.userid == "") {
+            $("#msgid").text("用户ID不能为空!");
+            $("#txtid")[0].focus();
+            return;
+        }
+        if (this.username == "") {
+            $("#msgname").text("用户名称不能为空!");
+            $("#txtid")[0].focus();
+            return;
+        }
+        if (this.userpwd != "") {
+            if (this.userpwd.length < 6) {
+                $("#msgpwd").text("密码长度必须大于6位");
+                $("#txtpwd")[0].focus();
+                return;
+            }
+           
+           
+        }
+        if (this.rolename == "") {
+            $("#msgrolename").text("请选择角色!");
+       
+            return;
+        }
+
+        if (this.radio == "") {
+            $("#msgradio").text("请选择用户启用状态!");
+            return;
+        }
+        if ($(".haveid").length > 0) {
+            $("#msgid").text("该用户编号已存在!");
+           
+            return;
+        }
+        if ($(".havename").length > 0) {
+            $("#msgname").text("该用户名称已存在!");
+          
+            return;
+        }
+        //创建参数对象 
+        var param = new URLSearchParams();
+        //添加参数 
+        param.append("userid", this.userid);
+        param.append("username", this.username);
+        if (this.userpwd != "") {
+            param.append("userpwd", this.userpwd);
+        } else {
+            param.append("userpwd","123456");
+        }
+        param.append("roleid", this.rolename);
+        if (this.overdate == null) {
+          
+            param.append("overdate", "");
+        } else {
+            param.append("overdate",this.overdate);
+        }
+        if (this.outdate == null) {
+            param.append("outdate", "");
+        } else {
+            param.append("outdate", this.outdate);
+        }
+      
+        param.append("status", this.radio);
+        //发送ajax请求 
+        axios.post("/XiTong/User/AddUser", param).then(function (response) {
+            if (response.data == true) {
+                vue.dialogFormVisible = false;
+                vue.$message('添加用户信息成功~');
+                vue.myload();
+            } else {
+                vue.$message('添加用户信息失败~');
+            }
+        })
+
+    },
+    checkupdid:function(){
+        $("#msgupdid").removeClass("haveuid");
+        $("#msgupdid").text(" ");
+        //非空判断 
+        if (this.updid != "") {
+            //获取userid的值 
+            //并发送ajax请求 
+            var param = new URLSearchParams();
+            param.append("uid", this.uid);
+            param.append("userid", this.updid);
+            axios.post("/XiTong/User/UpdCheckforId", param).then(function (response) {
+                if (response.data == false) {
+                    $("#msgupdid").text("该用户编号已存在");
+                    $("#msgupdid").addClass("haveuid");
+                }
+            })
+        } else {
+            $("#msgupdid").text("用户ID不能为空!");
+        }
+    },
+    checkupdname: function () {
+        $("#msgupdname").removeClass("haveuname");
+        $("#msgupdname").text(" ");
+        //非空判断 
+        if (this.updname != "") {
+            //获取roleid的值 
+            //并发送ajax请求 
+            var param = new URLSearchParams();
+            param.append("uid", this.uid);
+            param.append("username", this.updname);
+            axios.post("/XiTong/User/UpdCheckforName", param).then(function (response) {
+                if (response.data == false) {
+                    $("#msgupdname").text("该用户名称已存在");
+                    $("#msgupdname").addClass("haveuname");
+                }
+            })
+        } else {
+            $("#msgupdname").text("用户名称不能为空!");
+        }
+
+    },
+    showupddialog:function(item){
+        this.uid = item.id;
+        this.updid = item.usercode;
+        this.updname = item.username;
+        this.updpwd = item.userpwd;
+        this.updrolename = item.rolename;
+        this.updoverdate = item.overdate;
+        this.updoutdate = item.outdate;
+        this.updradio = item.userstatus;
+        this.dialogFormVisible2 = true;
+        console.log(this.updradio);
+        console.log(this.updrolename);
+    },
+    upduser: function () {
+                     
+        $("#msgupdid").text("");
+        $("#msgupdname").text("");
+        $("#msgupdpwd").text("");
+        $("#msgupdrolename").text("");
+        $("#msgupdoverdate").text("");
+        $("#msgupdoutdate").text("");
+        $("#msgupdstatus").text("");
+        if (this.updid == "") {
+            $("#msgupdid").text("用户ID不能为空!");
+            return;
+        }
+        if (this.updname == "") {
+            $("#msgupdname").text("用户名称不能为空!");
+            return;
+        }
+        if (this.updpwd == "") {
+            $("#msgupdpwd").text("用户密码不能为空!");
+            return;
+        }
+        if (this.updrolename == "") {
+            $("#msgupdrolename").text("角色名称不能为空!");
+            return;
+        }
+       
+        if (this.updoverdate == null) {
+            $("#msgupdoverdate").text("入职日期不能为空!");
+            return;
+        }
+        if (this.updoutdate == null) {
+            $("#msgupdoutdate").text("离职日期不能为空!");
+            return;
+        }
+       
+        if ($(".haveuid").length > 0) {
+            $("#msgupdid").text("该用户ID已存在!");
+            return;
+        }
+        if ($(".haveuname").length > 0) {
+            $("#msgupdname").text("该用户名称已存在!");
+            return;
+        }
+           
+        //创建参数对象 
+        var param = new URLSearchParams();
+        //添加参数 
+        param.append("uid", this.uid);
+        param.append("userid", this.updid);
+        param.append("username", this.updname);
+       
+       param.append("userpwd", this.updpwd);
+       
+        param.append("roleid", this.updrolename);
+        param.append("overdate", this.updoverdate);
+        param.append("outdate", this.updoutdate);
+        param.append("status", this.updradio);
+        //发送ajax请求 
+        axios.post("/XiTong/User/UpdUser", param).then(function (response) {
+            if (response.data == true) {
+                vue.dialogFormVisible2 = false;
+                vue.$message('修改用户信息成功~');
+                vue.myload();
+            } else {
+                vue.$message('修改用户信息失败~');
+            }
+        })
+
+    },
+    changestatus: function () {
+        //获得userid
+        var userid = this.users.id;
+        if (this.users.userstatus == '1') {
+            this.users.userstatus = '0';
+            //发送ajax请求 
+            var param = new URLSearchParams();
+            param.append("userid", userid);
+            param.append("status", 0);
+            axios.post("/XiTong/User/ChangeStatus", param).then(function (response) {
+                vue.dialogVisible = false;
+            })
+
+        } else {
+            this.users.userstatus = '1';
+            //发送ajax请求 
+            var param = new URLSearchParams();
+            param.append("userid", userid);
+            param.append("status", 1);
+            axios.post("/XiTong/User/ChangeStatus", param).then(function (response) {
+                vue.dialogVisible = false;
+            })
+        }
+      
+    },
+    comdel: function (item, event) {
+        eles = event.currentTarget;
+        this.uid = item.id;
+        this.dialogVisible2 = true;
+    },
+    deldata:function(){
+        var param = new URLSearchParams();
+        param.append("userid", this.uid);
+        axios.post("/XiTong/User/DelData", param).then(function (response) {
+            if (response.data == true) {
+                vue.dialogVisible2 = false;
+                var tr = $(eles).parent().parent();
+                $(tr).remove();
+                vue.count--;
+            }
+        })
+    },
+   handleClose(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      }
+        },    
+      created: function () {
+            this.$options.methods.myload();
+
+        },
+        filters: {
+            timeFilter: function (value) {
+                //非空验证
+                if (!value) {
+                    return '';
+                } else {
+                    var strs = value.split('T');
+                    //获得最后一个点的索引
+                    var index = strs[1].indexOf('.');
+                    strs[1] = strs[1].substring(0, index);
+                    var str = "";
+                    
+                    return strs[0] + " " + strs[1];
+                }
+            }
+        }
+    })
+    </script>
+}
+
+
+
+
+
+
+

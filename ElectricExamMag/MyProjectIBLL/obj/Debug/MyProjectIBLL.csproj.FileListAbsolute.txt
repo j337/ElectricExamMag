@@ -1,0 +1,9 @@
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectIBLL\bin\Debug\MyProjectIBLL.dll
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectIBLL\bin\Debug\MyProjectIBLL.pdb
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectIBLL\obj\Debug\MyProjectIBLL.dll
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectIBLL\obj\Debug\MyProjectIBLL.pdb
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectIBLL\bin\Debug\MyProjectIBLL.dll
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectIBLL\bin\Debug\MyProjectIBLL.pdb
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectIBLL\obj\Debug\MyProjectIBLL.csprojResolveAssemblyReference.cache
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectIBLL\obj\Debug\MyProjectIBLL.dll
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectIBLL\obj\Debug\MyProjectIBLL.pdb

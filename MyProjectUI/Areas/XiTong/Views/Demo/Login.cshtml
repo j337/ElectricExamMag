@@ -1,0 +1,132 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>电力系统登录</title>
+
+
+    <link href="~/Content/登录css/index.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <style>
+        .ss{
+            display:none;
+        }
+    </style>
+    <script>
+        jQuery(function () {
+            //页面初始化时 文本框获得焦点 
+            $("#txtname")[0].focus();
+
+            $("#u8_img").click(function () {
+                if ($("#txtname").val() == "" || $("#txtpwd").val() == "") {
+                    $("#errormsg").removeClass("ss");
+                } else {
+                    //获得登录账号
+                    var userid = $("#txtname").val();
+                    var userpwd = $("#txtpwd").val();
+                   
+                        //发送ajax请求 
+                        $.post("/XiTong/Demo/CheckLogin", "userid=" + userid + "&userpwd=" + userpwd, function (data) {
+                            if (data == "true") {
+                                window.location = "/FlawManages/Flaw/Index2";
+                            } else if (data == "false") {
+                                $('#exampleModal').modal({
+                                    keyboard: true,  //设置是否支持esc键关闭模态框
+                                    backdrop: 'static'   //设置是否支持点击空白区域关闭模态框
+                                });
+                                $("#msg").text("用户名或密码错误!");
+                            } else {
+                                $('#exampleModal').modal({
+                                    keyboard: true,  //设置是否支持esc键关闭模态框
+                                    backdrop: 'static'   //设置是否支持点击空白区域关闭模态框
+                                });
+                                $("#msg").text("该账号已禁用,不能登录!");
+                            }
+                        }, "json")
+                    }           
+            });
+        
+            $("#txtname").keypress(function (event) {
+                if (event.keyCode == 13) {
+                    $("#txtpwd")[0].focus();
+                }
+            })
+            //文本框获得光标事件 
+            $("#txtpwd").keypress(function (event) {
+                if (event.keyCode == 13) {
+                    //获得登录账号
+                    var userid = $("#txtname").val();
+                    var userpwd = $("#txtpwd").val();
+                    if (userid == "" || userpwd == "") {
+                        $("#errormsg").removeClass("ss");
+                    } else {
+                        //发送ajax请求 
+                        $.post("/XiTong/Demo/CheckLogin", "userid=" + userid + "&userpwd=" + userpwd, function (data) {
+                            if (data == "true") {
+                                window.location = "/FlawManages/Flaw/Index2";
+                            } else if (data == "false") {
+                                $('#exampleModal').modal({
+                                    keyboard: true,  //设置是否支持esc键关闭模态框
+                                    backdrop: 'static'   //设置是否支持点击空白区域关闭模态框
+                                });
+                                $("#msg").text("用户名或密码错误!");
+                            } else {
+                                $('#exampleModal').modal({
+                                    keyboard: true,  //设置是否支持esc键关闭模态框
+                                    backdrop: 'static'   //设置是否支持点击空白区域关闭模态框
+                                });
+                                $("#msg").text("该账号已禁用,不能登录!");
+                            }
+                        }, "json")
+                    }
+                }
+            })
+       
+        })
+    </script>
+</head>
+<body style="background-image:url('/Content/登录img/bg3.jpg')">
+    <div class="content">
+        <div class="login">
+            <div class="title">电力智能巡检系统&nbsp;·&nbsp;登录</div>
+            <div class="line">
+                <img class="smallImg" src="~/Content/登录img/icon-4.png" />
+                <input id="txtname" placeholder="请输入账号" type="text" />
+            </div>
+            <div class="line">
+                <img class="smallImg" src="~/Content/登录img/icon-5.png" />
+                <input id="txtpwd" placeholder="请输入密码" type="password" />
+            </div>
+            <button id="u8_img" type="button" class="logBut">登&nbsp;&nbsp;录</button>
+        </div>
+    </div>
+    <div id="errormsg" class="ss" style="position:absolute;width:200px;height:35px;color:red;margin-left:390px;margin-top:220px;">
+        请输入账户和密码
+    </div>
+    <!--信息提示模态框-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div style="width:36%;" class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">信息提示</h4>
+                </div>
+                <div class="modal-body">
+                    <label id="msg" for="recipient-name" class="control-label"></label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

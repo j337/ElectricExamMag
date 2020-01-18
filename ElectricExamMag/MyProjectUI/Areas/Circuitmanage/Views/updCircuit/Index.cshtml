@@ -1,0 +1,416 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+  <link href="~/Areas/Circuitmanage/Content/xlstyles.css" rel="stylesheet" />
+
+}
+
+@section myscript{
+
+}
+@section rightdiv{
+    <div id="u16" class="ax_形状">
+        <img id="u16_img" class="img " src="~/Areas/Circuitmanage/imgs/u16.png" />
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+
+    <!-- 导航 (动态面板) -->
+    <div id="u18" class="ax_动态面板" data-label="导航">
+        <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+            <!-- Unnamed (形状) -->
+            <div id="u19" class="ax_形状">
+                <img id="u19_img" class="img " src="~/Areas/Circuitmanage/imgs/u62.png" />
+                <!-- Unnamed () -->
+                <div id="u20" class="text"></div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u21" class="ax_文本">
+                <img id="u21_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u22" class="text">
+                    <p><span>杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u23" class="ax_文本">
+                <img id="u23_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u24" class="text">
+                    <p><span>线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u25" class="ax_文本">
+                <img id="u25_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u26" class="text">
+                    <p><span>缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u27" class="ax_文本">
+                <img id="u27_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u28" class="text">
+                    <p><span>巡检任务</span><span>管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u29" class="ax_文本">
+                <img id="u29_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u30" class="text">
+                    <p><span>消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u31" class="ax_文本">
+                <img id="u31_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u32" class="text">
+                    <p><span>系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u33" class="ax_文本">
+                <img id="u33_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u34" class="text">
+                    <p><span>信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u35" class="ax_文本">
+                <img id="u35_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u36" class="text">
+                    <p><span>我的工作平台</span></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div style="position:absolute;width:980px;top:135px;height:500px;background-color:#f4f4f4">
+        <p style="margin-left:55px;margin-top:30px"><a style="color:black" href="/Circuitmanage/Circuit/Index">电力巡检系统>>线路管理</a>><a style="color:black" href="#">新增路线</a></p>
+        <table class="table">
+            <tr>
+                <td style="width:80px">
+                    <label style="padding-top:10px">线路编码:</label>
+                </td>
+                <td style="width:390px">
+                    <el-input @@blur="checklinecode" style="width:240px" v-model="linedata.lineCode"></el-input>
+                    <span id="msglinecode" style="color:red"></span>
+                </td>
+
+                <td style="width:80px">
+                    <label style="padding-top:10px">线路名称:</label>
+                </td>
+                <td>
+                    <el-input style="width:240px" @@blur="checklinename" v-model="linedata.lineName"></el-input>
+                    <span id="msglineName" style="color:red"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="padding-top:10px">线路长度:</label>
+                </td>
+                <td><el-input style="width:240px" v-model="linedata.lineLength" placeholder="请输入线路长度"></el-input></td>
+                <td>
+                    <label style="padding-top:10px">回路长度:</label>
+                </td>
+                <td><el-input v-model="linedata.backLength" style="width:240px" placeholder="请输入回路长度"></el-input></td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="padding-top:10px">投运日期:</label>
+                </td>
+                <td>
+                    <el-date-picker v-model="linedata.productDate"
+                                    align="right"
+                                    style="width:240px"
+                                    type="date"
+                                    placeholder="选择日期"
+                                    :picker-options="pickerOptions1" value-format="yyyy-MM-dd">
+                    </el-date-picker>
+                </td>
+                <td>
+                    <label style="padding-top:10px">电压等级:</label>
+                </td>
+                <td><el-input v-model="linedata.voltageLevel" style="width:240px" placeholder="请输入电压等级"></el-input></td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="padding-top:10px">起始杆号:</label>
+                </td>
+                <td>
+                    <el-input v-model="linedata.startPoleCode" disabled="true" style="width:240px"></el-input>
+                    <el-button type="text" @@click="dialogVisible = true">选择杆塔号</el-button>
+
+                    <el-dialog title="选择杆塔号"
+                               :visible.sync="dialogVisible"
+                               width="30%"
+                               :before-close="handleClose">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>选择&nbsp;&nbsp;&nbsp;杆塔编号</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(item,index) in datalist2">
+                                    <td><el-radio v-model="radio" :label="item.poleCode">{{item.poleCode}}</el-radio></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <span slot="footer" class="dialog-footer">
+                            <el-button @@click="dialogVisible = false">取 消</el-button>
+                            <el-button type="primary" @@click="cli">确 定</el-button>
+                        </span>
+                    </el-dialog>
+                </td>
+                <td>
+                    <label style="padding-top:10px">终止杆号:</label>
+                </td>
+                <td>
+                    <el-input v-model="linedata.endPoleCode" disabled="true" style="width:240px"></el-input>
+                    <el-button type="text" @@click="dialogVisible2 = true">选择杆塔号</el-button>
+
+                    <el-dialog title="选择杆塔号"
+                               :visible.sync="dialogVisible2"
+                               width="30%"
+                               :before-close="handleClose2">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>选择&nbsp;&nbsp;&nbsp;杆塔编号</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(item,index) in datalist2">
+                                    <td><el-radio v-model="radio2" :label="item.poleCode">{{item.poleCode}}</el-radio></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <span slot="footer" class="dialog-footer">
+                            <el-button @@click="dialogVisible2 = false">取 消</el-button>
+                            <el-button type="primary" @@click="cli2">确 定</el-button>
+                        </span>
+                    </el-dialog>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="padding-top:10px">塔基数:</label>
+                </td>
+                <td><el-input v-model="linedata.towerBaseNum" style="width:240px" placeholder="请输入塔基数"></el-input></td>
+                <td>
+                    <label style="padding-top:10px">备注:</label>
+                </td>
+                <td>
+                    <el-input type="textarea"
+                              rows="2"
+                              placeholder="请输入内容"
+                              v-model="linedata.common">
+                    </el-input>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="padding-top:3px">是否启用:</label>
+                </td>
+                <td>
+                    <el-radio-group v-model="linedata.isStart">
+                        <el-radio :label="1">启用</el-radio>
+                        <el-radio :label="0">停用</el-radio>
+                    </el-radio-group>
+                </td>
+                <td>
+                    <label style="padding-top:3px">运行状态:</label>
+                </td>
+                <td>
+                    <el-radio-group v-model="linedata.runningStatus">
+                        <el-radio :label="1">正常</el-radio>
+                        <el-radio :label="2">检测中</el-radio>
+
+                    </el-radio-group>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <button class="btn btn-primary" style="height:30px;width:65px" @@click="save">保存</button>
+                    <button class="btn btn-primary" onclick="window.location = '/Circuitmanage/Circuit/Index'" style="height:30px;width:65px">取消</button>
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+}
+@section vuescript{
+    <script>
+    var myvue = new Vue({
+        el:"#app",
+        data:{
+            linedata:{},
+            pickerOptions1: {
+                disabledDate(time) {
+                    return time.getTime() > Date.now();
+                },
+                shortcuts: [{
+                    text: '今天',
+                    onClick(picker) {
+                        picker.$emit('pick', new Date());
+                    }
+                }, {
+                    text: '昨天',
+                    onClick(picker) {
+                        const date = new Date();
+                        date.setTime(date.getTime() - 3600 * 1000 * 24);
+                        picker.$emit('pick', date);
+                    }
+                }, {
+                    text: '一周前',
+                    onClick(picker) {
+                        const date = new Date();
+                        date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+                        picker.$emit('pick', date);
+                    }
+                }]
+            },
+            value2: '',
+             dialogVisible: false, dialogVisible2: false, datalist2: [],lineCodeCheck:"",radio:"",radio2:""
+        },
+        methods: {
+            mydata: function () {
+                axios.post("/Circuitmanage/updCircuit/getdata", null).then(function (response) {
+                    myvue.linedata = response.data;
+                    myvue.radio = myvue.linedata.startPoleCode;
+                    myvue.radio2 = myvue.linedata.endPoleCode;
+                    myvue.lineCodeCheck = myvue.linedata.lineCode;
+                })
+            },
+            cli:function(){
+                var param = new URLSearchParams();
+                param.append("pcode1", this.radio);
+                param.append("pcode2", this.linedata.endPoleCode);
+                axios.post("/Circuitmanage/updCircuit/checkpole", param).then(function (response) {
+                    if (response.data == true) {
+                        alert("起始杆塔不能大于终止杆塔");
+                    } else {
+                        myvue.linedata.startPoleCode = myvue.radio;
+                        myvue.dialogVisible = false;
+                    }
+                })
+            },
+            checklinecode: function () {
+                if (this.linedata.lineCode != "") {
+                    if (this.linedata.lineCode != this.lineCodeCheck) {
+                        var param = new URLSearchParams();
+                        param.append("linecode", this.linedata.lineCode);
+                        axios.post("/Circuitmanage/CircuitAdd/ChecklineCode", param).then(function (response) {
+                            if (response.data == true) {
+                                $("#msglinecode").text("该线路编号已存在");
+                                $("#msglinecode").addClass("f");
+                            } else {
+                                $("#msglinecode").text("");
+                                $("#msglinecode").removeClass("f");
+                            }
+                        })
+                    } else {
+                        $("#msglinecode").text("");
+                        $("#msglinecode").removeClass("f");
+                    }
+                    
+                } else {
+                    $("#msglinecode").text("线路编号不能为空");
+                }
+            },
+            cli2:function(){
+                var param = new URLSearchParams();
+                param.append("pcode1", this.linedata.startPoleCode);
+                param.append("pcode2", this.radio2);
+                axios.post("/Circuitmanage/updCircuit/checkpole2", param).then(function (response) {
+                    if (response.data == true) {
+                        myvue.linedata.endPoleCode = myvue.radio2;
+                        myvue.dialogVisible2 = false;
+
+                    } else {
+                        alert("终止杆塔不能小于起始杆塔");
+                    }
+                })
+            },
+            mydata2: function () {
+                axios.post("/Circuitmanage/updCircuit/getdata2", null).then(function (response) {
+                    myvue.datalist2 = response.data;
+                })
+            },
+            save: function () {
+                if (this.linedata.lineCode == "" || this.linedata.lineName == "" || this.linedata.lineLength == "" || this.linedata.backLength == "" || this.linedata.productDate == "" || this.linedata.voltageLevel == "" || this.linedata.towerBaseNum == "" || this.linedata.common == "") {
+                    alert("不能有空");
+                } else {
+                    if ($(".f").length > 0) {
+                        alert("线路编号已存在");
+                    }else{
+                    var param = new URLSearchParams();
+                    param.append("lineCode", this.linedata.lineCode);
+                    param.append("lineName", this.linedata.lineName);
+                    param.append("lineLength", this.linedata.lineLength);
+                    param.append("backLength", this.linedata.backLength);
+                    param.append("productDate", this.linedata.productDate);
+                    param.append("voltageLevel", this.linedata.voltageLevel);
+                    param.append("startPoleCode", this.linedata.startPoleCode);
+                    param.append("endPoleCode", this.linedata.endPoleCode);
+                    param.append("towerBaseNum", this.linedata.towerBaseNum);
+                    param.append("common", this.linedata.common);
+                    param.append("isStart", this.linedata.isStart);
+                    param.append("runningStatus", this.linedata.runningStatus);
+                    //alert(this.linedata.backLength)
+                    axios.post("/Circuitmanage/updCircuit/update", param).then(function (response) {
+                        if (response.data == true) {
+                            alert("修改成功");
+                            window.location = "/Circuitmanage/Circuit/Index";
+                        }
+                    })
+                    }
+                }
+            },
+            checkstart: function () {
+                if (this.linedata.startPoleCodetxt == "") {
+                    $("#msgstartPoleCode").text("起始杆号不能为空");
+                } else {
+                    $("#msgstartPoleCode").text("");
+                }
+            },
+            checklinename: function () {
+                if (this.linedata.lineName == "") {
+                    $("#msglineName").text("线路名称不能为空");
+                } else {
+                    $("#msglineName").text("");
+                }
+
+            }
+        },
+        created:function(){
+            this.$options.methods.mydata();
+            this.$options.methods.mydata2();
+        }
+    })
+
+    </script>
+}

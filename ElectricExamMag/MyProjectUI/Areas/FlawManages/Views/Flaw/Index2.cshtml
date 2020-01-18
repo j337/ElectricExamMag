@@ -1,0 +1,362 @@
+﻿
+@{
+    ViewBag.Title = "巡检系统主页";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+   
+<link href="~/Areas/FlawManages/Content/样式文件夹/待办列表/styles.css" rel="stylesheet" />
+}
+
+@section rightdiv{
+  
+    <div id="u16" class="ax_形状">
+        <img id="u16_img" class="img OffSet" src="~/images/待办列表/u16.png">
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+    <div id="u61" class="ax_动态面板 OffSet" data-label="导航">
+        <div id="u61_state0" class="panel_state" data-label="系统管理">
+
+            <!-- Unnamed (形状) -->
+            <div id="u62" class="ax_形状">
+                <img id="u62_img" class="img " src="~/images/待办列表/u62.png">
+                <!-- Unnamed () -->
+                <div id="u63" class="text"></div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u64" class="ax_文本" style="cursor: pointer;">
+                <img id="u64_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u65" class="text">
+                    <p><span>杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u66" class="ax_文本" style="cursor: pointer;">
+                <img id="u66_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u67" class="text">
+                    <p><span>线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u68" class="ax_文本" style="cursor: pointer;">
+                <img id="u68_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u69" class="text">
+                    <p><span>缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u70" class="ax_文本" style="cursor: pointer;">
+                <img id="u70_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u71" class="text">
+                    <p><span>巡检任务</span><span>管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u72" class="ax_文本" style="cursor: pointer;">
+                <img id="u72_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u73" class="text">
+                    <p><span>消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u74" class="ax_文本" style="cursor: pointer;">
+                <img id="u74_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u75" class="text">
+                    <p><span>系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u76" class="ax_文本" style="cursor: pointer;">
+                <img id="u76_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u77" class="text">
+                    <p><span>信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u78" class="ax_文本" style="cursor: pointer;">
+                <img id="u78_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u79" class="text">
+                    <p><span>我的工作平台</span></p>
+                </div>
+            </div>
+
+            <!-- 3 (形状) -->
+            <div id="u80" class="ax_文本" data-label="3" style="cursor: pointer;">
+                <img id="u80_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u81" class="text" style="font-weight: 700;">
+                    <p><span class="BtnHover">待办列表</span></p>
+                </div>
+            </div>
+
+            <!-- 3 (形状) -->
+            <div id="u82" class="ax_文本" data-label="3" style="cursor: pointer;">
+                <img id="u82_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u83" class="text">
+                    <p><span class="BtnHover">个人</span><span class="BtnHover">资料</span><span class="BtnHover">修改</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgDiv">
+        <p class="crumbs">我的工作平台>>&nbsp;&nbsp;待办列表</p>
+        <div v-if="tasklist.length>0" class="TableDiv">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr style="border-bottom:2px solid lightgray;">
+                        <td hidden="hidden"></td>
+                        <td hidden="hidden"></td>
+                        <td style="font-weight:700;text-align:center;border-right:1px solid #ebeef5;">待办任务类型</td>
+                        <td style="font-weight:700;text-align:center;border-right:1px solid #ebeef5;width:250px">待办任务名称</td>
+                        <td style="font-weight:700;text-align:center;border-right:1px solid #ebeef5;">完成时间</td>
+                        <td style="font-weight:700;text-align:center;">操作</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in tasklist" style="border-bottom:1px solid #ebeef5;">
+                        <td style="font-size:12px;border-right:1px solid #ebeef5;">{{item.WaitType}}</td>
+                        <td style="font-size:12px;border-right:1px solid #ebeef5;">{{item.WaitName}}</td>
+                        <td style="font-size:12px;border-right:1px solid #ebeef5;">{{item.WaitDate|timeFilter}}</td>
+                        <td style="font-size:12px;"><a class="a1" @@click="detailList($event,item)">查看</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="a1" @@click="solvefun(item)">处理</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="PgDiv">
+                <el-pagination @@current-change="handleCurrentChange"
+                               :page-size="6"
+                               layout="total, prev, pager, next"
+                               :total="pagecount" small>
+                </el-pagination>
+            </div>
+        </div>
+        <p v-if="tasklist.length==0" style="font-size:30px;color:lightgray;margin-left:380px;margin-top:60px;">
+              暂无任务!
+        </p>
+      
+    </div>
+    <!--任务详情查看区-->
+    <el-dialog title="查看巡检任务详情" :visible.sync="dialogVisible" width="30%" :show-close="false" center>
+        <p class="DialogP"><span class="DialogFonts">任务编号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{inspectinfo.taskcode}}</p>
+        <p class="DialogP"><span class="DialogFonts">任务名称:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{inspectinfo.taskname}}</p>
+        <p class="DialogP"><span class="DialogFonts">执行者:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{inspectinfo.excutename}}</p>
+        <p class="DialogP"><span class="DialogFonts">巡检线路:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{inspectinfo.linecode}}</p>
+        <p class="DialogP"><span class="DialogFonts">起始杆号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{inspectinfo.starpolecode}}</p>
+        <p class="DialogP"><span class="DialogFonts">终止杆号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{inspectinfo.endpolecode}}</p>
+        <p class="DialogP"><span class="DialogFonts">下发人:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{inspectinfo.issuedname}}</p>
+        <p class="DialogP"><span class="DialogFonts">下发时间:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{inspectinfo.issuedtime|timeFilter2}}</p>
+        <p class="DialogP"><span class="DialogFonts">备注信息:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{inspectinfo.desc}}</p>
+        <div slot="footer" class="dialog-footer">
+            <el-button type="primary" @@click="dialogVisible = false">确 定</el-button>
+        </div>
+    </el-dialog>
+    <el-dialog title="查看缺陷管理详情" :visible.sync="DefectManage" width="30%" :show-close="false" center>
+        <p class="DialogP"><span class="DialogFonts">任务编号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{bugmanage.taskcode}}</p>
+        <p class="DialogP"><span class="DialogFonts">任务名称:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{bugmanage.taskname}}</p>
+        <p class="DialogP"><span class="DialogFonts">执行者:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{bugmanage.excutename}}</p>
+        <p class="DialogP"><span class="DialogFonts">待确认杆号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{bugmanage.polecode}}</p>
+        <p class="DialogP"><span class="DialogFonts">下发人:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{bugmanage.issuedname}}</p>
+        <p class="DialogP"><span class="DialogFonts">下发时间:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{bugmanage.issuedtime|timeFilter2}}</p>
+        <p class="DialogP"><span class="DialogFonts">备注信息:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{bugmanage.desc}}</p>
+        <div slot="footer" class="dialog-footer">
+            <el-button type="primary" @@click="DefectManage = false">确 定</el-button>
+        </div>
+    </el-dialog>
+    <el-dialog title="查看消缺任务详情" :visible.sync="DisDefect" width="30%" :show-close="false" center>
+        <p class="DialogP"><span class="DialogFonts">任务编号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveinfo.taskcode}}</p>
+        <p class="DialogP"><span class="DialogFonts">任务名称:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveinfo.taskname}}</p>
+        <p class="DialogP"><span class="DialogFonts">执行者:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveinfo.excutename}}</p>
+        <p class="DialogP"><span class="DialogFonts">待消缺杆号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveinfo.polecode}}</p>
+        <p class="DialogP"><span class="DialogFonts">下发人:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveinfo.issuedname}}</p>
+        <p class="DialogP"><span class="DialogFonts">下发时间:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveinfo.issuedtime|timeFilter2}}</p>
+        <p class="DialogP"><span class="DialogFonts">备注信息:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveinfo.desc}}</p>
+        <div slot="footer" class="dialog-footer">
+            <el-button type="primary" @@click="DisDefect = false">确 定</el-button>
+        </div>
+    </el-dialog>
+
+<el-dialog title="消缺任务审查详情" :visible.sync="solveExaminedialog" width="30%" show-close="false" center>
+    <p class="DialogP"><span class="DialogFonts">任务编号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveexamine.taskcode}}</p>
+    <p class="DialogP"><span class="DialogFonts">任务名称:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveexamine.taskname}}</p>
+    <p class="DialogP"><span class="DialogFonts">任务状态:</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red;">{{solveexamine.taskstatus}}</span></p>
+    <p class="DialogP"><span class="DialogFonts">执行者:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveexamine.excutename}}</p>
+    <p class="DialogP"><span class="DialogFonts">消缺杆号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveexamine.polecode}}</p>
+    <p class="DialogP"><span class="DialogFonts">消缺时间:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveexamine.finishtime|timeFilter2}}</p>
+    <p class="DialogP"><span class="DialogFonts">下发人:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveexamine.issuedname}}</p>
+    <p class="DialogP"><span class="DialogFonts">负责人:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{solveexamine.taskmanagername}}</p>
+   
+    <div slot="footer" class="dialog-footer">
+        <el-button type="primary" @@click="solveExaminedialog = false">确 定</el-button>
+    </div>
+</el-dialog>
+
+}
+@section vuescript{
+
+    <script type="text/javascript">
+        var a = this;
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                dialogVisible:false,
+                DefectManage: false,
+                DisDefect: false,
+                solveExaminedialog: false,
+                tasklist:[],
+                pagecount: 0,
+                bugmanage: {},
+                inspectinfo: {},
+                solveinfo: {},
+                solveexamine:{} //消缺审查
+             
+            },
+            methods: {
+                myload:function(){
+                    var param=new URLSearchParams();
+                    param.append("pageindex",1);
+                    axios.post("/FlawManages/Flaw/SelectFlawWithTable", param).then(function (response) {
+                        vue.tasklist = response.data.list;
+                        vue.pagecount = response.data.pagecount;
+                    })
+                },
+                handleCurrentChange: function (val) {
+                    var param = new URLSearchParams();
+                    param.append("pageindex", val);
+                    axios.post("/FlawManages/Flaw/SelectFlawWithTable", param).then(function (response) {
+                        vue.tasklist = response.data.list;
+                        vue.pagecount = response.data.pagecount;
+                    })
+                },
+                detailList: function (event,item) {
+                    if (item.Type == 1) {
+                        var param = new URLSearchParams();
+                        param.append("taskid",item.id);
+                        axios.post("/FlawManages/Flaw/SelectSolveManageDetail", param).then(function (response) {
+                            vue.bugmanage = response.data;
+                            vue.DefectManage = true;
+                        })
+                    } else if (item.Type == 2) {
+                        var param = new URLSearchParams();
+                        param.append("taskid", item.id);
+                        axios.post("/FlawManages/Flaw/SelectInspectTakeDetail", param).then(function (response) {
+                            vue.inspectinfo = response.data;
+                            vue.dialogVisible = true;
+                        })
+                    } else if (item.Type == 3) {
+                        var param = new URLSearchParams();
+                        param.append("taskid", item.id);
+                        axios.post("/FlawManages/Flaw/SelectSolveTakeDetail", param).then(function (response) {
+                            vue.solveinfo = response.data;
+                            vue.DisDefect = true;
+                        })
+                    } else{
+                        var param = new URLSearchParams();
+                        param.append("taskid", item.id);
+                        axios.post("/FlawManages/Flaw/SelectSolveExamineDetail", param).then(function (response) {
+                            vue.solveexamine = response.data;
+                            vue.solveExaminedialog = true;
+                        })
+                    }
+                },
+                CheckForm: function (type) {
+                   
+                },
+                loginagain: function () {
+                    dialogVisible2 = false;
+                    window.location.href = "/FlawManages/Flaw/Login";
+                },
+                solvefun: function (item) {
+                    if (item.Type == 1) {
+                        var param = new URLSearchParams();
+                        param.append("taskid", item.id);
+                        axios.post("/FlawManages/Flaw/SaveIdBySession", param).then(function (response) {
+                            window.location = "/FlawManages/Defect/RedIndex";
+                        })
+                    } else if (item.Type == 2) {
+                        window.location = "/XiTong/Inspector/ExcuteOrReceipt";
+                    } else if (item.Type == 3) {
+                        window.location = "/extinction/SolveTaskReceiptEnter/Index";
+                    } else {
+                        var param = new URLSearchParams();
+                        param.append("taskid", item.id);
+                        axios.post("/extinction/SolveDetail/SaveIdBySession", param).then(function (response) {
+                            window.location = "/extinction/SolveDetail/TaskExmaine";
+                        })
+                     
+                    }
+                }
+            },
+            created: function () {
+                this.myload();
+            },
+            filters: {
+                timeFilter: function (value) {
+                    //非空验证
+                    if (!value) {
+                        return '';
+                    } else {
+                        var strs = value.split('T');
+                        //获得最后一个点的索引
+                        var nmr = strs[0].split('-');
+                        //先给日期加10
+                        var days = parseInt(nmr[2]) + 10;
+                        if (days > 30) {
+                            //如果日加10后大于30则月份进1 
+                            var months = parseInt(nmr[1]) + 1;
+                            //再判断月份是否大于12
+                            if (months > 12) {
+                                //则年份加1
+                                var year = nmr[0] + 1;
+                                //月份变为1
+                                months = 1;
+                                //日减30
+                                days = days - 30;
+                                return year + "-" + months + "-" + days;
+                            } else {
+                                //日减30
+                                days = days - 30;
+                                return nmr[0] + "-" + months + "-" + days;
+                            }
+                        } else {
+                            return nmr[0] + "-" + nmr[1] + "-" + days;
+                        }
+                       
+                    }
+                },
+                timeFilter2: function (value) {
+                    //非空验证
+                    if (!value) {
+                        return '';
+                    } else {
+                        var strs = value.split('T');
+                        //获得最后一个点的索引
+                        var index = strs[1].indexOf('.');
+                        strs[1] = strs[1].substring(0, index);
+                        var str = "";
+
+                        return strs[0] + " " + strs[1];
+                    }
+                }
+            }
+        });
+       
+    </script>
+}

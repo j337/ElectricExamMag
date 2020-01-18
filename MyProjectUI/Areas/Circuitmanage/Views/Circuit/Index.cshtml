@@ -1,0 +1,359 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+<link href="~/Areas/Circuitmanage/Content/xlstyles.css" rel="stylesheet" />
+    <style>
+            .overlay{
+             position: fixed;
+                        top: 0%;
+                        left: 0%;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #000;
+                        z-index: 110;
+                        opacity: .60;
+                       
+        }
+        .sss{
+            display:none;
+        }
+    
+        .dialog-footer{
+            text-align:right;
+            margin-right:25px;
+            margin-top:20px;
+        }
+        .delcircucss{
+         position:absolute;
+            z-index:222;
+            width:400px;
+            border:1px solid #dddddd;
+            border-radius:10px;
+            background-color:white;
+            margin-left:150px;
+            margin-top:-30px;
+            height:180px;
+        }
+    </style>
+    }
+
+@section myscript{
+
+    }
+@section rightdiv{
+
+    <!--模态框 -->
+   <div id="delcircudiv" class="delcircucss sss">
+    <p style="font-size:20px;color:black;margin-left:150px;margin-top:10px;margin-bottom:15px;">删除线路</p>
+    <p style="font-size:16px;margin-left:25px;margin-top:20px;">是否确定删除该线路?</p>
+    <div slot="footer" class="dialog-footer" style="margin-top:15px;">
+        <el-button @@click="hidcircudiv">取 消</el-button>
+        <el-button type="primary" @@click="comdeldata">确 定</el-button>
+    </div>
+</div>
+<div class="overlay sss">
+
+</div>
+    <div id="u16" class="ax_形状">
+    <img id="u16_img" class="img " src="~/Areas/Circuitmanage/imgs/u16.png" />
+    <!-- Unnamed () -->
+    <div id="u17" class="text"></div>
+</div>
+
+<!-- 导航 (动态面板) -->
+<div id="u18" class="ax_动态面板" data-label="导航">
+    <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+        <!-- Unnamed (形状) -->
+        <div id="u19" class="ax_形状">
+            <img id="u19_img" class="img " src="~/Areas/Circuitmanage/imgs/u62.png" />
+            <!-- Unnamed () -->
+            <div id="u20" class="text"></div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u21" class="ax_文本">
+            <img id="u21_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u22" class="text">
+                <p><span>杆塔管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u23" class="ax_文本">
+            <img id="u23_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u24" class="text">
+                <p><span>线路管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u25" class="ax_文本">
+            <img id="u25_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u26" class="text">
+                <p><span>缺陷管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u27" class="ax_文本">
+            <img id="u27_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u28" class="text">
+                <p><span>巡检任务</span><span>管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u29" class="ax_文本">
+            <img id="u29_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u30" class="text">
+                <p><span>消缺任务管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u31" class="ax_文本">
+            <img id="u31_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u32" class="text">
+                <p><span>系统管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u33" class="ax_文本">
+            <img id="u33_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u34" class="text">
+                <p><span>信息统计</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u35" class="ax_文本">
+            <img id="u35_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u36" class="text">
+                <p><span>我的工作平台</span></p>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    <div style="position:absolute;width:100%;top:135px;height:500px;background-color:#f4f4f4;height:76%;overflow:scroll;">
+             <p style="margin-left:55px;margin-top:30px">电力巡检系统>>线路管理</p>
+        <p style="margin-left:40px;margin-top:20px">
+            线路编号:<input style="width:140px;height:26px;border:1px solid #666666" type="text" id="circuitname"/>
+            <span style="margin-left:20px">
+                线路状态:<select style="margin-left:10px" id="circuitstatus">
+                    <option value="no">未选择</option>
+                    <option value="1">正常</option>
+                    <option value="2">检测中</option>
+                </select>
+            </span> 
+            <button class="btn btn-primary" style="height:30px;width:65px" @@click="sel">查询</button>
+            <button class="btn btn-primary" style="height:30px;width:85px;margin-left:200px" onclick="window.location = '/Circuitmanage/CircuitAdd/Index'">添加线路</button>
+        </p>
+        
+    <table class="table table-bordered table-hover table-striped" style="width:860px;margin-left:40px">
+        <thead>
+            <tr>
+                <th v-for="th in myheader">{{th}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(item,index) in datalist">
+                <td>{{item.lineCode}}</td>
+                <td>{{item.lineName}}</td>
+                <td>{{item.startPoleCode}}</td>
+                <td>{{item.endPoleCode}}</td>
+                <td>{{item.towerBaseNum}}</td>
+                <td>
+                    <span v-if="item.runningStatus==1">正常</span>
+                    <span v-if="item.runningStatus==2">检测中</span>
+                </td>
+                <td>
+                    <span v-if="item.isStart==1">启用</span>
+                    <span v-if="item.isStart==0">停用</span>
+                </td>
+                <td>
+                    <a v-if="item.isStart==1" @@click="cli(item,$event)"><span >停用</span>
+                      </a>
+                    <a v-if="item.isStart==0" @@click="cli(item,$event)">
+                        <span>启用</span>
+                    </a>
+                    <a @@click="update(item)">修改</a>
+                    <a @@click="del(item,$event)">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+        <div class="TableDiv">
+            <el-pagination @@size-change="handleSizeChange"
+                           @@current-change="handleCurrentChange"
+                           :current-page="currentPage"
+                           :page-sizes="[5, 10, 20, 40]"
+                           :page-size="5"
+                           layout="total, prev, pager, next"
+                           :total="count">
+            </el-pagination>
+        </div>
+
+
+
+</div>
+
+  
+    }
+@section vuescript{
+     <script>
+         var ele;
+    var _this = this;
+    var myvue = new Vue({
+        el: "#app",
+        data: {
+            myheader: ["线路编号", "线路名称", "起始杆号", "终止杆号", "塔基数", "运行状态", "启用状态", "操作"],
+            datalist: [],
+            Circuit: {},
+            currentPage: 1, //初始页
+            count:0,
+            lineCode:"",
+            status: "",
+            dialogVisible: false,
+            lineinfo:{}
+        },      
+        created: function () {
+            this.$options.methods.myload();
+        }, methods: {
+            myload: function () {
+                var param = new URLSearchParams();
+                param.append("pageindex", 1);
+                axios.post("/Circuitmanage/Circuit/GetData", param).then(function (response) {
+                    myvue.datalist = response.data.datalist;
+                    myvue.count = response.data.linecount;
+                })
+            },
+            sel: function () {
+                this.lineCode = $("#circuitname").val();
+                this.status = $("#circuitstatus").val();
+                var param = new URLSearchParams();
+                
+                if (this.lineCode != "" || this.status != "no") {
+                    param.append("lineCode", this.lineCode);
+                    param.append("status", this.status);
+                    param.append("pageindex", 1);
+                    axios.post("/Circuitmanage/Circuit/Sel", param).then(function (response) {
+                        myvue.datalist = response.data.datalist;
+                        myvue.count = response.data.linecount;
+
+                    })
+                } else {
+                    param.append("pageindex", 1);
+                    axios.post("/Circuitmanage/Circuit/GetData", param).then(function (response) {
+                        myvue.datalist = response.data.datalist;
+                        myvue.count = response.data.linecount;
+                    })
+                }
+            },
+            hidcircudiv: function () {
+                $("#delcircudiv").addClass("sss");
+               
+                $(".overlay").addClass("sss");
+            },
+            del: function (item, event) {
+                this.lineinfo = item;
+                var ele = event.currentTarget;
+                ele = ele;
+                $("#delcircudiv").removeClass("sss");
+
+                $(".overlay").removeClass("sss");
+            },
+            comdeldata:function(){
+                var tr = $(ele).parent().parent();
+                var param = new URLSearchParams();
+                param.append("id", this.lineinfo.id);
+                axios.post("/Circuitmanage/Circuit/Del", param).then(function (response) {
+                    if (response.data == true) {
+                        //myvue.$message("删除成功");
+                                 
+                        if (myvue.count <= 7) {
+                                myvue.myload();
+                        } else {
+                          
+                                for (var i = 0; i < myvue.datalist.length; i++) {
+                                    if (myvue.datalist[i].id == myvue.lineinfo.id) {
+                                        myvue.datalist.splice(i, 1);
+                                        myvue.count--;
+                                    }
+                                }
+                            }
+                            $("#delcircudiv").addClass("sss");
+
+                            $(".overlay").addClass("sss");
+                    }
+                })
+            },
+            update: function (item) {
+                var param = new URLSearchParams();
+                param.append("lid", item.id);
+                axios.post("/Circuitmanage/Circuit/SaveSession", param).then(function (response) {
+                    window.location = "/Circuitmanage/updCircuit/index";
+                })
+                
+            },
+            cli: function (item,event) {
+                //获取当前元素 
+                var ele = event.currentTarget;
+                var ele2 = $($(ele).parent().parent().children()[6]).text();
+                var count = item.isStart;
+                var param = new URLSearchParams();
+                param.append("lineid", item.id);
+                //alert(ele2);
+                if (count == 1) {
+                    param.append("isStart", 0);
+                    axios.post("/Circuitmanage/Circuit/upd1", param).then(function (response) {
+                        if (response.data == true) {
+                            item.isStart = 0;
+                            myvue.$message("该线路已禁用~");
+                        }
+                    })
+                } else {
+                    param.append("isStart", 1);
+                    axios.post("/Circuitmanage/Circuit/upd1", param).then(function (response) {
+                        if (response.data == true) {
+                            item.isStart = 1;
+                            myvue.$message("该线路已启用~");
+                        }
+                    })
+                }
+            },
+            handleCurrentChange(val) {
+                
+                var param = new URLSearchParams();
+                if (this.lineCode != "") {
+                    param.append("lineCode", this.lineCode);
+                   
+                }
+                if (this.status != "") {
+                    param.append("status", this.status);
+                }
+                param.append("pageindex",val);
+                axios.post("/Circuitmanage/Circuit/Sel", param).then(function (response) {
+                    myvue.datalist = response.data.datalist;
+                    myvue.count = response.data.linecount;
+                })
+
+            }
+        }
+    })
+</script>
+    }

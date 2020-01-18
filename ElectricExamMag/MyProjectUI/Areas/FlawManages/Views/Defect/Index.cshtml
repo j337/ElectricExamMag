@@ -1,0 +1,336 @@
+﻿
+@{
+    ViewBag.Title = "缺陷类型设置";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+    <link href="~/Areas/FlawManages/Content/样式文件夹/缺陷类型设置/styles.css" rel="stylesheet" />
+}
+
+@section rightdiv{
+<div id="u153" class="ax_形状 mouseDown" data-label="Styled Button" style="cursor: url(/Areas/FlawManages/images/d.ico),auto;margin-top: -25px;margin-left: 200px;" @@click="addBugType">
+    <img id="u153_img" class="img mouseDown" src="~/Areas/FlawManages/images/styled_button_u153_mouseDown.png" tabindex="0">
+    <!-- Unnamed () -->
+    <div id="u154" class="text" style="top: 3px;">
+        <p id="cache0"><span id="cache1" style="padding-left: 28px;">添加</span><span id="cache2" style="">缺陷类型</span></p>
+    </div>
+</div>
+<div id="u16" class="ax_形状">
+    <img id="u16_img" class="img OffSet" src="~/images/待办列表/u16.png">
+    <!-- Unnamed () -->
+    <div id="u17" class="text"></div>
+</div>
+<div id="u18" class="ax_动态面板" data-label="导航">
+    <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+        <!-- Unnamed (形状) -->
+        <div id="u19" class="ax_形状">
+            <img id="u19_img" class="img " src="~/images/待办列表/u62.png">
+            <!-- Unnamed () -->
+            <div id="u20" class="text"></div>
+        </div>
+
+        <!-- 1 (形状) -->
+        <div id="u21" class="ax_文本" data-label="1" style="cursor: pointer;">
+            <img id="u21_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u22" class="text">
+                <p><span>缺陷</span><span>类型</span><span>设置</span></p>
+            </div>
+        </div>
+
+        <!-- 2 (形状) -->
+        <div id="u23" class="ax_文本" data-label="2" style="cursor: pointer;">
+            <img id="u23_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u24" class="text">
+                <p><span>缺陷等级确认</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u25" class="ax_文本" style="cursor: pointer;">
+            <img id="u25_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u26" class="text">
+                <p><span>杆塔管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u27" class="ax_文本" style="cursor: pointer;">
+            <img id="u27_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u28" class="text">
+                <p><span>线路管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u29" class="ax_文本" style="cursor: pointer;">
+            <img id="u29_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u30" class="text">
+                <p><span>缺陷管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u31" class="ax_文本" style="cursor: pointer;">
+            <img id="u31_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u32" class="text">
+                <p><span>巡检任务</span><span>管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u33" class="ax_文本" style="cursor: pointer;">
+            <img id="u33_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u34" class="text">
+                <p><span>消缺任务管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u35" class="ax_文本" style="cursor: pointer;">
+            <img id="u35_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u36" class="text">
+                <p><span>系统管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u37" class="ax_文本" style="cursor: pointer;">
+            <img id="u37_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u38" class="text">
+                <p><span>信息统计</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u39" class="ax_文本" style="cursor: pointer;">
+            <img id="u39_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u40" class="text">
+                <p><span>我的工作平台</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="bgDiv" style="margin-top:50px;height: 430px;overflow:scroll;">
+    <div class="TableDiv">
+        <table class="table table-condensed table-striped table-bordered text-center">
+            <thead>
+                <tr>
+                    <td hidden="hidden">隐藏编号</td>
+                    <td class="td1">缺陷类型名称</td>
+                    <td class="td1">状态(启用/未启用)</td>
+                    <td class="td1">操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in TypeList">
+                    <td hidden="hidden">{{item.id}}</td>
+                    <td>{{item.configValueName}}</td>
+                    <td><input type="checkbox" style="cursor:pointer" @@click="onOroffBtn($event)" v-model="item.check" /></td>
+                    <td><a style="cursor: url(/Areas/FlawManages/images/d.ico),auto;" @@click="UpdateBtn($event)">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a style="cursor: url(/Areas/FlawManages/images/d.ico),auto;" @@click="DeleteBtn($event)">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagUl">
+        <el-pagination background
+                       layout="prev, pager, next"
+                       @@current-change="handleCurrentChange($event)"
+                       :page-size="pagesize"
+                       :total="pagecount">
+        </el-pagination>
+    </div>
+</div>
+<el-dialog title="添加缺陷类型"
+           :visible.sync="add" :show-close="false" :center="true"
+           width="30%">
+    <p><span class="span1">缺陷类型名称:</span>&nbsp;&nbsp;<el-input v-model="BugName" placeholder="请输入缺陷类型名称" size="small" style="width:200px"></el-input></p><br />
+    <p><span class="span1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;启用状态:</span>&nbsp;&nbsp;<el-radio v-model="radio" label="1" size="small" border>启用</el-radio><el-radio v-model="radio" label="0" size="small" border>停用</el-radio></p>
+    <span slot="footer" class="dialog-footer">
+        <el-button type="primary" plain @@click="addType" size="mini">添&nbsp;&nbsp;加</el-button>
+        <el-button plain @@click="add = false" size="mini">取&nbsp;&nbsp;消</el-button>
+    </span>
+</el-dialog>
+<el-dialog title="修改缺陷类型"
+           :visible.sync="update" :show-close="false" :center="true"
+           width="30%">
+    <div hidden="hidden">{{updateid}}</div>
+    <p><span class="span1">缺陷类型名称:</span>&nbsp;&nbsp;<el-input v-model="BugName" placeholder="请输入缺陷类型名称" size="small" style="width:200px"></el-input></p><br />
+    <p><span class="span1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;启用状态:</span>&nbsp;&nbsp;<el-radio v-model="radio" label="1" size="small" border>启用</el-radio><el-radio v-model="radio" label="0" size="small" border>停用</el-radio></p>
+    <span slot="footer" class="dialog-footer">
+        <el-button type="primary" plain @@click="UpdateType" size="mini">保&nbsp;&nbsp;存</el-button>
+        <el-button plain @@click="update = false" size="mini">返&nbsp;&nbsp;回</el-button>
+    </span>
+</el-dialog>
+}
+
+@section vuescript{
+    <script type="text/javascript">
+        var a = this;
+        var v = new Vue({
+            el: "#app",
+            data: {
+                Content:"",
+                radio: "1",
+                add:false,
+                update: false,
+                pagesize: 4,
+                pagecount: 0,
+                DataList: [],
+                TypeList: [],
+                currentPage: 1,
+                BugName: "",
+                updateid:0
+            },
+            created: function () {
+                //获得表数据的Ajax请求
+                //v.pagecount = respone.data.length;
+                //v.DataList = respone.data;
+                //for (var i = 0; i < v.pagesize; i++) {
+                //    v.TypeList.push(respone.data[i]);
+                //}
+                //console.log(v.TypeList);
+                a.axios({ method: "post", url: "/FlawManages/Defect/TypeList1" }).then(function (respone) {
+                    v.TypeList = respone.data.a;
+                    v.pagecount = respone.data.b;
+                });
+            },
+            methods: {
+                handleCurrentChange: function (pagenum) {
+                    //创建参数对象
+                    var params = new URLSearchParams();
+                    //添加参数
+                    params.append('pagenum', pagenum);
+
+                    axios.post("/FlawManages/Defect/TypeList2", params).then(function (respone) {
+                        v.TypeList.length = 0;
+                        v.TypeList = respone.data;
+                    });
+                },
+                UpdateBtn: function (event) {
+                    var ele = event.currentTarget;
+                    var updateid = $($(ele).parent().parent().children()[0]).text();
+                    v.updateid = updateid;
+                    //创建参数对象
+                    var params = new URLSearchParams();
+                    //添加参数
+                    params.append('id', updateid);
+
+                    axios.post("/FlawManages/Defect/updateBugType", params).then(function (respone) {
+                        v.radio = respone.data[0].isStart;
+                        v.BugName = respone.data[0].configValueName;
+                    });
+                    v.update = true;
+                },
+                UpdateType:function(){
+                    //创建参数对象
+                    var params = new URLSearchParams();
+                    //添加参数
+                    params.append('id', v.updateid);
+                    params.append('Name', v.BugName);
+                    params.append('isStart', v.radio);
+
+                    axios.post("/FlawManages/Defect/updateType", params).then(function (respone) {
+                        if (respone.data) {
+                            window.location.href = "/FlawManages/Defect/Index";
+                            v.$message({ message: '修改成功!', type: 'success', duration: 2000 });
+                        } else {
+                            v.$message({ message: '修改失败!', type: 'error', duration: 2000 });
+                        }
+                    });
+                },
+                DeleteBtn: function (event) {
+                    if (confirm('确认要删除这条缺陷类型吗')) {
+                        var ele = event.currentTarget;
+                        var deleteid = $($(ele).parent().parent().children()[0]).text();
+
+                        //创建参数对象
+                        var params = new URLSearchParams();
+                        //添加参数
+                        params.append('id', deleteid);
+
+                        axios.post("/FlawManages/Defect/deleteBugType", params).then(function (respone) {
+                            if (respone.data) {
+                                //成功
+                                v.$message({ message: '删除成功!', type: 'success', duration: 2000 });
+                                setTimeout(function () { window.location.href = "/FlawManages/Defect/Index"; }, 2000);
+                            } else {
+                                //失败
+                                v.$message({ message: '删除失败!', type: 'error', duration: 2000 });
+                            }
+                        });
+                    }
+                },
+                onOroffBtn: function (event) {
+                    var ele = event.currentTarget;
+                    var id = $($(ele).parent().parent().children()[0]).text();
+
+                    //创建参数对象
+                    var params = new URLSearchParams();
+                    //添加参数
+                    params.append('id', id);
+
+                    axios.post("/FlawManages/Defect/onOroffBugType", params).then(function (respone) {
+                        //先判断是启用还是停用
+                        if (respone.data.type == "启用") {
+                            //启用缺陷类型,再判断是成功还是失败
+                            if (respone.data.succ) {
+                                //成功
+                                v.$message({ showClose: true, message: '启用成功!', type: 'success', duration: 1000 });
+                            } else {
+                                //失败
+                                v.$message({ showClose: true, message: '启用失败!', type: 'error', duration: 1000 });
+                            }
+                        } else {
+                            //停用缺陷类型,再判断是成功还是失败
+                            if (respone.data.succ) {
+                                //成功
+                                v.$message({ showClose: true, message: '停用成功!', type: 'success', duration: 1000 });
+                            } else {
+                                //失败
+                                v.$message({ showClose: true, message: '停用失败!', type: 'error', duration: 1000 });
+                            }
+                        }
+                    });
+                },
+                addBugType: function () {
+                    v.radio = '1';
+                    v.BugName = "";
+                    v.add = true;
+                },
+                addType: function () {
+                    //创建参数对象
+                    var params = new URLSearchParams();
+                    //添加参数
+                    params.append('radio', v.radio);
+                    params.append('BugName', v.BugName);
+
+                    axios.post("/FlawManages/Defect/addBugType", params).then(function (respone) {
+                        if (respone.data) {
+                            //成功
+                            v.pagecount + 1;
+                            v.add = false;
+                            v.$message({ message: '添加成功!', type: 'success', duration: 2000 });
+                            setTimeout(function () { window.location.href = "/FlawManages/Defect/Index"; }, 2000);
+                        } else {
+                            //失败
+                            v.add = false;
+                            v.$message({ message: '添加失败!', type: 'error', duration: 2000 });
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+}

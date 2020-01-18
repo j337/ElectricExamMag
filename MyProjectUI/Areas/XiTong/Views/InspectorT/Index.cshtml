@@ -1,0 +1,523 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@*添加一个编写css的区域*@
+@section mycss{
+  <link href="~/Areas/XiTong/Content/itstyles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/axure_rp_page.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/jquery-ui-themes.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/styles.css" rel="stylesheet" />
+
+    <style>
+        .db {
+            color: #CCCCCC;
+        }
+
+        .cc {
+            color: #428bca;
+        }
+
+        .ss {
+            padding: 3px 10px;
+            background-color: #d7d7d7;
+            width: 120px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        .dialog-footer {
+            margin-top: -50px;
+            text-align: initial;
+            border: 1px solid #dddddd;
+        }
+         #myexcel{
+        text-decoration:none;
+       color:white;
+        font-weight:700;
+    }
+    #myexcel:hover{
+        text-decoration:none;
+        color:white;
+        font-weight:700;
+    }
+    #myexcel:after{
+         text-decoration:none;
+        color:white;
+        font-weight:700;
+    }
+    </style>
+}
+
+<!--添加一个编写script的区域-->
+@section myscript{
+}
+@*//身体*@
+
+@section rightdiv{
+
+     <!-- Unnamed (形状) -->
+<div id="u16" class="ax_形状">
+    <img id="u16_img" class="img " src="~/images/u16.png" />
+    <!-- Unnamed () -->
+    <div id="u17" class="text"></div>
+</div>
+
+<!-- 导航 (动态面板) -->
+<div id="u18" class="ax_动态面板" data-label="导航">
+    <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+        <!-- Unnamed (形状) -->
+        <div id="u19" class="ax_形状">
+            <img id="u19_img" class="img " src="~/images/u62.png" />
+            <!-- Unnamed () -->
+            <div id="u20" class="text"></div>
+        </div>
+
+        <!-- 1 (形状) -->
+        <div id="u21" class="ax_文本" data-label="1">
+            <img id="u21_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u22" class="text">
+                <p><span style="font-weight:400;">巡检任务制定与分配</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u23" class="ax_文本">
+            <img id="u23_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u24" class="text">
+                <p><span>杆塔管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u25" class="ax_文本">
+            <img id="u25_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u26" class="text">
+                <p><span>线路管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u27" class="ax_文本">
+            <img id="u27_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u28" class="text">
+                <p><span>缺陷管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u29" class="ax_文本">
+            <img id="u29_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u30" class="text">
+                <p><span>巡检任务</span><span>管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u31" class="ax_文本">
+            <img id="u31_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u32" class="text">
+                <p><span>消缺任务管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u33" class="ax_文本">
+            <img id="u33_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u34" class="text">
+                <p><span>系统管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u35" class="ax_文本">
+            <img id="u35_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u36" class="text">
+                <p><span>信息统计</span></p>
+            </div>
+        </div>
+
+        <!-- 1 (形状) -->
+        <div id="u37" class="ax_文本" data-label="1">
+            <img id="u37_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u38" class="text">
+                <p ><span>巡检任务</span><span>执行与回执</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u39" class="ax_文本">
+            <img id="u39_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u40" class="text">
+                <p><span>我的工作平台</span></p>
+            </div>
+        </div>
+
+        <!-- 1 (形状) -->
+        <div id="u41" class="ax_文本" data-label="1">
+            <img id="u41_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u42" class="text">
+                <p style="font-weight:700;"><span>缺陷查询</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container" style="border:1px solid #dddddd;background-color:#f4f4f4;margin-top:70px;height:100%;overflow:scroll;">
+        <div class="row">
+            <div class="col-sm-12">
+                <p style="margin-top:10px;">
+                    巡检任务管理>>缺陷查询
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <p style="margin-left:-80px;margin-top:15px;width:120%;border:1px solid #f4f4f4;">
+                    <span style="float:left;font-size:14px;margin-top:10px;">任务编号:&nbsp;</span><el-input style="line-height:30px;width:150px;float:left;height:30px;" v-model="taskcode" placeholder="请输入内容"></el-input>
+                    <span style="float:left;font-size:14px;margin-top:10px;margin-left:10px;">线路编号:&nbsp;</span>
+                    <el-input style="width:150px;float:left;" v-model="linecode" placeholder="请输入内容"></el-input>
+                    <span style="font-size:14px;margin-top:10px;margin-left:30px;float:left;">缺陷类型:&nbsp;</span><el-select style="width:150px;float:left;" clearable v-model="bugtype" placeholder="请选择">
+                        <el-option v-for="item in bugtypelist"
+                                   :key="item.configValueId"
+                                   :label="item.configValueName"
+                                   :value="item.configValueId">
+                        </el-option>
+                    </el-select>
+                    <span style="float:left;font-size:14px;margin-top:10px;margin-left:30px;">缺陷级别:&nbsp;</span><el-select style="width:150px;float:left;" clearable v-model="buglevel" placeholder="请选择">
+                        <el-option v-for="item in buglevellist"
+                                   :key="item.configValueId"
+                                   :label="item.configValueName"
+                                   :value="item.configValueId">
+                        </el-option>
+                    </el-select>
+                </p>
+                <p style="margin-left:-80px;margin-top:45px;width:110%;padding-top:8px;">
+                    <span style="float:left;font-size:14px;margin-top:10px;">发现时间:&nbsp;</span>
+                    <el-date-picker style="float:left;width:300px;" v-model="discovertime"
+                                    type="daterange"
+                                    start-placeholder="开始日期"
+                                    end-placeholder="结束日期"
+                                   value-format="yyyy-MM-dd HH:mm:ss" >
+                    </el-date-picker>
+                   
+                    <span style="float:left;font-size:14px;margin-top:10px;margin-left:20px;">下发时间:&nbsp;</span>
+                    <el-date-picker style="float:left;width:300px;" v-model="issuedtime"
+                                    type="daterange"
+                                    start-placeholder="开始日期"
+                                    end-placeholder="结束日期"
+                                    value-format="yyyy-MM-dd HH:mm:ss">
+                    </el-date-picker>
+
+                </p>
+              
+                <!-- Styled Button (形状) -->
+                <div @@click="checkdata" id="u263" class="ax_形状" data-label="Styled Button">
+                    <img id="u263_img" class="img " src="~/Areas/XiTong/imgs/styled_button_u117.png" />
+                    <!-- Unnamed () -->
+                    <div id="u264" class="text">
+                        <p><span>查询</span></p>
+                    </div>
+                </div>
+
+                <div id="u323" class="ax_形状" data-label="Styled Button">
+                    <img id="u323_img" class="img " src="~/Areas/InformationManage/Content/巡检记录统计/styled_button_u323.png" />
+                    <!-- Unnamed () -->
+                    <div id="u324" class="text">
+                        <p><span>&nbsp; &nbsp; </span><span>@Html.ActionLink("导出Excel", "Excel", "", new { id = "myexcel" })</span></p>
+                    </div>
+                </div>
+                <div id="u325" class="ax_图片">
+                    <img id="u325_img" class="img " src="~/Areas/InformationManage/Content/巡检记录统计/u325.png" />
+                    <!-- Unnamed () -->
+                    <div id="u326" class="text"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" style="margin-top:10px;">
+                <table style="width:105%;" class="table table-bordered table-hover table-striped">
+                    <tr>
+                        <th>
+                            任务编号
+                        </th>
+                        <th>
+                            线路编号
+                        </th>
+                        <th>
+                            杆塔编号
+                        </th>
+                        <th>
+                            缺陷级别
+                        </th>
+                        <th>
+                            缺陷类型
+                        </th>
+                        <th>
+                            发现人
+                        </th>
+
+                        <th>
+                            发现时间
+                        </th>
+                        <th>
+                           下发人
+                        </th>
+                        <th>
+                            下发时间
+                        </th>
+                        <th>
+                           完好率
+                        </th>
+                        <th>
+                           缺陷描述
+                        </th>
+                       
+                    </tr>
+                    <tbody>
+                        <tr v-for="item in datalist">
+                            <td>
+                                {{item.taskcode}}
+                            </td>
+                            <td>
+                                {{item.linecode}}
+                            </td>
+                            <td>
+                                {{item.polecode}}
+                            </td>
+                            <td>
+                                {{item.buglevelname}}
+                                
+                            </td>
+                            <td>
+                               {{item.bugtypename}}
+                            </td>
+                            <td>
+                                {{item.discovername}}
+                            </td>
+                            <td>
+                                {{item.discovertime|timeFilter}}
+                            </td>
+                            <td>
+                                {{item.issuedname}}
+                            </td>
+                            <td>
+                                {{item.issuedtime|timeFilter}}
+                            </td>
+                            <td>
+                                {{item.intactrate}}
+                            </td>
+                            <td>
+                                {{item.bugdesc}}
+                            </td>
+                          
+                        </tr>
+                    </tbody>
+                </table>
+                <el-pagination @@size-change="handleSizeChange"
+                               @@current-change="handleCurrentChange"
+                               :current-page="pageindex"
+                               :page-sizes="[100, 200, 300, 400]"
+                               :page-size="6"
+                               layout="total, prev, pager, next, jumper"
+                               :total="pagecount">
+                </el-pagination>
+            </div>
+        </div>
+    </div>
+
+
+}
+@section vuescript{
+    <script>
+        var _this = this;
+        var vue=new Vue({
+            el:"#app",
+            data: {
+                dialogFormVisible:false,
+              datalist:[],
+              syslist: [],
+              buglevellist: [],
+              taskstatuslist: [],
+              bugtypelist: [],
+              workdoclist: [],
+              taskcode: "",
+              linecode: "",
+              bugtype: "",
+              buglevel: "",
+              discovertime:"",
+              issuedtime: "",
+              taskcode2: "",
+              linecode2: "",
+              bugtype2: "",
+              buglevel2: "",
+              ptime1: "",
+              ptime2: "",
+              ptime3: "",
+              ptime4: "",
+              pagecount: 0,
+              pageindex: "1"
+           },
+            methods: {
+                myload:function(){
+                    var param = new URLSearchParams();
+                    param.append("pageindex", 1);
+                    //发送ajax请求
+                    axios.post("/XiTong/InspectorT/GetData", param).then(function (response) {
+                        vue.datalist = response.data.islist;
+                        vue.workdoclist = response.data.worktypelist;
+                        vue.buglevellist = response.data.buglevellist;
+                        vue.bugtypelist = response.data.bugtypelist;
+                        vue.taskstatuslist = response.data.taskstatuslist;
+                        vue.pagecount = response.data.pagecount;
+
+                    })
+                },
+                checkdata: function () {
+                    this.taskcode2 = this.taskcode;
+                    this.linecode2 = this.linecode;
+                    this.buglevel2 = this.buglevel;
+                    this.bugtype2 = this.bugtype;
+                    //创建参数对象
+                    var param = new URLSearchParams();
+                    //获得点击的之前的元素的ID值   即当前添加菜单节点的父节点
+                    param.append("pageindex", 1);
+                    param.append("taskcode", this.taskcode2);
+                    param.append("linecode", this.linecode2);
+                    param.append("buglevel", this.buglevel2);
+                    param.append("bugtype", this.bugtype2);
+                    if (this.discovertime != null) {
+                        if (this.discovertime.length > 0) {
+                            this.ptime1 = this.discovertime[0];
+                            this.ptime2 = this.discovertime[1];
+                            param.append("ptime1", this.ptime1);
+                            param.append("ptime2", this.ptime2);
+                        } else {
+                            this.ptime1 = "";
+                            this.ptime2 = "";
+                            param.append("ptime1", this.ptime1);
+                            param.append("ptime2", this.ptime2);
+                        }
+                    } else {
+                        this.ptime1 = "";
+                        this.ptime2 = "";
+                        param.append("ptime1", this.ptime1);
+                        param.append("ptime2", this.ptime2);
+                    }
+
+                    if (this.issuedtime != null) {
+                        if (this.issuedtime.length > 0) {
+                            this.ptime3 = this.issuedtime[0];
+                            this.ptime4 = this.issuedtime[1];
+                            param.append("ptime3", this.ptime3);
+                            param.append("ptime4", this.ptime4);
+                        } else {
+                            this.ptime3 = "";
+                            this.ptime4 = "";
+                            param.append("ptime3", this.ptime3);
+                            param.append("ptime4", this.ptime4);
+                        }
+                    } else {
+                        this.ptime3 = "";
+                        this.ptime4 = "";
+                        param.append("ptime3", this.ptime3);
+                        param.append("ptime4", this.ptime4);
+                    }
+                    axios.post("/XiTong/InspectorT/SelectData", param).then(function (response) {
+                        vue.datalist = response.data.islist;
+                        vue.pagecount = response.data.pagecount;
+
+                    })
+                },
+                handleSizeChange(val) {
+                    console.log(`每页 ${val} 条`);
+                },
+                handleCurrentChange(val) {
+                    //创建参数对象
+                    var param = new URLSearchParams();
+                    //获得点击的之前的元素的ID值   即当前添加菜单节点的父节点
+                    param.append("pageindex", val);
+                    param.append("taskcode", this.taskcode2);
+                    param.append("linecode", this.linecode2);
+                    param.append("buglevel", this.buglevel2);
+                    param.append("bugtype", this.bugtype2);        
+                    param.append("ptime1", this.ptime1);
+                    param.append("ptime2", this.ptime2);                      
+                    param.append("ptime3", this.ptime3);
+                    param.append("ptime4", this.ptime4);
+               
+                    axios.post("/XiTong/InspectorT/SelectData", param).then(function (response) {
+                        vue.datalist = response.data.islist;
+                        vue.pagecount = response.data.pagecount;
+
+                    })
+                },
+                receiptenter: function (id) {
+                    var param = new URLSearchParams();
+                    param.append("taskid", id);
+                    axios.post("/extinction/SolveDetail/SaveIdBySession", param).then(function (response) {
+                        window.location = "/extinction/SolveTaskReceiptEnter/ReceiptEnyerView";
+                    })
+                },
+                updreceiptenter:function(item){
+                    var param = new URLSearchParams();
+                    param.append("taskid", item.id);
+                    axios.post("/extinction/SolveDetail/SaveIdBySession", param).then(function (response) {
+                        window.location = "/extinction/SolveTaskReceiptEnter/UpdReceipt";
+                    })
+                },
+                showsolvedetailinfo: function (id) {
+                    var param = new URLSearchParams();
+                    param.append("taskid", id);
+                    axios.post("/extinction/SolveDetail/SaveIdBySession", param).then(function (response) {
+                        window.location = "/extinction/SolveDetail/SolveDetailView";
+                    })
+                },
+                updsolvertask: function (item) {
+                    var param = new URLSearchParams();
+                    param.append("taskid", item.id);
+                    axios.post("/extinction/SolveTaskReceiptEnter/TransTaskStatus", param).then(function (response) {
+                        if (response.data == true) {
+                            vue.$message("任务开始执行!");
+                            item.taskStatus = 3;
+                        }
+                    })
+                }
+           }, created: function () {
+               this.$options.methods.myload();
+           },
+           filters: {
+               timeFilter: function (value) {
+                   //非空验证
+                   if (!value) {
+                       return '';
+                   } else {
+                       var strs = value.split('T');
+                       //获得最后一个点的索引
+                       var index = strs[1].indexOf('.');
+                       strs[1] = strs[1].substring(0, index);
+                       var str = "";
+
+                       return strs[0];
+                   }
+               }
+           }
+        });
+    </script>
+}
+

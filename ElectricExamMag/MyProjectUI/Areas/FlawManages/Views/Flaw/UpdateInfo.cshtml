@@ -1,0 +1,748 @@
+﻿
+@{
+    ViewBag.Title = "个人资料修改";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+    <link href="~/Areas/FlawManages/Content/样式文件夹/待办列表/styles.css" rel="stylesheet" />
+}
+
+@section rightdiv{
+
+    <div id="u16" class="ax_形状">
+        <img id="u16_img" class="img OffSet" src="~/images/待办列表/u16.png">
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+    <div id="u61" class="ax_动态面板 OffSet" data-label="导航">
+        <div id="u61_state0" class="panel_state" data-label="系统管理">
+
+            <!-- Unnamed (形状) -->
+            <div id="u62" class="ax_形状">
+                <img id="u62_img" class="img " src="~/images/待办列表/u62.png">
+                <!-- Unnamed () -->
+                <div id="u63" class="text"></div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u64" class="ax_文本" style="cursor: pointer;">
+                <img id="u64_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u65" class="text">
+                    <p><span>杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u66" class="ax_文本" style="cursor: pointer;">
+                <img id="u66_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u67" class="text">
+                    <p><span>线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u68" class="ax_文本" style="cursor: pointer;">
+                <img id="u68_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u69" class="text">
+                    <p><span>缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u70" class="ax_文本" style="cursor: pointer;">
+                <img id="u70_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u71" class="text">
+                    <p><span>巡检任务</span><span>管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u72" class="ax_文本" style="cursor: pointer;">
+                <img id="u72_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u73" class="text">
+                    <p><span>消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u74" class="ax_文本" style="cursor: pointer;">
+                <img id="u74_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u75" class="text">
+                    <p><span>系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u76" class="ax_文本" style="cursor: pointer;">
+                <img id="u76_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u77" class="text">
+                    <p><span>信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u78" class="ax_文本" style="cursor: pointer;">
+                <img id="u78_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u79" class="text">
+                    <p><span>我的工作平台</span></p>
+                </div>
+            </div>
+
+            <!-- 3 (形状) -->
+            <div id="u80" class="ax_文本" data-label="3" style="cursor: pointer;">
+                <img id="u80_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u81" class="text">
+                    <p><span class="BtnHover">待办列表</span></p>
+                </div>
+            </div>
+
+            <!-- 3 (形状) -->
+            <div id="u82" class="ax_文本" data-label="3" style="cursor: pointer;font-weight: 700;">
+                <img id="u82_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                <!-- Unnamed () -->
+                <div id="u83" class="text">
+                    <p><span class="BtnHover">个人</span><span class="BtnHover">资料</span><span class="BtnHover">修改</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgDiv" style="height: 430px;overflow:scroll;">
+        <p class="crumbs">我的工作平台>>&nbsp;&nbsp;个人资料管理</p>
+        <div class="updateList">
+            <div class="LeftHint">
+                <p class="hintp">用户名:</p>
+                <p class="hintp">角色名称:</p>
+                <p class="hintp">请输入旧密码:</p>
+                <p class="hintp">请输入新密码:</p>
+                <p class="hintp">请确认新密码:</p>
+                <p class="hintp">性别:</p>
+                <p class="hintp">年龄：</p>
+                <p class="hintp">入职日期：</p>
+                <p class="hintp">离职日期：</p>
+                <p class="hintp">联系电话：</p>
+                <p class="hintp">电子邮箱：</p>
+            </div>
+            <div class="RightHint">
+                <div v-if="Jurisdiction != '系统管理员'">
+                    <form method="post" id="updateforelse" action="/Flaw/UserInfoUpdate">
+                        <p class="hintinput"><el-input placeholder="请输入想修改的用户名..." @@blur="CheckForm('usern')" id="usern" size="mini" v-model="usern" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-tooltip class="item" effect="light" content="系统管理员可修改" placement="right"><el-select v-model="username" size="mini" id="username" style="width:220px;" disabled="true"><el-option v-for="item in roleList" :key="item.value" :label="item.label" :value="item.value"></el-option></el-select></el-tooltip></p>
+                        <p class="hintinput"><el-input placeholder="请输入当前登录账号密码..." type="password" maxlength="20" @@blur="CheckForm('oldpwd')" size="mini" v-model="oldpwd" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-input placeholder="请输入新密码..." type="password" maxlength="20" @@blur="CheckForm('newpwd')" size="mini" v-model="newpwd" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-input placeholder="请输入确认密码..." type="password" maxlength="20" @@blur="CheckForm('affpwd')" size="mini" v-model="affpwd" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-radio label="男" v-model="sex" size="mini" border>男</el-radio><el-radio label="女" v-model="sex" size="mini" border>女</el-radio></p>
+                        <p class="hintinput"><el-input placeholder="请输入年龄..." maxlength="3" id="age1" @@blur="CheckForm('age')" size="mini" v-model="age" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-tooltip class="item" effect="light" content="系统管理员可更改" placement="right"><el-date-picker v-model="indate" id="indate" type="date" @@blur="CheckForm('indate')" size="mini" placeholder="选择入职日期..." disabled="true"></el-date-picker></el-tooltip></p>
+                        <p class="hintinput"><el-tooltip class="item" effect="light" content="系统管理员可更改" placement="right"><el-date-picker id="outdate1" v-model="outdate" @@blur="CheckForm('outdate')" type="date" size="mini" placeholder="选择离职日期..." disabled="true"></el-date-picker></el-tooltip></p>
+                        <p class="hintinput"><el-input placeholder="请输入联系电话..." @@blur="CheckForm('phone')" size="mini" v-model="phone" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-input placeholder="请输入电子邮箱..." @@blur="CheckForm('email')" size="mini" v-model="email" suffix-icon="el-icon-edit" clearable></el-input></p>
+                    </form>
+                </div>
+                <div v-else>
+                    <form method="post" id="updateforadmin" action="/Flaw/UserInfoUpdate">
+                        <p class="hintinput"><el-input placeholder="请输入想修改的用户名..." @@blur="CheckForm('usern')" id="usern" size="mini" v-model="usern" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-select v-model="username" size="mini" id="username" style="width:220px;"><el-option v-for="item in roleList" :key="item.value" :label="item.label" :value="item.value"></el-option></el-select></p>
+                        <p class="hintinput"><el-input placeholder="请输入当前登录账号密码..." maxlength="20" type="password" @@blur="CheckForm('oldpwd')" size="mini" v-model="oldpwd" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-input placeholder="请输入新密码..." maxlength="20" type="password" @@blur="CheckForm('newpwd')" size="mini" v-model="newpwd" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-input placeholder="请输入确认密码..." maxlength="20" type="password" @@blur="CheckForm('affpwd')" size="mini" v-model="affpwd" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-radio label="男" v-model="sex" size="mini" border>男</el-radio><el-radio label="女" v-model="sex" size="mini" border>女</el-radio></p>
+                        <p class="hintinput"><el-input placeholder="请输入年龄..." maxlength="3" id="age1" @@blur="CheckForm('age')" size="mini" v-model="age" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-date-picker v-model="indate" id="indate" type="date" @@blur="CheckForm('indate')" size="mini" placeholder="选择入职日期..."></el-date-picker></p>
+                        <p class="hintinput"><el-date-picker id="outdate1" :disabled="State" v-model="outdate" @@blur="CheckForm('outdate')" type="date" size="mini" placeholder="选择离职日期..."></el-date-picker></p>
+                        <p class="hintinput"><el-input placeholder="请输入联系电话..." @@blur="CheckForm('phone')" size="mini" v-model="phone" suffix-icon="el-icon-edit" clearable></el-input></p>
+                        <p class="hintinput"><el-input placeholder="请输入电子邮箱..." @@blur="CheckForm('email')" size="mini" v-model="email" suffix-icon="el-icon-edit" clearable></el-input></p>
+                    </form>
+                </div>
+                <div style="padding-bottom:30px;"><el-button id="submitBtn" type="primary" plain disabled="BtnState">提交信息</el-button></div>
+            </div>
+          
+            <div class="hintDiv">
+                <!--条件判断提示区-->
+
+                <div id="usern" v-if="errusern" class="usernp"><span class="hint">*</span>&nbsp;<span class="hinttxt">用户名最大长度为8个字符!</span></div>
+                <div id="oldpwd" v-if="erroldpwd" class="oldpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">旧密码为6-20个字符!</span></div>
+                <div id="newpwd" v-if="errnewpwd" class="newpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">新密码为6-20个字符!</span></div>
+                <div id="affpwd" v-if="erraffpwd" class="affpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">确认密码为6-20个字符!</span></div>
+                <br /><br />
+                <div id="age" v-if="errage" class="agep"><span class="hint">*</span>&nbsp;<span class="hinttxt">年龄不正确!(最小:10;最大:120)</span></div>
+                <br /><br />
+                <div id="outdate" v-if="erroutdate" class="outdatep"><span class="hint">*</span>&nbsp;<span class="hinttxt">离职日期不可比入职日期早!</span></div>
+                <div id="phone" v-if="errphone" class="phonep"><span class="hint">*</span>&nbsp;<span class="hinttxt">联系电话格式不正确!</span></div>
+                <div id="email" v-if="erremail" class="emailp"><span class="hint">*</span>&nbsp;<span class="hinttxt">邮箱格式不正确!</span></div>
+
+                <!--非空判断显示区-->
+
+                <div v-if="errusernNotNull" style="margin-top:-60px;" class="usernp"><span class="hint">*</span>&nbsp;<span class="hinttxt">用户名不能为空!</span></div>
+                <div v-if="erroldpwdNotNull" style="margin-top:26px;" class="oldpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">旧密码不能为空!</span></div>
+                <div v-if="errnewpwdNotNull" style="margin-top:69px;" class="newpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">新密码不能为空!</span></div>
+                <div v-if="erraffpwdNotNull" style="margin-top:112px;" class="affpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">确认密码不能为空!</span></div>
+                <br /><br />
+                <div v-if="errageNotNull" style="margin-top:162px;" class="agep"><span class="hint">*</span>&nbsp;<span class="hinttxt">年龄不能为空!</span></div>
+                <div v-if="errindateNotNull" class="indatep"><span class="hint">*</span>&nbsp;<span class="hinttxt">入职日期不能为空!</span></div>
+                <div v-if="erroutdateNotNull" style="margin-top:249px;" class="outdatep"><span class="hint">*</span>&nbsp;<span class="hinttxt">离职日期不能为空!</span></div>
+                <div v-if="errphoneNotNull" style="margin-top:293px;" class="phonep"><span class="hint">*</span>&nbsp;<span class="hinttxt">电话不能为空!</span></div>
+                <div v-if="erremailNotNull" style="margin-top:335px;" class="emailp"><span class="hint">*</span>&nbsp;<span class="hinttxt">邮箱不能为空!</span></div>
+
+                <!--密码判断显示区-->
+                <div v-if="errnewpwdSame" style="margin-top:29px;" class="newpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">新密码不能和旧密码一致!</span></div>
+                <div v-if="erraffpwdSame" style="margin-top:69px;" class="affpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">确认密码与新密码不一致!</span></div>
+                <div v-if="erroldpwdSame" style="margin-top:-13px;" class="affpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">旧密码不正确!</span></div>
+
+                <!--日期判断显示区-->
+                <div v-if="errindateSame" style="margin-top:205px;" class="newpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">入职日期不能比离职日期晚!</span></div>
+                <div v-if="erroutdateSame" style="margin-top:250px;" class="newpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">离职日期不能比入职日期早!</span></div>
+
+                <!--年龄非数字显示区-->
+                <div v-if="errageNaN" style="margin-top:162px;" class="affpwdp"><span class="hint">*</span>&nbsp;<span class="hinttxt">年龄必须是数字!</span></div>
+            </div>
+        </div>
+    </div>
+    <!--任务详情查看区-->
+    <el-dialog title="查看待办事宜" visible.sync="dialogVisible" width="30%" show-close="false" center>
+        <p class="DialogP"><span class="DialogFonts">任务编号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{detailsinfo.inspectionTaskCode}}</p>
+        <p class="DialogP"><span class="DialogFonts">任务名称:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{detailsinfo.inspectionTaskName}}</p>
+        <p class="DialogP"><span class="DialogFonts">巡检线路:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{detailsinfo.lineName}}</p>
+        <p class="DialogP"><span class="DialogFonts">起始杆号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{detailsinfo.startPole}}</p>
+        <p class="DialogP"><span class="DialogFonts">终止杆号:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{detailsinfo.endPole}}</p>
+        <p class="DialogP"><span class="DialogFonts">下发人:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{detailsinfo.createdBy}}</p>
+        <p class="DialogP"><span class="DialogFonts">下发时间:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{detailsinfo.creationTime}}</p>
+        <p class="DialogP"><span class="DialogFonts">备注信息:</span>&nbsp;&nbsp;&nbsp;&nbsp;{{detailsinfo.common}}</p>
+        <div slot="footer" class="dialog-footer">
+            <el-button type="primary" @@click="dialogVisible = false">确 定</el-button>
+        </div>
+    </el-dialog>
+    <!--修改成功Or失败提示区-->
+    <el-dialog title="系统提示"
+               :visible.sync="dialogVisible2"
+               width="30%" :show-close="false" :close-on-click-modal="false" center>
+        <!--成功区-->
+        <span v-if="UpdateSucc" style="margin-left:100px">修改成功!请您重新登录吧...</span>
+        <span v-if="UpdateSucc" slot="footer" class="dialog-footer">
+            <el-button type="primary" @@click="loginagain">重新登录</el-button>
+        </span>
+        <!--失败区-->
+        <span v-if="!UpdateSucc">修改失败!可能是修改信息异常导致出错,请稍后再来重试...</span>
+        <span v-if="!UpdateSucc" slot="footer" class="dialog-footer">
+            <el-button type="primary" @@click="dialogVisible2 = false">好吧</el-button>
+        </span>
+    </el-dialog>
+}
+@section vuescript{
+
+    <script type="text/javascript">
+        var a = this;
+        var v = new Vue({
+            el: "#app",
+            data: {
+                dialogVisible2:false,
+                detailsinfo: {},
+                sex: "男",
+                usern: "",
+                username:"",
+                oldpwd: "",
+                newpwd: "",
+                affpwd: "",
+                age: "",
+                indate: "",
+                outdate: "",
+                phone: "",
+                email: "",
+                checkoldpwd:"",
+                Jurisdiction: "其他",
+                errusern: false,
+                erroldpwd: false,
+                errnewpwd: false,
+                erraffpwd: false,
+                errage: false,
+                errindate: false,
+                erroutdate: false,
+                errphone: false,
+                erremail: false,
+                errusernNotNull: false,
+                erroldpwdNotNull: false,
+                errnewpwdNotNull: false,
+                erraffpwdNotNull: false,
+                errageNotNull: false,
+                errindateNotNull: false,
+                erroutdateNotNull: false,
+                errphoneNotNull: false,
+                erremailNotNull: false,
+                erroldpwdSame: false,
+                errnewpwdSame: false,
+                erraffpwdSame: false,
+                errageNaN: false,
+                errindateSame: false,
+                erroutdateSame: false,
+                UpdateSucc:false,
+                JurisAndData: {},
+                roleList: [],
+                dialogVisible3: false,
+                State: false,
+                BtnState:true
+            },
+            created: function () {
+                //获得权限限制修改个人资料页面的请求
+                a.axios({ method: "post", url: "/Flaw/JurisdictionManage" }).then(function (respone) {
+                    v.JurisAndData = respone.data;
+                    if (v.JurisAndData.result.entryDate != null) {
+                        var a = v.JurisAndData.result.entryDate.split('T');
+                        v.JurisAndData.result.entryDate = a[0];
+                    } else {
+                        v.JurisAndData.result.entryDate ="";
+                    }
+                    if (v.JurisAndData.result.dimissionDate != null) {
+                        var c = v.JurisAndData.result.dimissionDate.split('T');
+                        v.JurisAndData.result.dimissionDate = c[0];
+                    } else {
+                        v.JurisAndData.result.dimissionDate = "";
+                    }
+                 
+                    v.usern = v.JurisAndData.result.userName;
+                    v.username = v.JurisAndData.result.roleName;
+                    v.indate = v.JurisAndData.result.entryDate;
+                    v.outdate = v.JurisAndData.result.dimissionDate;
+                    v.age = v.JurisAndData.result.age;
+                    v.sex = v.JurisAndData.result.sex;
+                    v.phone = v.JurisAndData.result.phoneTel;
+                    v.email = v.JurisAndData.result.email;
+                    v.checkoldpwd = v.JurisAndData.result.userPassword;
+                    v.roleList = v.JurisAndData.role;
+                    if (v.JurisAndData.result.roleName == "系统管理员") {
+                        v.Jurisdiction = "系统管理员";
+                    }
+                });
+            },
+            methods: {
+                CheckForm: function (type) {
+                    if (v.usern == "" || v.oldpwd == "" || v.newpwd == "" || v.affpwd == "" || v.age == "" || v.indate == "" || v.outdate == "" || v.phone == "" || v.email == "") {
+                        if (type == "usern") {
+                            if (v.usern != "") {
+                                v.errusernNotNull = false;
+                                v.errusern = false;
+                                if (v.usern.length > 8) {
+                                    v.errusern = true;
+                                } else {
+                                    v.errusern = false;
+                                }
+                            } else {
+                                v.errusern = false;
+                                v.errusernNotNull = true;
+                            }
+                        }  else if (type == "oldpwd") {
+                            if (v.oldpwd != "") {
+                                v.erroldpwdSame = false;
+                                v.erroldpwdNotNull = false;
+                                v.erroldpwd = false;
+                                if (v.oldpwd != v.checkoldpwd) {
+                                    v.erroldpwdSame = true;
+                                } else {
+                                    if (v.oldpwd.length > 20 || v.oldpwd.length < 6) {
+                                        v.erroldpwd = true;
+                                    } else {
+                                        v.erroldpwd = false;
+                                    }
+                                }
+                            } else {
+                                v.erroldpwd = false;
+                                v.erroldpwdSame = false;
+                                v.erroldpwdNotNull = true;
+                            }
+                        } else if (type == "newpwd") {
+                            if (v.newpwd != "") {
+                                v.errnewpwdNotNull = false;
+                                v.errnewpwdSame = false;
+                                v.errnewpwd = false;
+                                if (v.newpwd.length > 20 || v.newpwd.length < 6) {
+                                    v.errnewpwd = true;
+                                } else {
+                                    v.errnewpwd = false;
+                                    if (v.newpwd == v.oldpwd) {
+                                        v.errnewpwdSame = true;
+                                    } else {
+                                        if (v.errnewpwdSame == true) {
+                                            v.errnewpwdSame = true;
+                                        } else {
+                                            v.errnewpwdSame = false;
+                                        }
+                                        v.errnewpwdNotNull = false;
+                                    }
+                                }
+                            } else {
+                                v.errnewpwd = false;
+                                v.errnewpwdSame = false;
+                                v.errnewpwdNotNull = true;
+                            }
+                        } else if (type == "affpwd") {
+                            if (v.affpwd != "") {
+                                v.erraffpwdNotNull = false;
+                                v.erraffpwdSame = false;
+                                v.erraffpwd = false;
+                                if (v.affpwd.length > 20 || v.affpwd.length < 6) {
+                                    v.erraffpwd = true;
+                                } else {
+                                    v.erraffpwd = false;
+                                    if (v.affpwd != v.newpwd) {
+                                        v.erraffpwdSame = true;
+                                    } else {
+                                        if (v.erraffpwdSame == true) {
+                                            v.erraffpwdSame = true;
+                                        } else {
+                                            v.erraffpwdSame = false;
+                                        }
+                                        v.erraffpwdNotNull = false;
+                                    }
+                                }
+                            } else {
+                                v.erraffpwd = false;
+                                v.erraffpwdSame = false;
+                                v.erraffpwdNotNull = true;
+                            }
+                        } else if (type == "age") {
+                            if (v.age != "") {
+                                v.errageNotNull = false;
+                                v.errage = false;
+                                v.errageNaN = false;
+                                if (!isNaN(v.age)) {
+                                    if (parseInt(v.age) < 10 || parseInt(v.age) > 120) {
+                                        v.errage = true;
+                                    }
+                                } else {
+                                    $("#age1").val("");
+                                    v.errageNotNull = false;
+                                    v.errage = false;
+                                    v.errageNaN = true;
+                                }
+                            } else {
+                                v.errageNaN = false;
+                                v.errage = false;
+                                v.errageNotNull = true;
+                            }
+                        } else if (type == "indate") {
+                            if (v.indate != "" && v.indate != null) {
+                                v.errindateSame = false;
+                                v.errindate = false;
+                                v.errindateNotNull = false;
+                                if (v.outdate != "" && v.outdate != null) {
+                                    var d1 = new Date(v.indate);
+                                    var d2 = new Date(v.outdate);
+                                    if (d2 < d1) {
+                                        //警告:入职不能比离职晚
+                                        v.errindateSame = true;
+                                    } else {
+                                        v.errindate = false;
+                                        v.errindateNotNull = false;
+                                        v.State = false;
+                                        v.errindateSame = false;
+                                    }
+                                } else {
+                                    v.errindateSame = false;
+                                    v.errindate = false;
+                                    v.State = false;
+                                    v.errindateNotNull = false;
+                                }
+                            } else {
+                                v.errindateSame = false;
+                                v.errindate = false;
+                                v.State = true;
+                                v.errindateNotNull = true;
+                            }
+                        } else if (type == "outdate") {
+                            if (v.outdate != "" && v.outdate != null) {
+                                v.erroutdateSame = false;
+                                v.erroutdate = false;
+                                v.erroutdateNotNull = false;
+                                if (v.indate != "" && v.indate != null) {
+                                    var d1 = new Date(v.indate);
+                                    var d2 = new Date(v.outdate);
+                                    if (d2 < d1) {
+                                        //警告:离职不能比入职早
+                                        v.erroutdateSame = true;
+                                    } else {
+                                        v.erroutdate = false;
+                                        v.erroutdateNotNull = false;
+                                        v.erroutdateSame = false;
+                                    }
+                                } else {
+                                    v.erroutdateSame = false;
+                                    v.erroutdate = false;
+                                    v.erroutdateNotNull = false;
+                                }
+                            } else {
+                                v.erroutdateSame = false;
+                                v.erroutdate = false;
+                                v.erroutdateNotNull = true;
+                            }
+                        } else if (type == "phone") {
+                            if (v.phone != "") {
+                                v.errphone = false;
+                                v.errphoneNotNull = false;
+                                if (!(/^1[3456789]\d{9}$/.test(v.phone))) {
+                                    v.errphone = true;
+                                } else {
+                                    v.errphone = false;
+                                }
+                            } else {
+                                v.errphone = false;
+                                v.errphoneNotNull = true;
+                            }
+                        } else if (type == "email") {
+                            if (v.email != "") {
+                                v.erremail = false;
+                                v.erremailNotNull = false;
+                                if (!(/^[a-zA-Z0-9_-]+@@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/.test(v.email))) {
+                                    v.erremail = true;
+                                } else {
+                                    v.erremail = false;
+                                }
+                            } else {
+                                v.erremail = false;
+                                v.erremailNotNull = true;
+                            }
+                        }
+                    } else {
+                        if (type == "usern") {
+                            if (v.usern != "") {
+                                v.errusernNotNull = false;
+                                v.errusern = false;
+                                if (v.usern.length > 8) {
+                                    v.errusern = true;
+                                } else {
+                                    v.errusern = false;
+                                }
+                            } else {
+                                v.errusern = false;
+                                v.errusernNotNull = true;
+                            }
+                        }  else if (type == "oldpwd") {
+                            if (v.oldpwd != "") {
+                                v.erroldpwdSame = false;
+                                v.erroldpwdNotNull = false;
+                                v.erroldpwd = false;
+                                if (v.oldpwd != v.checkoldpwd) {
+                                    v.erroldpwdSame = true;
+                                } else {
+                                    if (v.oldpwd.length > 20 || v.oldpwd.length < 6) {
+                                        v.erroldpwd = true;
+                                    } else {
+                                        v.erroldpwd = false;
+                                    }
+                                }
+                            } else {
+                                v.erroldpwd = false;
+                                v.erroldpwdSame = false;
+                                v.erroldpwdNotNull = true;
+                            }
+                        } else if (type == "newpwd") {
+                            if (v.newpwd != "") {
+                                v.errnewpwdNotNull = false;
+                                v.errnewpwdSame = false;
+                                v.errnewpwd = false;
+                                if (v.newpwd.length > 20 || v.newpwd.length < 6) {
+                                    v.errnewpwd = true;
+                                } else {
+                                    v.errnewpwd = false;
+                                    if (v.newpwd == v.oldpwd) {
+                                        v.errnewpwdSame = true;
+                                    } else {
+                                        if (v.errnewpwdSame == true) {
+                                            v.errnewpwdSame = true;
+                                        } else {
+                                            v.errnewpwdSame = false;
+                                        }
+                                        v.errnewpwdNotNull = false;
+                                    }
+                                }
+                            } else {
+                                v.errnewpwd = false;
+                                v.errnewpwdSame = false;
+                                v.errnewpwdNotNull = true;
+                            }
+                        } else if (type == "affpwd") {
+                            if (v.affpwd != "") {
+                                v.erraffpwdNotNull = false;
+                                v.erraffpwdSame = false;
+                                v.erraffpwd = false;
+                                if (v.affpwd.length > 20 || v.affpwd.length < 6) {
+                                    v.erraffpwd = true;
+                                } else {
+                                    v.erraffpwd = false;
+                                    if (v.affpwd != v.newpwd) {
+                                        v.erraffpwdSame = true;
+                                    } else {
+                                        if (v.erraffpwdSame == true) {
+                                            v.erraffpwdSame = true;
+                                        } else {
+                                            v.erraffpwdSame = false;
+                                        }
+                                        v.erraffpwdNotNull = false;
+                                    }
+                                }
+                            } else {
+                                v.erraffpwd = false;
+                                v.erraffpwdSame = false;
+                                v.erraffpwdNotNull = true;
+                            }
+                        } else if (type == "age") {
+                            if (v.age != "") {
+                                v.errageNotNull = false;
+                                v.errage = false;
+                                v.errageNaN = false;
+                                if (!isNaN(v.age)) {
+                                    if (parseInt(v.age) < 10 || parseInt(v.age) > 120) {
+                                        v.errage = true;
+                                    }
+                                } else {
+                                    $("#age1").val("");
+                                    v.errageNotNull = false;
+                                    v.errage = false;
+                                    v.errageNaN = true;
+                                }
+                            } else {
+                                v.errageNaN = false;
+                                v.errage = false;
+                                v.errageNotNull = true;
+                            }
+                        } else if (type == "indate") {
+                            if (v.indate != "" && v.indate != null) {
+                                v.errindateSame = false;
+                                v.errindate = false;
+                                v.errindateNotNull = false;
+                                if (v.outdate != "" && v.outdate != null) {
+                                    var d1 = new Date(v.indate);
+                                    var d2 = new Date(v.outdate);
+                                    if (d2 < d1) {
+                                        //警告:入职不能比离职晚
+                                        v.errindateSame = true;
+                                    } else {
+                                        v.errindate = false;
+                                        v.errindateNotNull = false;
+                                        v.State = false;
+                                        v.errindateSame = false;
+                                    }
+                                } else {
+                                    v.errindateSame = false;
+                                    v.errindate = false;
+                                    v.State = false;
+                                    v.errindateNotNull = false;
+                                }
+                            } else {
+                                v.errindateSame = false;
+                                v.errindate = false;
+                                v.State = true;
+                                v.errindateNotNull = true;
+                            }
+                        } else if (type == "outdate") {
+                            if (v.outdate != "" && v.outdate != null) {
+                                v.erroutdateSame = false;
+                                v.erroutdate = false;
+                                v.erroutdateNotNull = false;
+                                if (v.indate != "" && v.indate != null) {
+                                    var d1 = new Date(v.indate);
+                                    var d2 = new Date(v.outdate);
+                                    if (d2 < d1) {
+                                        //警告:离职不能比入职早
+                                        v.erroutdateSame = true;
+                                    } else {
+                                        v.erroutdate = false;
+                                        v.erroutdateNotNull = false;
+                                        v.erroutdateSame = false;
+                                    }
+                                } else {
+                                    v.erroutdateSame = false;
+                                    v.erroutdate = false;
+                                    v.erroutdateNotNull = false;
+                                }
+                            } else {
+                                v.erroutdateSame = false;
+                                v.erroutdate = false;
+                                v.erroutdateNotNull = true;
+                            }
+                        } else if (type == "phone") {
+                            if (v.phone != "") {
+                                v.errphone = false;
+                                v.errphoneNotNull = false;
+                                if (!(/^1[3456789]\d{9}$/.test(v.phone))) {
+                                    v.errphone = true;
+                                } else {
+                                    v.errphone = false;
+                                }
+                            } else {
+                                v.errphone = false;
+                                v.errphoneNotNull = true;
+                            }
+                        } else if (type == "email") {
+                            if (v.email != "") {
+                                v.erremail = false;
+                                v.erremailNotNull = false;
+                                if (!(/^[a-zA-Z0-9_-]+@@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/.test(v.email))) {
+                                    v.erremail = true;
+                                } else {
+                                    v.erremail = false;
+                                }
+                            } else {
+                                v.erremail = false;
+
+                                v.erremailNotNull = true;
+                            }
+                        }
+                        if (v.errusern || v.erroldpwd || v.errnewpwd || v.erraffpwd || v.errage || v.errindate || v.erroutdate || v.errphone || v.erremail || v.errusernNotNull || v.erroldpwdNotNull || v.errnewpwdNotNull || v.erraffpwdNotNull || v.errageNotNull || v.errindateNotNull || v.erroutdateNotNull || v.errphoneNotNull || v.erremailNotNull || v.erroldpwdSame || v.errnewpwdSame || v.erraffpwdSame || v.errageNaN || v.errindateSame || v.erroutdateSame) {
+                            if ($("#submitBtn").attr("disabled") != 'disabled') {
+                                $("#submitBtn").removeClass("btn-info");
+                                $("#submitBtn").addClass("btn-warning");
+                                $("#submitBtn").attr("disabled", "true");
+                            }
+                        } else {
+                            //按钮可用
+                            v.BtnState = false;
+                        }
+                    }
+                },
+                loginagain: function () {
+                    dialogVisible2 = false;
+                    window.location.href = "/FlawManages/Flaw/Login";
+                }
+            }
+        });
+        jQuery(function () {
+            $("#u81").click(function () {
+                window.location.href = "/FlawManages/Flaw/Index";
+            });
+            $("#submitBtn").click(function () {
+                //设置入职/离职日期文本框内值
+                var indate = $("#indate").val();
+                var outdate = $("#outdate1").val();
+                //创建参数对象
+                var params = new URLSearchParams();
+                //添加参数
+                params.append('sex', v.sex);
+                params.append('usern', v.usern);
+                params.append('username', v.username);
+                params.append('newpwd', v.newpwd);
+                params.append('age', v.age);
+                params.append('indate', indate);
+                params.append('outdate', outdate);
+                params.append('phone', v.phone);
+                params.append('email', v.email);
+
+                axios.post("/Flaw/UpdateForForm", params).then(function (respone) {
+                    if (respone.data == true) {
+                        v.UpdateSucc = true;
+                    } else {
+                        v.UpdateSucc = false;
+                    }
+                    v.dialogVisible2 = true;
+                });
+            });
+        });
+    </script>
+}

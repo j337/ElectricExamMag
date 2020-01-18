@@ -1,0 +1,8 @@
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectBLL\bin\Debug\MyProjectBLL.dll
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectBLL\bin\Debug\MyProjectBLL.pdb
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectBLL\obj\Debug\MyProjectBLL.dll
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectBLL\obj\Debug\MyProjectBLL.pdb
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectBLL\bin\Debug\MyProjectBLL.dll
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectBLL\bin\Debug\MyProjectBLL.pdb
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectBLL\obj\Debug\MyProjectBLL.dll
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectBLL\obj\Debug\MyProjectBLL.pdb

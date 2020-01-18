@@ -1,0 +1,9 @@
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectIDAL\bin\Debug\MyProjectIDAL.dll
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectIDAL\bin\Debug\MyProjectIDAL.pdb
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectIDAL\obj\Debug\MyProjectIDAL.dll
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectIDAL\obj\Debug\MyProjectIDAL.pdb
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectIDAL\bin\Debug\MyProjectIDAL.dll
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectIDAL\bin\Debug\MyProjectIDAL.pdb
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectIDAL\obj\Debug\MyProjectIDAL.csprojResolveAssemblyReference.cache
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectIDAL\obj\Debug\MyProjectIDAL.dll
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectIDAL\obj\Debug\MyProjectIDAL.pdb

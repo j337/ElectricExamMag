@@ -1,0 +1,1293 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+@section mycss{
+    <link href="~/Areas/XiTong/Content/rmstyles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/axure_rp_page.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/jquery-ui-themes.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/styles.css" rel="stylesheet" />
+    <style>
+        ul{
+            margin:0px;
+            padding:0px;
+        } 
+        ul li{
+            list-style:none;
+        }
+        .u188{
+ width:186px;
+  height:219px;
+              -webkit-transform:rotate(90deg);
+              -moz-transform:rotate(90deg);
+              -ms-transform:rotate(90deg);
+              transform:rotate(90deg);
+                position:absolute;               
+                z-index:10;
+                margin-left:170px;
+               
+        }
+        .u188_img {
+  width:210px;
+  height:229px;
+}
+   .ss{
+       display:none;
+   }
+   .showul li{
+       font-size:14px;
+       color:#666;
+       margin-top:10px;
+       margin-left:8px;
+   }
+    #u201 {
+  width:138px;
+  height:172px;
+  overflow:hidden;
+ 
+}
+#u201_state0 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:138px;
+  height:172px;
+  -ms-overflow-x:hidden;
+  overflow-x:hidden;
+  -ms-overflow-y:hidden;
+  overflow-y:hidden;
+}
+#u202 {
+  position:absolute;
+  left:10px;
+  top:6px;
+  width:120px;
+  height:160px;
+}
+#u202_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:120px;
+  height:160px;
+}
+#u203 {
+  position:absolute;
+  left:2px;
+  top:72px;
+  width:116px;
+ 
+  word-wrap:break-word;
+}
+#u204 {
+  position:absolute;
+  left:111px;
+  top:9px;
+  width:16px;
+  height:16px;
+}
+#u204_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:16px;
+  height:16px;
+}
+#u205 {
+  position:absolute;
+  left:2px;
+  top:0px;
+  width:12px;
+ 
+  word-wrap:break-word;
+}
+#u206 {
+  position:absolute;
+  left:18px;
+  top:9px;
+  width:66px;
+  height:16px;
+  font-family:'Arial Negreta', 'Arial';
+  font-weight:700;
+}
+#u206_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:66px;
+  height:16px;
+}
+#u207 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:66px;
+  white-space:nowrap;
+}
+#u208 {
+  position:absolute;
+  left:35px;
+  top:35px;
+  width:66px;
+  height:16px;
+}
+#u208_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:66px;
+  height:16px;
+}
+#u209 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:66px;
+  white-space:nowrap;
+}
+#u210 {
+  position:absolute;
+  left:35px;
+  top:66px;
+  width:53px;
+  height:16px;
+}
+#u210_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:53px;
+  height:16px;
+}
+#u211 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:53px;
+  white-space:nowrap;
+}
+#u212 {
+  position:absolute;
+  left:35px;
+  top:100px;
+  width:53px;
+  height:16px;
+}
+#u212_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:53px;
+  height:16px;
+}
+#u213 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:53px;
+  white-space:nowrap;
+}
+#u214 {
+  position:absolute;
+  left:20px;
+  top:126px;
+  width:100px;
+  height:16px;
+}
+#u215 {
+  position:absolute;
+  left:16px;
+  top:0px;
+  width:82px;
+  word-wrap:break-word;
+}
+#u214_input {
+  position:absolute;
+  left:-3px;
+  top:-2px;
+}
+#u216 {
+  position:absolute;
+  left:72px;
+  top:126px;
+  width:60px;
+  height:16px;
+}
+#u217 {
+  position:absolute;
+  left:16px;
+  top:0px;
+  width:42px;
+  word-wrap:break-word;
+}
+#u216_input {
+  position:absolute;
+  left:-3px;
+  top:-2px;
+}
+#u218 {
+  position:absolute;
+  left:16px;
+  top:35px;
+  width:16px;
+  height:16px;
+}
+#u218_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:16px;
+  height:16px;
+}
+#u219 {
+  position:absolute;
+  left:2px;
+  top:0px;
+  width:12px;
+  visibility:hidden;
+  word-wrap:break-word;
+}
+#u220 {
+  position:absolute;
+  left:18px;
+  top:65px;
+  width:16px;
+  height:16px;
+}
+#u220_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:16px;
+  height:16px;
+}
+#u221 {
+  position:absolute;
+  left:2px;
+  top:0px;
+  width:12px;
+
+  word-wrap:break-word;
+}
+#u222 {
+  position:absolute;
+  left:17px;
+  top:100px;
+  width:16px;
+  height:16px;
+}
+#u222_img {
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:16px;
+  height:16px;
+}
+#u223 {
+  position:absolute;
+  left:2px;
+  top:0px;
+  width:12px;
+
+  word-wrap:break-word;
+}
+    #addmenu,#addmenu table td{
+      font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    color:
+    #333333
+    }
+    #addmenu table td{
+       height:50px;
+    }
+    .el-input__inner{
+        height:35px;
+        line-height:35px;
+        width:210px;
+    }
+    #addmenu table{
+        width:600px;
+       
+    }
+    #updmenu table{
+        border:1px solid #dddddd;
+    }
+     #updmenu table td{
+       height:50px;
+    }
+      #addmenu table{
+        width:450px;
+       
+    }
+    #updmenu table{
+        border:1px solid #dddddd;
+    }
+    #updmenu,#updmenu table td{
+      font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    color:
+    #333333
+    }
+      .overlay{
+             position: fixed;
+                        top: 0%;
+                        left: 0%;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #000;
+                        z-index: 110;
+                        opacity: .60;
+                       
+        }
+        .sss{
+            display:none;
+        }
+       
+        .dialog-footer{
+            text-align:right;
+            margin-right:25px;
+            margin-top:20px;
+        }
+        .delpremisscss{
+         position:absolute;
+            z-index:222;
+            width:400px;
+            border:1px solid #dddddd;
+            border-radius:10px;
+            background-color:white;
+            margin-left:150px;
+            margin-top:-100px;
+            height:180px;
+        }
+    </style>
+}
+
+@section myscript{
+
+}
+
+@section rightdiv{
+
+    <div id="delpremissdiv" class="delpremisscss sss">
+    <p style="font-size:20px;color:black;margin-left:150px;margin-top:10px;margin-bottom:15px;color:#666;">删除权限</p>
+   <p style="font-size:16px;margin-left:25px;margin-top:20px;color:#666;">若删除,其下所有子节点都将会被删除!</p>
+         <p style="font-size:16px;margin-left:25px;margin-top:5px;color:#666;">是否继续删除?</p>
+    <div slot="footer" class="dialog-footer" style="margin-top:15px;">
+        <el-button @@click="hidprediv">取 消</el-button>
+        <el-button type="primary" @@click="delfun">确 定</el-button>
+    </div>
+</div>
+<div id="selectrolepremiss" class="delpremisscss sss">
+    <p style="font-size:20px;color:black;margin-left:150px;margin-top:10px;margin-bottom:15px;color:#666;">消息提示</p>
+    <p style="font-size:16px;margin-left:25px;margin-top:20px;color:#666;">请选择角色要赋予的权限</p>
+    <div slot="footer" class="dialog-footer">
+        <el-button @@click="hidprediv">取 消</el-button>
+        <el-button @@click="hidprediv" type="primary">确 定</el-button>
+    </div>
+</div>
+
+<div id="selectrole" class="delpremisscss sss">
+    <p style="font-size:20px;color:black;margin-left:150px;margin-top:10px;margin-bottom:15px;color:#666;">消息提示</p>
+    <p style="font-size:16px;margin-left:25px;margin-top:20px;color:#666;">请选择角色</p>
+    <div slot="footer" class="dialog-footer">
+        <el-button @@click="hidprediv">取 消</el-button>
+        <el-button @@click="hidprediv" type="primary">确 定</el-button>
+    </div>
+</div>
+<div class="overlay sss">
+
+</div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u16" class="ax_形状">
+        <img id="u16_img" class="img " src="~/images/u16.png" />
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+
+    <div id="u18" class="ax_动态面板" data-label="导航">
+        <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+            <!-- Unnamed (形状) -->
+            <div id="u19" class="ax_形状">
+                <img id="u19_img" class="img " src="~/images/u62.png" />
+                <!-- Unnamed () -->
+                <div id="u20" class="text"></div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u21" class="ax_文本" data-label="1">
+                <img id="u21_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u22" class="text">
+                    <p><span @@click="transtorolepage" style="font-weight:400;">角色管理</span></p>
+                </div>
+            </div>
+
+            <!-- 2 (形状) -->
+            <div id="u23" class="ax_文本" data-label="2">
+                <img id="u23_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u24" class="text">
+                    <p><span @@click="transtouserpage">用户管理</span></p>
+                </div>
+            </div>
+
+            <!-- 3 (形状) -->
+            <div id="u25" class="ax_文本" data-label="3">
+                <img id="u25_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u26" class="text">
+                    <p><span style="font-weight:700;">角色权限配置</span></p>
+                </div>
+            </div>
+
+            <!-- 4 (形状) -->
+            <div id="u27" class="ax_文本" data-label="4">
+                <img id="u27_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u28" class="text">
+                    <p><span @@click="transtosyspage">系统配置</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u29" class="ax_文本">
+                <img id="u29_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u30" class="text">
+                    <p><span>杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u31" class="ax_文本">
+                <img id="u31_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u32" class="text">
+                    <p><span>线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u33" class="ax_文本">
+                <img id="u33_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u34" class="text">
+                    <p><span>缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u35" class="ax_文本">
+                <img id="u35_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u36" class="text">
+                    <p><span>巡检任务</span><span>管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u37" class="ax_文本">
+                <img id="u37_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u38" class="text">
+                    <p><span>消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u39" class="ax_文本">
+                <img id="u39_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u40" class="text">
+                    <p><span>系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u41" class="ax_文本">
+                <img id="u41_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u42" class="text">
+                    <p><span>信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u43" class="ax_文本">
+                <img id="u43_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u44" class="text">
+                    <p><span>我的工作平台</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width:100%;background-color:#f4f4f4;margin-top:70px;height:100%;overflow:scroll;">
+        <div class="container">
+            <div class="row">
+                <p style="margin-left:40px;margin-top:15px;">
+                    系统管理>>&nbsp;角色权限配置
+                </p>
+            </div>
+            <div class="row">
+                <div style="margin-top:-243px;" id="funinfo" class='u188 ss'>
+                    <img class='u188_img' src='~/Areas/XiTong/imgs/u188.png' />
+                    <div style="transform:rotate(-90deg);position:relative;left:10px;top:-220px;" class='u189'>
+                     <ul class="showul">
+                         <li>
+                             功能编号：<span>{{menusdetails.funcode}}</span>
+                         </li>
+                         <li>
+                             功能名称：<span>{{menusdetails.funname}}</span>
+                         </li>
+                         <li>
+                             功能URL：<span>{{menusdetails.funurl}}</span>
+                         </li>
+                         <li>
+                             父级节点：<span>{{menusdetails.parentname}}</span>
+                         </li>
+                         <li>
+                             状态： <span v-if="menusdetails.status==1" style="color:green;">启用中</span>
+                             <span v-if="menusdetails.status==0" style="color:red;">停用</span>
+                         </li>
+                     </ul>
+                    </div>
+                </div>
+                <!-- 右键菜单 (动态面板) -->
+                <div  style="position:absolute;left:385px;margin-top:-185px;z-index:20;" id="u201" class="ax_动态面板 ss" data-label="右键菜单">
+                    <div id="u201_state0" class="panel_state" data-label="State1">
+
+                        <!-- Unnamed (形状) -->
+                        <div id="u202" class="ax_形状">
+                            <img id="u202_img" class="img " src="~/Areas/XiTong/imgs/u202.png" />
+                            <!-- Unnamed () -->
+                            <div id="u203" class="text"></div>
+                        </div>
+
+                        <!-- Unnamed (图片) -->
+                        <div @@click="closediv" id="u204" class="ax_图片">
+                            <img id="u204_img" class="img " src="~/Areas/XiTong/imgs/u204.png" />
+                            <!-- Unnamed () -->
+                            <div id="u205" class="text"></div>
+                        </div>
+
+                        <!-- Unnamed (形状) -->
+                        <div id="u206" class="ax_文本">
+                            <img id="u206_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                            <!-- Unnamed () -->
+                            <div id="u207" class="text">
+                                <p><span>操作列表：</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Unnamed (形状) -->
+                        <div @@click="showaddmenudiv" id="u208" class="ax_文本">
+                            <img id="u208_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                            <!-- Unnamed () -->
+                            <div id="u209" class="text">
+                                <p ><span>新增子节点</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Unnamed (形状) -->
+                        <div @@click="showupdmenudiv" id="u210" class="ax_文本">
+                            <img id="u210_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                            <!-- Unnamed () -->
+                            <div id="u211" class="text">
+                                <p><span>修改</span><span>节点</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Unnamed (形状) -->
+                        <div @@click="opendeldialog" id="u212" class="ax_文本">
+                            <img id="u212_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                            <!-- Unnamed () -->
+                            <div id="u213" class="text">
+                                <p><span>删除</span><span>节点</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Unnamed (单选框) -->
+                        <div id="u214" class="ax_单选框">
+                            <label for="u214_input">
+                                <!-- Unnamed () -->
+                                <div id="u215" class="text">
+                                    <p><span>启用</span></p>
+                                </div>
+                            </label>
+                            <input @@click="changefunstatus($event)" id="u214_input" class="u2015" type="radio" value="1" name="u215" />
+                        </div>
+
+                        <!-- Unnamed (单选框) -->
+                        <div id="u216" class="ax_单选框">
+                            <label for="u216_input">
+                                <!-- Unnamed () -->
+                                <div id="u217" class="text">
+                                    <p><span>停用</span></p>
+                                </div>
+                            </label>
+                            <input @@click="changefunstatus($event)" id="u216_input" class="u2015" type="radio" value="0" name="u215" />
+                        </div>
+
+                        <!-- Unnamed (图片) -->
+                        <div id="u218" class="ax_图片">
+                            <img id="u218_img" class="img " src="~/Areas/XiTong/imgs/u73.png" />
+                            <!-- Unnamed () -->
+                            <div id="u219" class="text"></div>
+                        </div>
+
+                        <!-- Unnamed (图片) -->
+                        <div id="u220" class="ax_图片">
+                            <img id="u220_img" class="img " src="~/Areas/XiTong/imgs/u233.png" />
+                            <!-- Unnamed () -->
+                            <div id="u221" class="text"></div>
+                        </div>
+
+                        <!-- Unnamed (图片) -->
+                        <div id="u222" class="ax_图片">
+                            <img id="u222_img" class="img " src="~/Areas/XiTong/imgs/u222.png" />
+                            <!-- Unnamed () -->
+                            <div id="u223" class="text"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width:230px;border:1px solid #808080;float:left;margin-left:20px;background-color:white;height:500px;overflow:scroll;margin-top:10px;">
+                    <el-select @@change="changerole" style="width:215px;padding:5px 6px;" v-model="rolename" placeholder="请选择">
+                        <el-option v-for="item in options"
+                                   :key="item.id"
+                                   :label="item.roleName"
+                                   :value="item.id">
+                        </el-option>
+                    </el-select>
+                    <p style="margin-left:5px;"><b style="font-size:15px;">系统功能菜单树</b></p>
+                    <div id="div_menu"></div>
+                   
+                </div>
+                <div style="width:720px;border:1px solid #808080;float:left;margin-left:8px;background-color:white;height:500px;margin-top:10px;">
+                  <div class="ss" id="addmenudiv" style="width:80%;margin-left:10%;margin-top:50px;">
+                      <img style="width:20px;height:20px;" src="~/Areas/XiTong/imgs/u73.png"  /><span>新增菜单节点</span>
+                      <hr style="width:100%;border:1px solid black;margin-top:5px;" />
+                      <div id="addmenu">
+                          <table>
+                              <tr>
+                                  <td>
+                                      父节点:
+                                  </td>
+                                  <td>
+                                  {{parmenuname}}
+                                  </td>
+                                  <td style="width:150px;"></td>
+                              </tr>
+                              <tr>  
+                                  <td>
+                                      功能编码:
+                                  </td>
+                                  <td>
+                                      <el-input @@blur="checkfuncode" placeholder="请输入功能编码"
+                                                v-model="funcode">
+                                      </el-input>
+                                  </td>
+                                  <td>
+                                      <span id="msgcode" style="font-size:14px;color:red;"></span>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                     功能名称:
+                                  </td>
+                                  <td>
+                                      <el-input @@blur="checkfunname" placeholder="请输入功能名称"
+                                                v-model="funname">
+                                      </el-input>
+                                  </td>
+                                  <td>
+                                      <span  id="magfunname1" style="font-size:14px;color:red;"></span>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                     功能URL:
+                                  </td>
+                                  <td>
+                                      <el-input @@blur="checkfunurl"  placeholder="请输入功能URL"
+                                                v-model="funurl">
+                                      </el-input>
+                                  </td>
+                                  <td>
+                                      <span id="magfunurl1" style="font-size:14px;color:red;"></span>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      状态:
+                                  </td>
+                                  <td>
+                                      <el-radio v-model="radio" label="1">启用</el-radio>
+                                      <el-radio v-model="radio" label="0">不启用</el-radio>
+                                  </td>
+                                  <td>
+                                      <span id="magfunstatus" style="font-size:14px;color:red;"></span>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td colspan="3">
+                                     <div style="margin-left:130px;">
+                                         <el-button @@click="addchildrenmenu" type="primary" plain>保存</el-button>
+
+                                         <el-button @@click="cancleadd" type="info" plain>返回</el-button>
+                                     </div>
+                                  </td>
+                                  
+                              </tr>
+                          </table>
+                      </div>
+                     
+                  </div>
+                    <div id="updmenudiv" class="ss" style="width:80%;margin-left:10%;margin-top:50px;">
+                        <img style="width:20px;height:20px;" src="~/Areas/XiTong/imgs/u73.png" /><span>修改菜单节点</span>
+                        <hr style="width:100%;border:1px solid black;margin-top:5px;" />
+                        <div id="addmenu">
+                            <table>
+                                <tr>
+                                    <td>
+                                        父节点:
+                                    </td>
+                                    <td>
+                                       {{parmenuname}}
+                                    </td>
+                                    <td ></td>
+                                </tr>
+                               
+                                <tr>
+                                    <td>
+                                        功能名称:
+                                    </td>
+                                    <td>
+                                        <el-input @@blur="checkupdfunname" placeholder="请输入功能名称"
+                                                  v-model="updfunname"
+                                                  >
+                                        </el-input>
+                                    </td>
+                                    <td>
+                                        <span id="msgupdfunname" style="font-size:14px;color:red;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        功能URL:
+                                    </td>
+                                    <td>
+                                        <el-input @@blur="checkupdfunurl" placeholder="请输入功能URL"
+                                                  v-model="updfunurl"
+                                                  >
+                                        </el-input>
+                                    </td>
+                                    <td>
+                                        <span id="msgupdfunurl" style="font-size:14px;color:red;"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        状态:
+                                    </td>
+                                    <td>
+                                        <el-radio-group v-model="radio2">
+                                            <el-radio label="1">启用</el-radio>
+                                            <el-radio label="0">停用</el-radio>
+                                          
+                                        </el-radio-group>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <div style="margin-left:130px;">
+                                            <el-button @@click="updfun" type="primary" plain>修改</el-button>
+
+                                            <el-button @@click="cancleupd" type="info" plain>返回</el-button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <el-button @@click="savepremiss" style="margin-left:100px;margin-top:20px;" type="primary" round>保存配置</el-button>
+            </div>
+        </div>
+    <!--模式对话框-->
+  
+}
+
+@section vuescript{
+    <script>
+        var eles;
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                mymenus: {},
+                rolename: "",
+                options: [],
+                menusdetails: {},
+                codelist: [],
+                funcode: "",
+                updfuncode: "",
+                parmenuname: "",
+                funname: "",
+                funurl: "",
+                radio: "1",
+                parmenucode: "",
+                updfunname: "",
+                updfunurl: "",
+                radio2: "",
+                roleid: "",
+                functionid: ""
+            },
+            methods: {
+                myload: function () {
+                    $("#div_menu").html("");
+                    axios.post("/XiTong/Premiss/GetMenuData", null).then(function (response) {
+                        vue.mymenus = response.data.mm;
+                        vue.options = response.data.rolelist;
+                        var showlist = $("<ul style='margin-left:40px;font-size:14px;color:#666;'></ul>");
+                        vue.showall(vue.mymenus.MMlist, showlist);
+                        $("#div_menu").append(showlist);
+                 
+                        $(".ckall").each(function (index, ele) {
+                            console.log(ele);
+                            var id = $(ele).attr("id");
+                            var funcode=$(ele).attr("fcode");
+                            var funname = $(ele).attr("fname");
+                            var furl = $(ele).attr("furl");
+                            var parname = $(ele).attr("parname");
+                            var status=$(ele).attr("status");
+                           
+                            $(ele).prepend($("<span class='showdata' id='" + id + "' fname='" + funname + "' fcode='" + funcode + "' furl='" + furl + "' parname='" + parname + "' status='" + status + "'><input class='ckalls' type='checkbox' value='" + funcode + "' />" + funname + "</span>"));
+                        })
+                        $(".showdata").hover(function (event) {
+                            var top = $(this).offset().top;
+                           
+                            //获得id=funinfo的元素的margin-top属性的值 
+                           
+                            var mtop = $("#funinfo")[0].style.marginTop;
+                          
+                            var index = mtop.indexOf('p');
+                            mtop = mtop.substring(0, index);
+                          
+                            mtop = parseInt(top)+ parseInt(mtop);
+                           
+                            $("#funinfo")[0].style.marginTop = mtop + "px";                          
+                            $("#funinfo").removeClass("ss");
+                            var vas = $(this).attr("id");
+                            //并发送ajax请求
+                            var param = new URLSearchParams();
+                            param.append("funid", vas);                        
+                            axios.post("/XiTong/Premiss/GetMenuDetails", param).then(function (response1) {
+                                vue.menusdetails = response1.data;
+                            })
+                        }, function (event) {
+                            $("#funinfo")[0].style.marginTop ="-243px";
+                            $("#funinfo").addClass("ss");
+                           
+                        })
+                        
+
+                        //鼠标右键点击事件   
+                        $(".showdata").contextmenu(function (e) {
+                            if (e.button == 2) {   //左键--button属性=1，右键button属性=2
+                                 //屏蔽右键默认的事件
+                                e.preventDefault();
+
+                                eles = $(this)[0];
+                                vue.functionid = $(this).attr("id");
+                                $("#u201")[0].style.marginTop = "-185px";
+                                $("#u201").addClass("ss");
+                                var top = $(this).offset().top;
+                                var mtop = $("#u201")[0].style.marginTop;
+                                var index = mtop.indexOf('p');
+                                mtop = mtop.substring(0, index);
+
+                                mtop = parseInt(top) + parseInt(mtop);
+
+                                $("#u201")[0].style.marginTop = mtop + "px";
+
+                                //获得该元素的status属性的值 
+                                var status = $(this).attr("status");
+                                $(".u2015").each(function (index, ele) {
+                                    if ($(ele).val() == status) {
+                                        ele.checked = true;
+                                    }
+                                })
+                                $("#u201").removeClass("ss");
+                            }
+                          
+                        })
+
+                        $(".ckalls").click(function () {
+                            var uls = $(this).parent().next();
+                           //console.log(uls.find("input[type='checkbox']"));
+                            if ($(this)[0].checked == true) {
+                                uls.find("input[type='checkbox']").each(function (index, ele) {
+                                    ele.checked = true;
+                                })
+                            } else {
+                                uls.find("input[type='checkbox']").each(function (index, ele) {
+                                    ele.checked = false;
+                                })
+                            }
+                           
+                        })
+                    })
+                },
+                showall: function (menu_list, paret) {
+                    for (var m in menu_list) {
+                        //如果有子节点 则便利该节点 
+                        if (menu_list[m].MMlist.length > 0) {
+                            //创建一个li
+                            var li = $("<li class='ckall' id=" + menu_list[m].id + " fcode='" + menu_list[m].funcode + "' fname='" + menu_list[m].funname + "' furl='"+ menu_list[m].funurl+"' status='"+ menu_list[m].isStart+"' parname='"+menu_list[m].parentname+"'  style='color:black;'></li>");
+                            //将li的文本设置好，并马上添加一个空白的ul子节点，并且将这个li添加到父亲节点中
+                            $(li).append("<ul style='margin-left:15px;color:#666;'></ul>").appendTo(paret);
+                            //将空白的ul作为下一个递归遍历的父亲节点传入
+                            this.showall(menu_list[m].MMlist, $(li).children().eq(0));
+                        }
+                            //如果该节点没有子节点，则直接将该节点li以及文本创建好直接添加到父亲节点中
+                        else {
+                            $("<li style='width:290px;' class='menus'  id='" + menu_list[m].id + "'></li>").append($("<span class='showdata' style='color:#666;' id='" + menu_list[m].id + "' fcode='" + menu_list[m].funcode + "' fname='" + menu_list[m].funname + "' furl='"+ menu_list[m].funurl+"' status='"+ menu_list[m].isStart+"' parname='"+menu_list[m].parentname+"'  style='color:black;'><input type='checkbox' value='" + menu_list[m].funcode + "' />" + menu_list[m].funname + "</span>")).appendTo(paret);
+                        }
+                    }
+                },
+                checkfuncode: function () {
+                    
+                    $("#msgcode").text("");
+                    $("#msgcode").removeClass("havecode");
+                    if (this.funcode != "") {
+                        if (isNaN(this.funcode)) {
+                            $("#msgcode").text("功能编码必须为数字!");
+                        } else {
+                            ////获得点击的之前的元素的ID值 
+                            //var id = $(ele).attr("id");                    
+                            var param = new URLSearchParams();
+                            param.append("funcode", this.funcode);
+                            axios.post("/XiTong/Premiss/Checkfuncode", param).then(function (response) {
+                                if (response.data == false) {
+                                    $("#msgcode").text("该功能编码已存在!");
+                                    $("#msgcode").addClass("havecode");
+                                }
+                            })
+                        }
+                    } else {
+                        $("#msgcode").text("功能编码不能为空!");
+                    }
+                },
+                checkfunname:function(){
+                    $("#magfunname1").text("");
+                    if (this.funname == "") {
+                        $("#magfunname1").text("功能名称不能为空!");
+                    }
+                },
+                checkfunurl: function () {
+                    $("#magfunurl1").text("");
+                    if (this.funurl == "") {
+                        $("#magfunurl1").text("功能名称不能为空!");
+                    }
+                },
+                hidprediv: function () {
+                    $("#delpremissdiv").addClass("sss");
+                    $("#selectrolepremiss").addClass("sss");
+                    $("#selectrole").addClass("sss");
+                    $(".overlay").addClass("sss");
+                },
+                addchildrenmenu: function () {
+                    $("#msgcode").text("");
+                    $("#magfunname1").text("");
+                    $("#magfunurl1").text("");
+                    $("#magfunstatus").text("");
+
+                    //非空判断 
+                    if (this.funcode == "") {
+                        $("#msgcode").text("功能编码不能为空!");
+                        return;
+                    }
+                    if (isNaN(this.funcode)) {
+                        $("#msgcode").text("功能编码必须为数字!");
+                        return;
+                    }
+                    if (this.funname == "") {
+                        $("#magfunname1").text("功能名称不能为空!");
+                        return;
+                    }
+                    if (this.funurl == "") {
+                        $("#magfunurl1").text("功能名称不能为空!");
+                        return;
+                    }
+                    if (this.radio == "") {
+                        $("#magfunstatus").text("功能状态不能为空!");
+                        return;
+                    }
+
+                    if ($(".havecode").length > 0) {
+                        $("#msgcode").text("该功能编码已存在!");
+                        return;
+                    }
+
+                    //创建参数对象 
+                    var param = new URLSearchParams();
+                    //获得点击的之前的元素的ID值   即当前添加菜单节点的父节点
+                    var id = $(eles).attr("id");   
+                    param.append("parentid", id);
+                    param.append("funcode", this.funcode);
+                    param.append("funname", this.funname);
+                    param.append("funurl", this.funurl);
+                    param.append("radio", this.radio);
+                    axios.post("/XiTong/Premiss/AddMenusinfo", param).then(function (response) {
+                        if (response.data == true) {
+                            $("#addmenudiv").addClass("ss");
+                            vue.funcode = "";
+                            vue.funname = "";
+                            vue.funurl = "";
+                            vue.radio = "1";                    
+                            vue.$message({ message: '成功添加一个子节点~', type: 'success', duration: 800 });
+                            vue.myload();
+                          
+                        } else {
+                            vue.$message({ message: '添加子节点失败~', type: 'success', duration: 1000 });
+                        }
+                    })
+
+                },
+                changerole: function (val) {
+                    this.roleid = val;
+                    $("input[type='checkbox']").each(function (index,ele) {
+                        ele.checked = false;
+                    })
+                    var param = new URLSearchParams();
+                    param.append("roleid", val);
+                    axios.post("/XiTong/Premiss/GetRoleFun", param).then(function (response) {
+                        vue.codelist = response.data;
+
+                        var ckitem = $("input[type='checkbox']");
+                        ckitem.each(function (index,ele) {
+                            for (var i = 0; i < vue.codelist.length; i++) {
+                                if (vue.codelist[i].funcode == $(ele).val()) {
+                                    ele.checked = true;
+                                }
+                            }
+                        })
+                        $(".ckall").each(function (index, ele) {
+                            var vas = $(ele).attr("fcode");
+                            for (var i = 0; i < vue.codelist.length; i++) {
+                                if (vue.codelist[i].funcode == vas) {
+                                    $($(ele).children()[0]).children()[0].checked = true;
+                                }
+                            }
+                        })
+                    })
+                },
+                showaddmenudiv: function () {
+                    $("#updmenudiv").addClass("ss");
+
+                    //显示新增菜单节点的div
+                    $("#addmenudiv").removeClass("ss");
+                    $("#u201").addClass("ss");
+                    var parname = $(eles).attr("fname");
+                    console.log(eles);
+                    this.parmenuname = parname;
+                 
+                },
+                showupdmenudiv: function () {
+                    $("#addmenudiv").addClass("ss");
+      
+                    //显示新增菜单节点的div
+                    $("#updmenudiv").removeClass("ss");
+                    $("#u201").addClass("ss");
+                    var funname = $(eles).attr("fname");
+                    var funcode = $(eles).attr("fcode");
+                    var parentname = $(eles).attr("parname");
+                    var furl = $(eles).attr("furl");
+                    var status = $(eles).attr("status");
+                    this.updfunname = funname;
+                    this.parmenuname = parentname;
+                    this.updfunurl = furl;
+                    this.radio2 = status;
+                   
+                },
+                checkupdfunname:function(){
+                    $("#msgupdfunname").text("");
+            if (this.updfunname == "") {
+                $("#msgupdfunname").text("功能名称不能为空!");
+            }
+        },
+        checkupdfunurl: function () {
+            $("#msgupdfunurl").text("");
+            if (this.updfunurl == "") {
+                $("#msgupdfunurl").text("功能名称不能为空!");
+            }
+        },
+        updfun: function () {
+            $("#msgupdfunname").text("");
+            $("#msgupdfunurl").text("");
+
+            if (this.updfunname == "") {
+                $("#msgupdfunname").text("功能名称不能为空!");
+                return;
+            }
+            if (this.updfunurl == "") {
+                $("#msgupdfunurl").text("功能名称不能为空!");
+                return;
+            }
+
+            //创建参数对象 
+            var param = new URLSearchParams();
+            //获得点击的之前的元素的ID值   即当前添加菜单节点的父节点
+            var id = $(eles).attr("id");
+            param.append("id", id);
+            param.append("funname", this.updfunname);
+            param.append("funurl", this.updfunurl);
+            param.append("status", this.radio2);
+            axios.post("/XiTong/Premiss/UpdMenusinfo", param).then(function (response) {
+                if (response.data == true) {
+                    $("#updmenudiv").addClass("ss");
+                    //vue.$message('修改菜单信息成功');
+                    vue.myload();                
+                } else {
+                    vue.$message('修改菜单信息失败');
+                }
+            })
+
+        },
+            //保存角色权限 
+        savepremiss: function () {
+            if (this.roleid != "") {
+                //获得所有的复选框集合 
+                var ckitems = $("input[type='checkbox']");
+                var strs = "";
+                ckitems.each(function (index, ele) {
+
+                    if (ele.checked == true) {
+                        //获得该复选框的父级元素 
+                        var parele = $(ele).parent();
+                        //再获得父级元素的fcode属性的值 
+                        var funcode = parele.attr("fcode");
+                        strs += funcode + ",";
+                    }
+
+                })
+                var index = strs.lastIndexOf(',');
+                strs = strs.substring(0, index);
+                if (strs != "") {               
+                    //创建参数对象 
+                    var param = new URLSearchParams();
+                    //获得点击的之前的元素的ID值   即当前添加菜单节点的父节点
+
+                    param.append("roleid", this.roleid);
+                    param.append("fcodes", strs);
+                    axios.post("/XiTong/Premiss/UpdRolePremiss", param).then(function (response) {
+                        if (response.data == true) {                         
+                            vue.$message({ message: '角色权限修改成功~', type: 'success', duration: 1000 });
+                            vue.myload();
+                            vue.rolename = "";
+                        } else {
+                       
+                            vue.$message({ message: '角色权限修改失败~', type: 'success', duration: 1000 });
+                        }
+                    })
+
+                } else {
+                    $("#selectrolepremiss").removeClass("sss");
+                    $(".overlay").removeClass("sss");
+                }
+            } else {
+                 $("#selectrole").removeClass("sss");
+                    $(".overlay").removeClass("sss");
+            }
+        },
+        closediv: function () {
+            $("#u201").addClass("ss");
+           
+        },
+        changefunstatus: function (event) {
+            var ele = event.currentTarget;
+            if (ele.checked == true) {
+                //创建参数对象 
+                var param = new URLSearchParams();
+                //获得点击的之前的元素的ID值   即当前添加菜单节点的父节点
+                param.append("funid", this.functionid);
+                param.append("status", $(ele).val());            
+                axios.post("/XiTong/Premiss/ChangeStatus", param).then(function (response) {
+                    $("#u201").addClass("ss");
+                    //修改该节点的状态 
+                    //获得该节点的status属性值 
+                    var txt=$(ele).val();
+                    $(eles).attr("status", txt);
+                })
+            }
+        },
+        opendeldialog: function () {
+            //打开对话框 
+            $("#delpremissdiv").removeClass("sss");
+            $(".overlay").removeClass("sss");
+            $("#u201").addClass("ss");
+
+        },
+        delfun: function () {
+            //创建参数对象 
+            var param = new URLSearchParams();
+            //获得点击的之前的元素的ID值   即当前添加菜单节点的父节点
+            param.append("funid", this.functionid);
+            axios.post("/XiTong/Premiss/DelFun", param).then(function (response) {
+                if (response.data == true) {
+                    vue.$message({ message: '删除节点成功~', type: 'success', duration: 1000 });
+                    $("#delpremissdiv").addClass("sss");
+                    $(".overlay").addClass("sss");
+                    vue.myload();
+                } else {
+                    vue.$message('删除节点失败');
+                }
+            })
+        },
+        cancleadd: function () {
+            $("#addmenudiv").addClass("ss");
+            //清空添加提示信息
+            $("#msgcode").text("");
+            $("#magfunname1").text("");
+            $("#magfunurl1").text("");
+            $("#magfunstatus").text("");
+
+        }, cancleupd: function () {
+            $("#updmenudiv").addClass("ss");
+            //清空修改提示信息 
+            $("#msgupdfunname").text("");
+            $("#msgupdfunurl").text("");
+        },
+        transtosyspage: function () {
+            window.location = "/XiTong/Sysconfig/Index";
+        },
+        transtorolepage: function () {
+            window.location = "/XiTong/Role/Index";
+        },
+        transtopresspage: function () {
+            window.location = "/XiTong/Premiss/Index";
+        },
+        transtouserpage: function () {
+            window.location = "/XiTong/User/Index";
+        }
+            },
+            mounted: function () {
+                this.$options.methods.myload();
+              
+            }
+        })
+      
+    </script>
+    }

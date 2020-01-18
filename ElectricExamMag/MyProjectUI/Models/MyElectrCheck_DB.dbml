@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyElectrCheck_DB" Class="MyElectrCheck_DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=MyElectrCheck_DB;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MyElectrCheck_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ps_user" Member="ps_user">
+    <Type Name="ps_user">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="userName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="userPassword" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="entryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dimissionDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="phoneTel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lastLoginTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="userStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="roleId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_systemconfig" Member="ps_systemconfig">
+    <Type Name="ps_systemconfig">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="configCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="configName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="configValueId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="configValueName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isStart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_role_premission" Member="ps_role_premission">
+    <Type Name="ps_role_premission">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="roleId" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="functionCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isStart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_role" Member="ps_role">
+    <Type Name="ps_role">
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="roleName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isStart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_pole_info" Member="ps_pole_info">
+    <Type Name="ps_pole_info">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="poleCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lineId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lineCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lineName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isStart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_logs" Member="ps_logs">
+    <Type Name="ps_logs">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="userName" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="operateInfo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="operateDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_inspector_detail" Member="ps_inspector_detail">
+    <Type Name="ps_inspector_detail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="taskId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inspectorCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inspectorName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_inspectiontask_detail" Member="ps_inspectiontask_detail">
+    <Type Name="ps_inspectiontask_detail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="taskid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="poleid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="poleCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lineCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lineName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="isBug" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intactRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="bugLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bugLevelName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="bugType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bugTypeName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="bugDesc" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="discovererCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="discovererName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="discoverTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isSolve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inspectTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="taskStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isBugLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_function" Member="ps_function">
+    <Type Name="ps_function">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="functionCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="functionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="funcUrl" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="isStart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="parentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_solver_detail" Member="ps_solver_detail">
+    <Type Name="ps_solver_detail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="taskId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="solverCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="solverName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_solvetask_detail" Member="ps_solvetask_detail">
+    <Type Name="ps_solvetask_detail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="taskId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inspectionTaskDelId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_inspectiontask_main" Member="ps_inspectiontask_main">
+    <Type Name="ps_inspectiontask_main">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="inspectionTaskCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="inspectionTaskName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lineId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lineCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lineName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="startPole" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="startPoleCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="endPole" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="endPoleCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="issuedByCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="issuedByName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="issuedTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="taskStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="taskStatusName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="finishTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="common" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isCancel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_line_info" Member="ps_line_info">
+    <Type Name="ps_line_info">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="lineCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lineName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lineLength" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="backLength" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="productDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="voltageLevel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="startPole" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="startPoleCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="endPole" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="endPoleCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="towerBaseNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="maintenanceCompany" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="runningStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="runningStatusName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="common" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isStart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ps_solvetask_main" Member="ps_solvetask_main">
+    <Type Name="ps_solvetask_main">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="solveTaskCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="workDocType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="workDocTypeName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="taskDesc" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="taskManagerCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="taskManagerName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="taskStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="taskStatusName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="finishTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="common" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="managerSuggestion" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="taskFinishDesc" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="taskFinishReport" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="taskNotes" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="issuedByCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="issuedByName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="issuedTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="issuedSuggestion" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="solveTaskName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="isCancel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isrejectexamine" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

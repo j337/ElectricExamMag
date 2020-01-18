@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.375" name="MyElectrCheck_DB">
+  <DataContextMoniker Name="/MyElectrCheck_DBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b737817e-1e37-4ef0-a557-58a413fab3f9" absoluteBounds="3.75, 1.75, 2, 3.7548343912760416">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3bfa681-1702-405a-bc4a-e51fe00ed36c" absoluteBounds="3.765, 2.21, 1.9700000000000002, 3.1948343912760415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a042e587-133f-4363-832d-ccd143fe8aa9" absoluteBounds="6.375, 2.375, 2, 1.9068933105468751">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_systemconfig" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f3abcd1-0128-41ab-83fd-f711807826fe" absoluteBounds="6.39, 2.835, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="28df438a-b5ed-4e7e-b1e3-7cca5b231641" absoluteBounds="4.875, 0.5, 2, 2.0916874186197916">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_role_premission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df5bd52f-d6c1-47d8-9f23-eedec6f47327" absoluteBounds="4.89, 0.96, 1.9700000000000002, 1.5316874186197915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="418bb84f-92c5-4f79-a68a-05c0447195d7" absoluteBounds="6.875, 0.5, 2, 1.9068933105468751">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10deb4b0-0400-4486-a31c-9001bca538ca" absoluteBounds="6.8900000000000006, 0.96, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e09a4635-b6af-42ac-951b-c115ca9b3bb8" absoluteBounds="4.875, 0.5, 2, 2.4612756347656251">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_pole_info" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5394c4b4-7734-421d-ad8f-34caece77d7a" absoluteBounds="4.89, 0.96, 1.9700000000000002, 1.901275634765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7915f5a9-5189-494b-9ad5-4347f7b412e3" absoluteBounds="3.125, 0.75, 2, 1.7220992024739581">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_logs" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19791827-b12f-4770-97e6-8905fe292397" absoluteBounds="3.1399999999999997, 1.21, 1.9700000000000002, 1.1620992024739583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f40c8a8-cf96-42a3-8f63-38f94deb3cdf" absoluteBounds="3.5, 1.25, 2, 2.0916874186197916">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_inspector_detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc3cddf4-4cf8-4bb4-b52f-167e90f5bc31" absoluteBounds="3.5149999999999997, 1.71, 1.9700000000000002, 1.5316874186197915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6b71940e-377b-4a36-8b8e-0a235cd76378" absoluteBounds="5, 4.125, 2, 5.0483931477864576">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_inspectiontask_detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef13442b-b5a1-4042-a9fd-f368027ae0d5" absoluteBounds="5.015, 4.585, 1.9700000000000002, 4.488393147786458" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf6b8395-99d2-4395-9e6c-176310b45ce6" absoluteBounds="8, 4.625, 2, 2.4612756347656251">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_function" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4547082-34ad-4e02-9581-f588d620cd2a" absoluteBounds="8.015, 5.085, 1.9700000000000002, 1.901275634765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6fb41d65-7fdf-48cd-9606-4c3213b4e7f7" absoluteBounds="8.125, 1, 2, 2.0916874186197916">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_solver_detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6bc18ba-3e0b-4b50-857c-61e64a19e8cc" absoluteBounds="8.14, 1.46, 1.9700000000000002, 1.5316874186197915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="510e7efc-2f77-4102-bff1-a854d99fde2a" absoluteBounds="3, 2, 2, 1.9068933105468751">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_solvetask_detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f957d4a-2cbd-469d-90b0-3950076a8cf2" absoluteBounds="3.0149999999999997, 2.46, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="77a7f249-8c97-41ed-8786-4c8a757453dd" absoluteBounds="0.5, 3.625, 2, 4.6788049316406246">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_inspectiontask_main" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2e1224f-c152-4db0-8dc5-2d0aa6d60987" absoluteBounds="0.51500000000000012, 4.085, 1.9700000000000002, 4.118804931640625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="957e1c83-e32b-4613-b3b8-7298559f4845" absoluteBounds="8.625, 3.625, 2, 4.4940108235677076">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_line_info" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8c1e0db1-f645-4797-bab8-d2bed46a44fc" absoluteBounds="8.64, 4.085, 1.9700000000000002, 3.934010823567708" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a0a8315-e6d8-409d-b32e-d3e098d8e8c6" absoluteBounds="1.25, 0.5, 2, 5.4179813639322907">
+      <DataClassMoniker Name="/MyElectrCheck_DBDataContext/ps_solvetask_main" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63c1a948-073a-4a03-ad53-fae8058595b6" absoluteBounds="1.2650000000000001, 0.96, 1.9700000000000002, 4.8579813639322911" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

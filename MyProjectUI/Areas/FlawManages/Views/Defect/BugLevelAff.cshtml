@@ -1,0 +1,475 @@
+﻿
+@{
+    ViewBag.Title = "缺陷等级确认";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+    <link href="~/Areas/FlawManages/Content/样式文件夹/缺陷等级确认/styles.css" rel="stylesheet" />
+}
+
+@section rightdiv{
+    <div class="OffSet">
+        <div id="u16" class="ax_形状" style="margin-left:190px">
+            <img id="u16_img" class="img " src="~/images/待办列表/u16.png">
+            <!-- Unnamed () -->
+            <div id="u17" class="text"></div>
+        </div>
+        <div id="u18" class="ax_动态面板" data-label="导航" style="margin-left: 190px;">
+            <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+                <!-- Unnamed (形状) -->
+                <div id="u19" class="ax_形状">
+                    <img id="u19_img" class="img " src="~/images/待办列表/u62.png">
+                    <!-- Unnamed () -->
+                    <div id="u20" class="text"></div>
+                </div>
+
+                <!-- 1 (形状) -->
+                <div id="u21" class="ax_文本" data-label="1" style="cursor: pointer;">
+                    <img id="u21_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                    <!-- Unnamed () -->
+                    <div id="u22" class="text">
+                        <p><span>缺陷</span><span>类型</span><span>设置</span></p>
+                    </div>
+                </div>
+
+                <!-- 2 (形状) -->
+                <div id="u23" class="ax_文本" data-label="2" style="cursor: pointer;">
+                    <img id="u23_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                    <!-- Unnamed () -->
+                    <div id="u24" class="text">
+                        <p><span>缺陷等级确认</span></p>
+                    </div>
+                </div>
+
+                <!-- Unnamed (形状) -->
+                <div id="u25" class="ax_文本" style="cursor: pointer;">
+                    <img id="u25_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                    <!-- Unnamed () -->
+                    <div id="u26" class="text">
+                        <p><span>杆塔管理</span></p>
+                    </div>
+                </div>
+
+                <!-- Unnamed (形状) -->
+                <div id="u27" class="ax_文本" style="cursor: pointer;">
+                    <img id="u27_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                    <!-- Unnamed () -->
+                    <div id="u28" class="text">
+                        <p><span>线路管理</span></p>
+                    </div>
+                </div>
+
+                <!-- Unnamed (形状) -->
+                <div id="u29" class="ax_文本" style="cursor: pointer;">
+                    <img id="u29_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                    <!-- Unnamed () -->
+                    <div id="u30" class="text">
+                        <p><span>缺陷管理</span></p>
+                    </div>
+                </div>
+
+                <!-- Unnamed (形状) -->
+                <div id="u31" class="ax_文本" style="cursor: pointer;">
+                    <img id="u31_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                    <!-- Unnamed () -->
+                    <div id="u32" class="text">
+                        <p><span>巡检任务</span><span>管理</span></p>
+                    </div>
+                </div>
+
+                <!-- Unnamed (形状) -->
+                <div id="u33" class="ax_文本" style="cursor: pointer;">
+                    <img id="u33_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                    <!-- Unnamed () -->
+                    <div id="u34" class="text">
+                        <p><span>消缺任务管理</span></p>
+                    </div>
+                </div>
+
+                <!-- Unnamed (形状) -->
+                <div id="u35" class="ax_文本" style="cursor: pointer;">
+                    <img id="u35_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                    <!-- Unnamed () -->
+                    <div id="u36" class="text">
+                        <p><span>系统管理</span></p>
+                    </div>
+                </div>
+
+                <!-- Unnamed (形状) -->
+                <div id="u37" class="ax_文本" style="cursor: pointer;">
+                    <img id="u37_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                    <!-- Unnamed () -->
+                    <div id="u38" class="text">
+                        <p><span>信息统计</span></p>
+                    </div>
+                </div>
+
+                <!-- Unnamed (形状) -->
+                <div id="u39" class="ax_文本" style="cursor: pointer;">
+                    <img id="u39_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+                    <!-- Unnamed () -->
+                    <div id="u40" class="text">
+                        <p><span>我的工作平台</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="u41" class="ax_文本" style="cursor: pointer;margin-left: 190px;margin-top: 10px;">
+            <img id="u41_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u42" class="text">
+                <p><span>缺陷管理</span><span>&gt;&gt;</span><span>&nbsp;</span><span>缺陷</span><span>等级确认</span></p>
+            </div>
+        </div>
+        <div class="bgDiv" style="height:430px;margin-top:-70px;width:100%;">
+            <div class="topDiv">
+                <table class="TDiv1">
+                    <tr>
+                        <td>任务编号:<el-input placeholder="请输入搜索内容" prefix-icon="el-icon-search" size="mini" style="width:130px;" v-model="taskcode"></el-input></td>
+                        <td>线路编号:<el-input placeholder="请输入搜索内容" prefix-icon="el-icon-search" size="mini" style="width:130px;" v-model="linecode"></el-input></td>
+                        <td colspan="2">杆塔编号:&nbsp;&nbsp;<el-input placeholder="请输入搜索内容" size="mini" prefix-icon="el-icon-search" style="width:130px;" v-model="polecode"></el-input>&nbsp;&nbsp;发现人:&nbsp;&nbsp;<el-input size="mini" placeholder="请输入搜索内容" style="width:130px;" prefix-icon="el-icon-search" v-model="discovername"></el-input><br /></td>
+                    </tr>
+                    <tr>
+                        <td>缺陷类型:<el-select v-model="buglevel" size="mini" style="width:130px;"><el-option v-for="item in LevelList" :key="item.value" :label="item.label" :value="item.value"></el-option></el-select></td>
+                        <td>缺陷级别:<el-select v-model="bugtype" size="mini" style="width:130px;"><el-option v-for="item in TypeList" :key="item.value" :label="item.label" :value="item.value"></el-option></el-select></td>
+                        <td colspan="2">发现时间:&nbsp;&nbsp;<el-date-picker v-model="betweenTime" type="daterange" size="mini" style="width:260px" range-separator="-----" start-placeholder="开始日期" end-placeholder="结束日期"></el-date-picker>&nbsp;&nbsp;<el-button type="primary" @@click="dimSelect" size="mini" plain>查询</el-button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="middleDiv">
+                <el-button type="primary" @@click="SaveBtn" size="mini" style="position: relative;top: -20px;" plain>保存</el-button>
+             <div v-show="DataLists.length>0">
+                 <table class="TDiv2" style="border:1px solid #cccccc;margin-top: -10px;">
+                     <thead>
+                         <tr style="border-bottom:1px solid #cccccc;">
+                             <td hidden="hidden">任务编号</td>
+                             <th class="thBkg" style="border-bottom:1px solid #cccccc;border-right:1px solid #cccccc">任务编号</th>
+                             <th class="thBkg" style="border-bottom:1px solid #cccccc;border-right:1px solid #cccccc">线路编号</th>
+                             <th class="thBkg" style="border-bottom:1px solid #cccccc;border-right:1px solid #cccccc">杆塔编号</th>
+                             <th class="thBkg" style="border-bottom:1px solid #cccccc;border-right:1px solid #cccccc">缺陷类型</th>
+                             <th class="thBkg" style="border-bottom:1px solid #cccccc;border-right:1px solid #cccccc">完好率</th>
+                             <th class="thBkg" style="border-bottom:1px solid #cccccc;border-right:1px solid #cccccc">缺陷描述</th>
+                             <th class="thBkg" style="border-bottom:1px solid #cccccc;border-right:1px solid #cccccc">发现时间</th>
+                             <th class="thBkg" style="border-bottom:1px solid #cccccc;border-right:1px solid #cccccc">发现人员</th>
+                             <th class="thBkg">缺陷级别</th>
+                         </tr>
+                     </thead>
+                     <tbody id="mytb"></tbody>
+                 </table>
+                 <el-pagination style="margin-top:10px;" @@size-change="handleSizeChange"
+                                @@current-change="handleCurrentChange"
+                                :current-page="currentPage4"
+                                :page-sizes="[100, 200, 300, 400]"
+                                :page-size="6"
+                                layout="total, prev, pager, next, jumper"
+                                :total="pagecount">
+                 </el-pagination>
+             </div>
+                <div v-if="DataLists.length==0" style="font-size:30px;color:gray;margin-left:350px;margin-top:100px;">
+                       暂无数据!
+                </div>
+            </div>
+            <div>
+              
+            </div>
+        </div>
+    </div>
+}
+
+@section vuescript{
+    <script type="text/javascript">
+        var a = this;
+        var v = new Vue({
+            el: "#app",
+            data: {
+                DataLists: [],
+                TypeList: [],
+                pagesize: 8,
+                pagecount: 0,
+                selectType: "",
+                selectLevel: "",
+                LevelList: [],
+                selectDefectType: "",
+                taskcode: "",
+                linecode: "",
+                polecode: "",
+                discovername: "",
+                bugtype: "",
+                buglevel: "",
+                taskcode2: "",
+                linecode2: "",
+                polecode2: "",
+                discovername2: "",
+                bugtype2: "",
+                buglevel2: "",
+                betweenTime: "",
+                selectState: false,
+                UpdateState: true,
+                oldvaluelist: [],
+                ptime: "",
+                ptime:""
+            },
+            methods: {
+                handleCurrentChange: function (event) {
+                    var params = new URLSearchParams();
+                    //添加参数
+                    params.append("pageindex", event);
+                    params.append('taskcode', this.taskcode2);
+                    params.append('linecode', this.linecode2);
+                    params.append('polecode', this.polecode2);
+                    params.append('discovername', this.discovername2);
+                    params.append("bugtype", this.bugtype2);
+                    params.append("buglevel", this.buglevel2);
+                    if (this.betweenTime != null) {
+                        if (this.betweenTime.length > 0) {
+                            this.ptime1 = this.betweenTime[0];
+                            this.ptime2 = this.betweenTime[1];
+                            param.append("time1", this.ptime1);
+                            param.append("time2", this.ptime2);
+                        } else {
+                            params.append("time1", "");
+                            params.append("time2", "");
+                        }
+                    } else {
+                        params.append("time1", "");
+                        params.append("time2", "");
+                    }
+
+                    axios.post("/FlawManages/Defect/SelectByDataList", params).then(function (respone) {
+
+                        v.DataLists = respone.data.DataList;
+                        v.pagecount = respone.data.count;
+
+                        $("#mytb").html("");
+                        var tr = "";
+                        for (var i = 0; i < v.DataLists.length; i++) {
+                            var time1 = v.DataLists[i].discoverTime.substr(0, 10);
+                            var time2 = time1.split('-');
+                            v.DataLists[i].discoverTime = time2[0] + "/" + time2[1] + "/" + time2[2];
+                            tr += "<tr style='border-bottom:1px solid #cccccc;'><td hidden='hidden'>" + v.DataLists[i].id + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].inspectionTaskCode + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].lineCode + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].poleCode + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].bugTypeName + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].intactRate + "%</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].bugDesc + "</td><td class='tdBkg pTitleTime' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].discoverTime + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].discovererName + "</td><td class='tdBkg selectedbug'><select class='selectitem' style='width: 70px;margin-top: 4px;margin-bottom: 4px;'><option selected='selected' value='0'>--请选择--</option><option value='1'>一般</option><option value='2'>紧急</option><option value='3'>严重</option></select></td></tr>";
+                        }
+                       
+                        $("#mytb").append(tr);
+
+                        $(".selectitem").change(function () {
+                            var id = $($(this).parent().parent().children()[0]).text();
+                            var vas = $(this).val();
+                            var list = v.oldvaluelist;
+                            if (list.length > 0) {
+                                for (var i = 0; i < list.length; i++) {
+                                    if (id == list[i].id) {
+                                        v.oldvaluelist.splice(i, 1);
+                                    }
+                                }
+                            }
+
+                            vas = id + "-" + vas;
+                            if (vas != "0") {
+                                v.oldvaluelist.push({ id: id, vas: vas });
+                            }
+                        })
+
+                        if (v.oldvaluelist.length > 0) {
+                            var list = v.oldvaluelist;
+                            for (var i = 0; i < list.length; i++) {
+                                $("select").each(function (index, ele) {
+                                    var id = $($(ele).parent().parent().children()[0]).text();
+                                    if (id == list[i].id) {
+                                        var strlist = list[i].vas.split('-');
+                                        $(ele).val(strlist[1]);
+                                    }
+                                })
+                            }
+                        }
+                    });
+
+                },
+                dimSelect: function () {
+                    
+                    //创建参数对象
+                    var params = new URLSearchParams();
+                    //添加参数
+
+                    this.taskcode2=this.taskcode;
+                    this.linecode2=this.linecode;
+                    this.polecode2=this.polecode;
+                    this.discovername2=this.discovername;
+                    this.bugtype2=this.bugtype;
+                    this.buglevel2 = this.buglevel;
+                    params.append("pageindex", 1);
+                    params.append('taskcode', this.taskcode2);
+                    params.append('linecode', this.linecode2);
+                    params.append('polecode', this.polecode2);
+                    params.append('discovername', this.discovername2);
+                    params.append("bugtype",this.bugtype2);
+                    params.append("buglevel",this.buglevel2);
+                    if (this.betweenTime != null) {
+                        if (this.betweenTime.length > 0) {
+                            this.ptime1 = this.betweenTime[0];
+                            this.ptime2 = this.betweenTime[1];
+                            param.append("time1", this.ptime1);
+                            param.append("time2", this.ptime2);
+                        } else {
+                            params.append("time1","");
+                            params.append("time2", "");
+                        }
+                    } else {
+                        params.append("time1","");
+                        params.append("time2", "");
+                    }
+                
+                      axios.post("/FlawManages/Defect/SelectByDataList", params).then(function (respone) {
+                           
+                          
+                            v.pagecount = respone.data.count;
+
+                            $("#mytb").html("");
+                            var tr = "";
+                            if (respone.data.DataList.length > 0) {
+                                v.DataLists = respone.data.DataList;
+                                for (var i = 0; i < v.DataLists.length; i++) {
+
+                                    var time1 = v.DataLists[i].discoverTime.substr(0, 10);
+                                    var time2 = time1.split('-');
+                                    v.DataLists[i].discoverTime = time2[0] + "/" + time2[1] + "/" + time2[2];
+                                    tr += "<tr style='border-bottom:1px solid #cccccc;'><td hidden='hidden'>" + v.DataLists[i].id + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].inspectionTaskCode + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].lineCode + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].poleCode + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].bugTypeName + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].intactRate + "%</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].bugDesc + "</td><td class='tdBkg pTitleTime' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].discoverTime + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].discovererName + "</td><td class='tdBkg selectedbug'><select class='selectitem' style='width: 70px;margin-top: 4px;margin-bottom: 4px;'><option selected='selected' value='0'>--请选择--</option><option value='1'>一般</option><option value='2'>紧急</option><option value='3'>严重</option></select></td></tr>";
+                                }
+                            }
+                            
+                            $("#mytb").append(tr);
+
+                            $(".selectitem").change(function () {
+                                var id = $($(this).parent().parent().children()[0]).text();
+                                var vas = $(this).val();
+                                var list = v.oldvaluelist;
+                                if (list.length > 0) {
+                                    for (var i = 0; i < list.length; i++) {
+                                        if (id == list[i].id) {
+                                            v.oldvaluelist.splice(i, 1);
+                                        }
+                                    }
+                                }
+
+                                vas = id + "-" + vas;
+                                if (vas != "0") {
+                                    v.oldvaluelist.push({ id: id, vas: vas });
+                                }
+                            })
+
+                            if (v.oldvaluelist.length > 0) {
+                                var list = v.oldvaluelist;
+                                for (var i = 0; i < list.length; i++) {
+                                    $("select").each(function (index, ele) {
+                                        var id = $($(ele).parent().parent().children()[0]).text();
+                                        if (id == list[i].id) {
+                                            var strlist = list[i].vas.split('-');
+                                            $(ele).val(strlist[1]);
+                                        }
+                                    })
+                                }
+                            }
+                        });
+                    
+                },
+                SaveBtn: function () {
+                    var str = "";
+                    var list = this.oldvaluelist;
+                   
+                    for (var i = 0; i < list.length; i++) {
+                        var strlist = list[i].vas.split('-');                       
+                        if (strlist[1] != "0") {
+                            str += list[i].vas + ",";
+                        }
+                    }
+
+                    var index = str.lastIndexOf(',');
+                    str = str.substr(0, index);
+                    //    //创建参数对象
+                    var params1 = new URLSearchParams();
+                    //添加参数
+                    params1.append('str', str);
+
+                    axios.post("/FlawManages/Defect/AddSelectBugLevel", params1).then(function (respone) {
+                        if (respone.data) {
+                            v.$message({ message: '保存成功!', type: 'success', duration: 2000 });
+                            v.myload();
+                        } else {
+                            v.$message({ message: '保存失败!', type: 'error', duration: 2000 });
+                        }
+                    });
+                },
+                myload:function() {
+                    //创建参数对象
+                    var params = new URLSearchParams();
+                    //添加参数
+                    params.append('pagenum', 1);
+
+                    a.axios({ method: "post", url: "/FlawManages/Defect/DefectTableDataList" }).then(function (respone) {
+                       
+                        v.LevelList = respone.data.Bugresult;
+                        v.pagecount = respone.data.pagecount;
+                        v.TypeList = respone.data.buglevellist;
+                        $("#mytb").html("");
+                        var tr = "";
+                        if (respone.data.inspectlist.length > 0) {
+                            v.DataLists = respone.data.inspectlist;
+                            for (var i = 0; i < v.DataLists.length; i++) {
+
+                                var time1 = v.DataLists[i].discoverTime.substr(0, 10);
+                                var time2 = time1.split('-');
+                                v.DataLists[i].discoverTime = time2[0] + "/" + time2[1] + "/" + time2[2];
+                                tr += "<tr style='border-bottom:1px solid #cccccc;'><td hidden='hidden'>" + v.DataLists[i].id + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].inspectionTaskCode + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].lineCode + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].poleCode + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].bugTypeName + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].intactRate + "%</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].bugDesc + "</td><td class='tdBkg pTitleTime' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].discoverTime + "</td><td class='tdBkg' style='border-bottom:1px solid #cccccc;border-right:1px solid #cccccc'>" + v.DataLists[i].discovererName + "</td><td class='tdBkg selectedbug'><select class='selectitem' style='width: 70px;margin-top: 4px;margin-bottom: 4px;'><option selected='selected' value='0'>--请选择--</option><option value='1'>一般</option><option value='2'>紧急</option><option value='3'>严重</option></select></td></tr>";
+                            }
+                        } else {
+                            v.DataLists.splice(0,v.DataLists.length);
+                        }
+                        $("#mytb").append(tr);
+
+                        $(".selectitem").change(function () {
+                            var id = $($(this).parent().parent().children()[0]).text();
+                            var vas = $(this).val();
+                            var list = v.oldvaluelist;
+                            if (list.length > 0) {
+                                for (var i = 0; i < list.length; i++) {
+                                    if (id == list[i].id) {
+                                        v.oldvaluelist.splice(i, 1);
+                                    }
+                                }
+                            }
+
+                            vas = id + "-" + vas;
+                            if (vas != "0") {
+                                v.oldvaluelist.push({ id: id, vas: vas });
+                            }
+                        })
+
+                        if (v.oldvaluelist.length > 0) {
+                            var list = v.oldvaluelist;
+                            for (var i = 0; i < list.length; i++) {
+                                $("select").each(function (index, ele) {
+                                    var id = $($(ele).parent().parent().children()[0]).text();
+                                    if (id == list[i].id) {
+                                        var strlist = list[i].vas.split('-');
+                                        $(ele).val(strlist[1]);
+                                    }
+                                })
+                            }
+                        }
+                    });
+                }
+            },
+            mounted:function(){
+                this.$options.methods.myload();
+            },
+            filters:{
+                DateFilter: function (value) {
+                    var time1 = value.substr(0, 10);
+                    var time2 = time1.split('-');
+                    return time2[0] + "/" + time2[1] + "/" + time2[2];
+                }
+            }
+        });
+    </script>
+}

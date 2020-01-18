@@ -1,0 +1,9 @@
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\PoleDatalist\bin\Debug\PoleDatalist.dll
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\PoleDatalist\bin\Debug\PoleDatalist.pdb
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\PoleDatalist\obj\Debug\PoleDatalist.dll
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\PoleDatalist\obj\Debug\PoleDatalist.pdb
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\PoleDatalist\bin\Debug\PoleDatalist.dll
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\PoleDatalist\bin\Debug\PoleDatalist.pdb
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\PoleDatalist\obj\Debug\PoleDatalist.csprojResolveAssemblyReference.cache
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\PoleDatalist\obj\Debug\PoleDatalist.dll
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\PoleDatalist\obj\Debug\PoleDatalist.pdb

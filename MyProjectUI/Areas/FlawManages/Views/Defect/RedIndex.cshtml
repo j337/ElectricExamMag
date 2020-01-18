@@ -1,0 +1,225 @@
+﻿
+@{
+    ViewBag.Title = "巡检等级确认";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+    <link href="~/Areas/FlawManages/Content/样式文件夹/等级确认/styles.css" rel="stylesheet" />
+}
+
+@section rightdiv{
+
+<div id="u16" class="ax_形状 OffSet">
+    <img id="u16_img" class="img"  src="~/images/待办列表/u16.png">
+    <!-- Unnamed () -->
+    <div id="u17" class="text"></div>
+</div>
+<div id="u18" class="ax_动态面板 OffSet" style="top: 129px;" data-label="导航">
+    <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+        <!-- Unnamed (形状) -->
+        <div id="u19" class="ax_形状">
+            <img id="u19_img" class="img " src="~/images/待办列表/u62.png">
+            <!-- Unnamed () -->
+            <div id="u20" class="text"></div>
+        </div>
+
+        <!-- 1 (形状) -->
+        <div id="u21" class="ax_文本" data-label="1" style="cursor: pointer;">
+            <img id="u21_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u22" class="text">
+                <p><span>缺陷等级设置</span></p>
+            </div>
+        </div>
+
+        <!-- 2 (形状) -->
+        <div id="u23" class="ax_文本" data-label="2" style="cursor: pointer;">
+            <img id="u23_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u24" class="text">
+                <p><span>缺陷等级确认</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u25" class="ax_文本" style="cursor: pointer;">
+            <img id="u25_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u26" class="text">
+                <p><span>杆塔管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u27" class="ax_文本" style="cursor: pointer;">
+            <img id="u27_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u28" class="text">
+                <p><span>线路管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u29" class="ax_文本" style="cursor: pointer;">
+            <img id="u29_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u30" class="text">
+                <p><span>缺陷管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u31" class="ax_文本" style="cursor: pointer;">
+            <img id="u31_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u32" class="text">
+                <p><span>巡检任务</span><span>管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u33" class="ax_文本" style="cursor: pointer;">
+            <img id="u33_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u34" class="text">
+                <p><span>消缺任务管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u35" class="ax_文本" style="cursor: pointer;">
+            <img id="u35_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u36" class="text">
+                <p><span>系统管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u37" class="ax_文本" style="cursor: pointer;">
+            <img id="u37_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u38" class="text">
+                <p><span>信息统计</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u39" class="ax_文本" style="cursor: pointer;">
+            <img id="u39_img" class="img " src="~/resources/images/transparent.gif" tabindex="0">
+            <!-- Unnamed () -->
+            <div id="u40" class="text">
+                <p><span>我的工作平台</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bgDiv" style="height:430px;margin-top:53px;overflow:scroll;margin-left:10px;width:100%;">
+    <p class="crumbs">缺陷管理>>&nbsp;&nbsp;缺陷等级确认>>&nbsp;&nbsp;等级确认</p>
+    <div class="LeftDiv">
+        <p>任务编号&nbsp;:&nbsp;</p>
+        <p class="pTitle">线路编号&nbsp;:&nbsp;</p>
+        <p class="pTitle">杆塔编号&nbsp;:&nbsp;</p>
+        <p class="pTitle">缺陷类型&nbsp;:&nbsp;</p>
+        <p class="pTitle">完好率&nbsp;:&nbsp;</p>
+        <p class="pTitle">缺陷描述&nbsp;:&nbsp;</p>
+        <p class="pTitle">发现时间&nbsp;:&nbsp;</p>
+        <p class="pTitle">发现人&nbsp;:&nbsp;</p>
+        <p class="pTitle">缺陷等级&nbsp;:&nbsp;</p>
+    </div>
+    <div class="RightDiv">
+        <p>{{DataList.inspectionTaskCode}}</p>
+        <p class="pTitle">{{DataList.lineCode}}</p>
+        <p class="pTitle">{{DataList.poleCode}}</p>
+        <p class="pTitle">{{DataList.bugTypeName}}</p>
+        <p class="pTitle">{{DataList.intactRate}}%</p>
+        <p class="pTitle" style="width:220px;">{{DataList.bugDesc}}</p>
+        <p class="pTitleTime">{{DataList.discoverTime}}</p>
+        <p class="pTitle">{{DataList.discovererName}}</p>
+        <p class="pTitleSelect">
+            <el-select @@change="transbuglevel" v-model="selectType" placeholder="请选择" style="width:120px;" size="mini">
+                <el-option v-for="item in TypeList"
+                           :key="item.configValueId"
+                           :label="item.configValueName"
+                           :value="item.configValueId">
+                </el-option>
+            </el-select>
+        </p>
+    </div>
+    <div class="bottomDiv">
+        <el-button type="primary" style="float:left;" @@click="SaveBtn" size="small" plain>保存</el-button>
+        <el-button type="primary" style="float:left;margin-left:80px;" @@click="CancelBtn" size="small" plain>返回</el-button>
+    </div>
+</div>
+<el-dialog title="系统提示"
+           :visible.sync="dialogVisible1"
+           width="30%" :show-close="false" :close-on-click-modal="false" center>
+    <span style="margin-left:100px">处理失败!请稍后再来重试...</span>
+    <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @@click="dialogVisible1 = false">好吧</el-button>
+    </span>
+</el-dialog>
+}
+
+@section vuescript{
+    <script type="text/javascript">
+        var a = this;
+        var v = new Vue({
+            el: "#app",
+            data: {
+                DataList: {},
+                TypeList: [],
+                selectType: "",
+                DetailId: "",
+                dialogVisible1: false,
+                configid: "",
+                configvalue:""
+            },
+            created: function () {
+                a.axios({ method: "post", url: "/Defect/ResultData" }).then(function (respone) {
+                    v.DataList = respone.data.result1;
+                    var time1 = v.DataList.discoverTime.substr(0, 10).split('T');
+                    var time2 = time1[0].split('-');
+                    v.DataList.discoverTime = time2[0] + "/" + time2[1] + "/" + time2[2];
+                    v.DetailId = v.DataList.id;
+                    v.TypeList = respone.data.result2;
+                });
+            },
+            methods:{
+                CancelBtn: function () {
+                    window.location.href = "/FlawManages/Flaw/Index2";
+                },
+                SaveBtn: function () {
+                    if (v.selectType != "" && v.selectType != null) {
+                        //创建参数对象
+                        var params = new URLSearchParams();
+                        //添加参数
+                        params.append('id', v.DetailId);
+                        params.append('buglevel', this.configid);
+                        params.append('buglevelname', this.configvalue);
+                        axios.post("/FlawManages/Defect/AddBugLevel", params).then(function (respone) {
+                            if (respone.data) {
+                                window.location.href = "/FlawManages/Flaw/Index2";
+                            } else {
+                                v.dialogVisible1 = true;
+                            }
+                        });
+                    } else {
+                        v.$message({ message: '选项不能为空!', type: 'error', duration: 2000 });
+                    }
+                },
+                transbuglevel: function (val) {
+                    var list=this.TypeList;
+                    for (var i = 0; i < list.length; i++) {
+                        if (list[i].configValueId == val) {
+                            this.configid = list[i].configValueId;
+                            this.configvalue = list[i].configValueName;
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+}

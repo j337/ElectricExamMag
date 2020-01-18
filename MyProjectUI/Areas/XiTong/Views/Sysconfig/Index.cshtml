@@ -1,0 +1,608 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+    <link href="~/Areas/XiTong/Content/rmstyles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/axure_rp_page.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/jquery-ui-themes.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/styles.css" rel="stylesheet" />
+    <style>
+        #rolestatus {
+            width: 85px;
+            height: 22px;
+            font-family: 'Arial';
+            font-size: 13px;
+            color: #000000;
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+
+        .role_tab {
+            margin-top: 10px;
+        }
+
+        .msg {
+            font-size: 15px;
+            color: red;
+        }
+         .syscss{
+            position:absolute;
+            z-index:222;
+            width:650px;
+            border:1px solid #dddddd;
+            border-radius:10px;
+            background-color:white;
+            margin-left:50px;
+            margin-top:-100px;
+            height:400px;
+           
+           
+        }
+        .overlay{
+             position: fixed;
+                        top: 0%;
+                        left: 0%;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #000;
+                        z-index: 110;
+                        opacity: .60;
+                       
+        }
+        .sss{
+            display:none;
+        }
+        .delusercss{
+              position:absolute;
+            z-index:222;
+            width:400px;
+            border:1px solid #dddddd;
+            border-radius:10px;
+            background-color:white;
+            margin-left:150px;
+            margin-top:-100px;
+            height:200px;
+        }
+        .dialog-footer{
+            text-align:right;
+            margin-right:25px;
+        }
+    </style>
+
+}
+
+@section rightdiv{
+           <!--添加模态框区域-->
+<div id="addsysconfig" class="syscss sss">
+    <p style="font-size:20px;color:#666;margin-left:10px;margin-top:5px;margin-bottom:10px;">添加系统配置</p>
+    <table class="table" style="margin-left:2%;width:96%;">
+        <tr>
+            <td style="padding-top:20px;"><b>配置类型编码:</b></td>
+            <td><el-input v-model="configCode" style="width:200px;" auto-complete="off"></el-input></td>
+
+        </tr>
+        <tr>
+            <td style="padding-top:20px;"><b style="margin-top:10px;">配置类型名称:</b></td>
+            <td><el-input v-model="configname" style="width:200px;" auto-complete="off"></el-input></td>
+        </tr>
+        <tr>
+            <td style="padding-top:20px;"><b>配置参数ID:</b></td>
+            <td><el-input v-model="valueid" style="width:200px;" auto-complete="off"></el-input></td>
+        </tr>
+        <tr>
+            <td style="padding-top:20px;"><b>配置参数名称:</b></td>
+            <td><el-input v-model="valuename" style="width:200px;" auto-complete="off"></el-input></td>
+        </tr>
+        <tr>
+            <td><b style="margin-top:10px;">启用状态:</b></td>
+            <td>
+                <el-radio v-model="radio" label="1">启用</el-radio>
+                <el-radio v-model="radio" label="0">不启用</el-radio>
+            </td>
+
+        </tr>
+    </table>
+    <div slot="footer" class="dialog-footer">
+        <el-button @@click="hidsysdiv">取 消</el-button>
+        <el-button type="primary" @@click="addconfig">确 定</el-button>
+    </div>
+</div>
+<!--end-->
+<!--修改模态框区域-->
+<div id="updsysconfig" class="syscss sss">
+    <p style="font-size:20px;color:#666;margin-left:10px;margin-top:5px;margin-bottom:10px;">修改系统配置</p>
+    <table class="table" style="margin-left:2%;width:96%;">
+        <tr>
+            <td style="padding-top:15px;"><b>配置类型编码:</b></td>
+            <td style="padding-top:15px;">
+                <el-input v-model="updconfigCode" style="width:200px;" auto-complete="off"></el-input>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="padding-top:20px;"><b>配置类型名称:</b></td>
+            <td><el-input @@blur="checkupdname" v-model="updname" style="width:200px;" auto-complete="off"></el-input></td>
+            <td style="padding-top:20px;"><p id="updmsgname" class="msg">&nbsp;</p></td>
+        </tr>
+        <tr>
+            <td style="padding-top:20px;"><b>配置参数ID:</b></td>
+            <td><el-input @@blur="checkupdname" v-model="updvalueid" style="width:200px;" auto-complete="off"></el-input></td>
+        </tr>
+        <tr>
+            <td style="padding-top:20px;"><b>配置参数名称:</b></td>
+            <td><el-input @@blur="checkupdname" v-model="updvaluename" style="width:200px;" auto-complete="off"></el-input></td>
+        </tr>
+        <tr>
+            <td><b style="margin-top:10px;">是否启用:</b></td>
+            <td>
+                <el-radio-group v-model="updradio">
+                    <el-radio :label="1">启用</el-radio>
+                    <el-radio :label="0">不启用</el-radio>
+
+                </el-radio-group>
+            </td>
+            <td style="width:220px;padding-top:20px;"><div id="msgradio" class="msg">&nbsp;</div></td>
+        </tr>
+    </table>
+    <div slot="footer" class="dialog-footer">
+        <el-button @@click="hidsysdiv">取 消</el-button>
+        <el-button type="primary" @@click="updconfig">确 定</el-button>
+    </div>
+</div>
+<!--end-->
+<div id="delsysconinfo" class="delusercss sss"> 
+    <p style="height:40px;line-height:40px;font-size:16px;color:black;margin-left:10px;margin-top:5px;">
+        删除提示
+    </p>
+    <p style="height:40px;line-height:40px;font-size:15px;color:#666;margin-left:30px;margin-top:5px;">是否确定删除该配置信息?</p>
+    <div slot="footer" class="dialog-footer" style="margin-top:30px;">
+        <el-button @@click="hidsysdiv">取 消</el-button>
+        <el-button type="primary" @@click="delsysdata">确 定</el-button>
+    </div>
+</div>
+    <div class="overlay sss"></div>
+    <!-- Unnamed (形状) -->
+    <div id="u16" class="ax_形状">
+        <img id="u16_img" class="img " src="~/images/u16.png" />
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+
+    <div id="u18" class="ax_动态面板" data-label="导航">
+        <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+            <!-- Unnamed (形状) -->
+            <div id="u19" class="ax_形状">
+                <img id="u19_img" class="img " src="~/images/u62.png" />
+                <!-- Unnamed () -->
+                <div id="u20" class="text"></div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u21" class="ax_文本" data-label="1">
+                <img id="u21_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u22" class="text">
+                    <p><span @@click="transtorolepage" style="font-weight:400;">角色管理</span></p>
+                </div>
+            </div>
+
+            <!-- 2 (形状) -->
+            <div id="u23" class="ax_文本" data-label="2">
+                <img id="u23_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u24" class="text">
+                    <p><span @@click="transtouserpage">用户管理</span></p>
+                </div>
+            </div>
+
+            <!-- 3 (形状) -->
+            <div id="u25" class="ax_文本" data-label="3">
+                <img id="u25_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u26" class="text">
+                    <p><span @@click="transtopresspage">角色权限配置</span></p>
+                </div>
+            </div>
+
+            <!-- 4 (形状) -->
+            <div id="u27" class="ax_文本" data-label="4">
+                <img id="u27_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u28" class="text">
+                    <p><span style="font-weight:700;">系统配置</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u29" class="ax_文本">
+                <img id="u29_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u30" class="text">
+                    <p><span>杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u31" class="ax_文本">
+                <img id="u31_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u32" class="text">
+                    <p><span>线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u33" class="ax_文本">
+                <img id="u33_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u34" class="text">
+                    <p><span>缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u35" class="ax_文本">
+                <img id="u35_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u36" class="text">
+                    <p><span>巡检任务</span><span>管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u37" class="ax_文本">
+                <img id="u37_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u38" class="text">
+                    <p><span>消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u39" class="ax_文本">
+                <img id="u39_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u40" class="text">
+                    <p><span>系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u41" class="ax_文本">
+                <img id="u41_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u42" class="text">
+                    <p><span>信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u43" class="ax_文本">
+                <img id="u43_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u44" class="text">
+                    <p><span>我的工作平台</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width:100%;background-color:#f4f4f4;margin-top:70px;height:410px;height:100%;overflow:scroll;">
+        <div class="container">
+            <div class="row">
+                <p style="margin-left:40px;margin-top:15px;">
+                    系统管理>>&nbsp;系统配置
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div id="u240" class="ax_形状" data-label="Styled Button" style="margin-top:-30px">
+                        <img id="u240_img" class="img " src="~/Areas/XiTong/imgs/styled_button_u240.png" />
+                        <!-- Unnamed () -->
+                        <div @@click="showadddialog" id="u241" class="text">
+                            <p><span>添加</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1" style="margin-top:10px;">
+                    <table class="table table-bordered table-hover table-striped role_tab">
+                        <tr>
+                            <th>
+                                配置类型编码
+                            </th>
+                            <th>
+                                配置类型名称
+                            </th>
+                            <th>
+                                配置参数ID
+                            </th>
+                            <th>
+                                配置参数名称
+                            </th>
+                            <th>
+                                是否启用
+                            </th>
+                            <th>
+                                操作
+                            </th>
+                        </tr>
+                        <tbody>
+                            <tr v-for="item in configlist">
+                                <td>
+                                    {{item.configCode}}
+                                </td>
+                                <td>
+                                    {{item.configName}}
+                                </td>
+                                <td>
+                                    {{item.configValueId}}
+                                </td>
+                                <td>
+                                    {{item.configValueName}}
+                                </td>
+                                <td>
+                                    <span v-show="item.isStart==1">
+                                        <input class="ckitem2" @@click="changestatus(item,$event)" type="checkbox" checked="checked" />启用
+                                    </span>
+                                    <span v-show="item.isStart==0">
+                                        <input class="ckitem" @@click="changestatus(item,$event)" type="checkbox" />不启用
+                                    </span>
+                                </td>
+                                <td>
+                                    <a @@click="update(item)">修改</a>&nbsp;|&nbsp;<a @@click="comdel(item,$event)">删除</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p v-if="configlist.length==0" style="width:100px;margin-left:200px;font-size:15px;color:#666;border:1px solid #dddddd;">
+                        暂无数据
+                    </p>
+                    <el-pagination @@size-change="handleSizeChange"
+                                   @@current-change="handleCurrentChange"
+                                   :current-page="currentPage"
+                                   :page-sizes="[5, 10, 20, 40]"
+                                   :page-size="5"
+                                   layout="total, prev, pager, next"
+                                   :total="count">
+                    </el-pagination>
+
+
+             
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section vuescript{
+    <script>
+        var myvue = new Vue({
+            el: "#app",
+            data: {
+                configlist: [],
+                currentPage: 1,
+                count:0,
+               
+                updconfigCode: "",
+                updname: "",
+                updvalueid: "",
+                updvaluename: "",
+                updradio: "",
+                form: {
+                    delivery: false
+                },
+                formLabelWidth: '120px',
+                radio: "1",
+                configCode: "",
+                configname: "",
+                valueid: "",
+                valuename: "",
+                items: {},
+                sysid:""
+            },
+            methods: {
+                myload: function () {
+                    var param = new URLSearchParams();
+                    param.append("pageindex", 1);
+                    axios.post("/XiTong/Sysconfig/getdata", param).then(function (response) {
+                        myvue.configlist = response.data.configlist;
+                        myvue.count = response.data.configcount;
+                    })
+                },
+                handleCurrentChange (val) {
+                    var param = new URLSearchParams();
+                    param.append("pageindex", val);
+                    axios.post("/XiTong/Sysconfig/getdata", param).then(function (response) {
+                        myvue.configlist = response.data.configlist;
+                        myvue.count = response.data.configcount;
+                    })
+                },
+                update: function (item) {
+                    this.items = item;
+                    this.updconfigCode = item.configCode;
+                    this.updname = item.configName;
+                    this.updvalueid = item.configValueId;
+                    this.updvaluename = item.configValueName;
+                    this.updradio = item.isStart;
+                    
+                    $("#updsysconfig").removeClass("sss");
+                    $(".overlay").removeClass("sss");
+                    var param = new URLSearchParams();
+                    param.append("id", item.id);
+                    axios.post("/XiTong/Sysconfig/wu", param).then(function (response) {
+                    })
+                },
+                updconfig: function () {
+                    if (this.updconfigCode==""||this.updname == "" || this.updvalueid == "" || this.updvaluename == "") {
+                       
+                        this.$message({ message: '不能有空~', type: 'warning', duration: 1000 });
+                    } else {
+                        if (isNaN(this.updvalueid)) {                         
+                            this.$message({ message: '配置参数ID只能为数字~', type: 'warning', duration: 1000 });
+                        } else {
+                            var param = new URLSearchParams();
+                            param.append("configcode", this.updconfigCode);
+                            param.append("name", this.updname);
+                            param.append("valueid", this.updvalueid);
+                            param.append("valuename", this.updvaluename);
+                            param.append("radio", this.updradio);
+                            axios.post("/XiTong/Sysconfig/update", param).then(function (response) {
+                                if (response.data == true) {
+                                    $("#updsysconfig").addClass("sss");
+                                    $(".overlay").addClass("sss");
+                                  //  myvue.$message('修改配置信息成功~');
+                                    myvue.items.configCode = myvue.updconfigCode;
+                                    myvue.items.configName = myvue.updname;
+                                    myvue.items.configValueId = myvue.updvalueid;
+                                    myvue.items.configValueName = myvue.updvaluename;
+                                    myvue.items.isStart = myvue.updradio;
+
+                                    if ($(".ckitem").length > 0) {
+                                        $(".ckitem").each(function (index, ele) {
+                                            ele.checked = false;
+                                        })
+                                    }
+                                } else {
+                                    myvue.$message('修改配置信息失败~');
+                                }
+                            })
+                        }
+
+                    }
+
+                },
+                comdel: function (item, event) {
+                    eles = event.currentTarget;
+                    this.sysid = item.id;
+                    $("#delsysconinfo").removeClass("sss");
+                    $(".overlay").removeClass("sss");
+                },
+                delsysdata: function () {
+                        var param = new URLSearchParams();
+                        param.append("conid", this.sysid);
+                        axios.post("/XiTong/Sysconfig/del", param).then(function (response) {
+                            if (response.data == true) {
+                                $("#delsysconinfo").addClass("sss");
+                                $(".overlay").addClass("sss");
+                                if (myvue.count <= 6) {
+                                    myvue.myload();
+                                } else {
+                                    for (var i = 0; i < myvue.count<=6; i++) {
+                                        if (myvue.configlist[i].id == myvue.sysid) {
+                                            myvue.configlist.splice(i, 1);
+                                            myvue.count--;
+                                        }
+                                    }
+                                }
+                               
+                              
+                            } else {
+                                myvue.$message("删除失败")
+                            }
+                        })
+
+                },
+                showadddialog:function(){
+                    $("#addsysconfig").removeClass("sss");
+                    $(".overlay").removeClass("sss");
+                },
+                addconfig: function () {
+                    var param = new URLSearchParams();
+                    param.append("configCode", this.configCode);
+                    param.append("configname", this.configname);
+                    param.append("valueid", this.valueid);
+                    param.append("valuename", this.valuename);
+                    param.append("radio", this.radio);
+                    if (this.configCode == "" || this.configname == "" || this.valueid == "" || this.valuename == "") {
+                       
+                        this.$message({ message: '不能有空~', type: 'warning', duration: 1000 });
+
+                    } else {
+                        if (isNaN(this.valueid)) {
+                           
+                            this.$message({ message: '配置参数ID只能为数字~', type: 'warning', duration: 1000 });
+                        } else {
+                            axios.post("/XiTong/Sysconfig/Add", param).then(function (response) {
+                                if (response.data == true) {
+                                    $("#addsysconfig").addClass("sss");
+                                    $(".overlay").addClass("sss");
+                                    myvue.$message({ message: '添加成功~', type: 'success', duration: 1000 });
+                                    myvue.myload();                                  
+                                    myvue.configCode = "";
+                                    myvue.configname = "";
+                                    myvue.valueid = "";
+                                    myvue.valuename = "";
+
+                                }
+                            })
+                        }
+
+                    }
+
+                },
+                changestatus: function (item,event) {
+                    var ele = event.currentTarget;
+                    var param = new URLSearchParams();
+                    param.append("cid", item.id);
+                    if (item.isStart == 0) {
+                        param.append("isStart", 1);
+                        axios.post("/XiTong/Sysconfig/updisStart", param).then(function (response) {
+                            if (response.data == true) {
+                            
+                                myvue.$message({ message: '启用成功~', type: 'success', duration: 1000 });
+                                item.isStart = 1;
+                                $(".ckitem2").each(function (index,ele) {
+                                    ele.checked = true;
+                                })
+
+                            }
+                        })
+                    } else {
+                        param.append("isStart", 0);
+                        axios.post("/XiTong/Sysconfig/updisStart", param).then(function (response) {
+                            if (response.data == true) {
+                                myvue.$message({ message: '已取消启用~', type: 'success', duration: 1000 });
+                                item.isStart = 0;
+                                $(".ckitem").each(function (index, ele) {
+                                    ele.checked = false;
+                                })
+                            }
+                        })
+                    }
+                },
+                hidsysdiv:function(){
+                    $("#addsysconfig").addClass("sss");
+                    $("#updsysconfig").addClass("sss");
+                    $("#delsysconfig").addClass("sss");
+                    $(".overlay").addClass("sss");
+                },
+                transtosyspage: function () {
+                    window.location = "/XiTong/Sysconfig/Index";
+                },
+                transtorolepage: function () {
+                    window.location = "/XiTong/Role/Index";
+                },
+                transtopresspage: function () {
+                    window.location = "/XiTong/Premiss/Index";
+                },
+                transtouserpage: function () {
+                    window.location = "/XiTong/User/Index";
+                }
+
+            }, created: function () {
+                this.$options.methods.myload();
+
+            },
+        })
+    </script>
+
+}
+

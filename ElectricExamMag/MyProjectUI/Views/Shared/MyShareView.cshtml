@@ -1,0 +1,597 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/sitemap.css" rel="stylesheet" />
+    <link href="~/Content/resources/reset.css" rel="stylesheet" />
+    <link href="~/Content/resources/default.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/index.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/axios.min.js"></script>
+    <script src="~/Scripts/vue.js"></script>
+    <script src="~/Scripts/index.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+  
+    <!--添加一个编写css的区域-->
+    @RenderSection("mycss")
+    <!--添加一个编写script的区域-->
+    @RenderSection("myscript", false)
+    <style>
+        body{
+            font-size:13px;
+            color:black;
+        }
+        #apps{
+            width:100%;
+          
+        }
+        #over_left{
+            float:left;
+            width:19%;
+            border-right:3px solid #b9b9b9;
+            height:570px;
+            overflow:scroll;
+        }
+        #over_right{
+            float:left;
+            margin-top:8px;
+            width:79%;
+            border:1px solid #dddddd;
+            margin-left:1%;
+         
+        }
+        .Header_main{
+            float:left;
+        }
+        .Header_time{
+            float:left;
+
+        }
+        .Header_main{
+            margin-left:40px;
+            margin-top:15px;
+        }
+        .Header_main_span{
+            font-weight:bold;
+        }
+        .aaa{
+            text-decoration:none;
+            color:#333;
+        }
+        .aaa:hover{
+            text-decoration:none;
+            color:#333;
+        }
+         .ee{
+             display:none;
+         }
+         .navul{
+             margin:0px;
+             padding:0px;
+            
+         }
+         #interfaceControlFrameHeader{
+             position: relative;
+            list-style: none;
+            padding: 4px 0px 4px 0px;
+            font-size: 11px;
+            z-index: 50;
+            
+         }
+         #interfaceControlFrameHeaderContainer{
+             overflow: visible;
+             width: 250px;
+             padding-bottom:0px;
+              background-color:#b9b9b9;
+
+         }
+         #interfaceControlFrameMinimizeContainer{
+             position: relative;
+            font-size: 2px;
+            text-align: right;
+            z-index: 100;
+            height: 20px;
+             background-color:#b9b9b9;
+         }
+         #interfaceControlFrameMinimizeContainer a{
+             display: inline-block;
+            width: 15px;
+            height: 20px;
+            font-size: 2px;
+            background: url('/images/closebtn.png') no-repeat;
+            text-decoration: none;
+            margin: 2px 5px 0px 0px;
+         }
+         #interfaceControlFrameCloseContainer{
+                 display: inline-block;
+                width: 15px;
+                height: 20px;
+                font-size: 2px;
+                margin: 5px 2px 0px 0px;
+           }
+         #interfaceControlFrameCloseContainer a {
+                background: url('/images/minbtn.png') no-repeat;
+                margin: 0px;
+                text-decoration: none;
+}
+    .close{
+        display:none;
+    }
+    #div_menu2 a:hover{
+        text-decoration:none;
+    }
+    #div_menu2 a:active{
+        text-decoration:none;
+         color:#333;
+    }
+    #div_menu2 a:visited{
+         text-decoration:none;
+         color:#333;
+    }
+    </style>
+    <script>
+        var menulist;
+        var usercode; //用户名称
+        var rolename; //角色名称
+        var userinfo;
+        jQuery(function () {
+            $.getJSON("/XiTong/Demo/MyFunction", "", function (data) {
+                menuslist = data.mm;
+                usercode = data.usercode;
+                rolename = data.rolename;
+                userinfo = data.userinfo;
+
+                $("#spanusercode").text(usercode);
+                $("#spanrolename").text(rolename);
+
+                console.log(menuslist.MMlist);
+                var showlist = $("<ul style='margin-left:40px;font-size:13px;color:#333;'></ul>");
+                showall(menuslist.MMlist, showlist);
+                $("#div_menu2").append(showlist);
+
+                $(".ckitem4").each(function (index, ele) {
+                    var strs = $(ele).attr("url");
+                    var content = $(ele).attr("mycontent");
+                    $(ele).prepend("<span class='showele'><img src='/images/comm2.gif' /><img src='/images/comm1.png' /></span><a class='aaa' href='" + strs + "'>" + content + "</a>");
+                })
+
+                $(".showele").click(function () {
+                    //获得当前元素的父级元素 
+                    var ele = $($(this).parent().children()[2]);
+                    if (ele.hasClass("ee")) {
+                        //再隐藏元素 
+                        ele.removeClass("ee");
+                        $(this).html("<img src='/images/comm2.gif' /><img src='/images/comm1.png' />");
+                    } else {
+                        //再隐藏元素 
+                        ele.addClass("ee");
+                        $(this).html("<img src='/images/comm5.gif' /><img src='/images/comm6.png' />");
+                    }
+                })
+
+                $(".menus4").each(function (index,ele) {
+                    $(ele).prepend("<img src='/images/comm4.png' />");
+                })
+
+                $(".aaa").each(function (index, ele) {
+                    var vas = $(ele).attr("href");
+                    if (vas == "nothing") {
+                        var txt = $(ele).text();
+                        $(ele).replaceWith("<span class='searchele'>" + txt + "</span>");
+                    }
+                })
+
+                $(".navli").click(function () {
+                    $(".navli").removeClass("selected");
+                    var txtvas = $(this).attr("pluginid");
+                    $(this).addClass("selected");
+                    if (txtvas == "pageNotesHost") {
+                        $(".divmenu").addClass("ee");
+                    } else {
+                        $(".divmenu").removeClass("ee");
+                    }
+                })
+            })
+
+            $('#exampleModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget) // Button that triggered the modal
+               
+             
+            })
+     
+        })
+        function showall(menu_list, paret) {
+            for (var m in menu_list) {
+                //如果有子节点 则便利该节点
+                if (menu_list[m].MMlist.length > 0) {
+                    //创建一个li
+                    var li = $("<li class='ckitem4' id=" + menu_list[m].id + " url='" + menu_list[m].funurl + "' mycontent='" + menu_list[m].funname + "'></li>");
+                    //将li的文本设置好，并马上添加一个空白的ul子节点，并且将这个li添加到父亲节点中
+                    $(li).append("<ul style='margin-left:13px;color:#333;'></ul>").appendTo(paret);
+                    //将空白的ul作为下一个递归遍历的父亲节点传入
+                    showall(menu_list[m].MMlist, $(li).children().eq(0));
+                }
+                    //如果该节点没有子节点，则直接将该节点li以及文本创建好直接添加到父亲节点中
+                else {
+                    $("<li class='menus4' id='" + menu_list[m].id + "'></li>").append($("<a class='searchele' style='color:#333;' id='url" + menu_list[m].id + "' href='" + menu_list[m].funurl + "' style='color:#333;'>" + menu_list[m].funname + "</a>")).appendTo(paret);
+                }
+            }
+        }
+
+        function showtime(){
+            //实例化日期类 
+            var date = new Date();
+            //获得年份 
+            var year = date.getYear();
+            //获得月
+            var month = date.getMonth() + 1;
+            //获得日
+            var day = date.getDate();
+            //获得时分秒 
+            var hh = date.getHours();
+            var mm = date.getMinutes();
+            var ss = date.getSeconds();
+            //补零
+            if (month < 10) {
+                month = "0" + day;
+            }
+            if (day < 10) {
+                day = "0" + day;
+            }
+            if (mm < 10) {
+                mm = "0" + mm;
+            }
+            if (ss < 10) {
+                ss = "0" + ss;
+            }
+            year = year.toString().substr(1, 2);
+            var date = "20" + year + "-" + month + "-" + day + " " + hh + ":" + mm + ":" + ss;
+            $("#systime").text(date);
+
+            window.setInterval("showtime()", 1000);
+        }
+
+        //最小化的方法 
+        function Minimize() {
+            $("#paneldiv").addClass("ee");
+            $("#openmenu").removeClass("ee");
+        }
+      
+        function showdiv() {
+            $("#paneldiv").removeClass("ee");
+            $("#openmenu").addClass("ee");
+        }
+
+        function closePlayer() {
+            $("#paneldiv").addClass("ee");
+            window.location = "/XiTong/Demo/Login";
+        }
+        function showinput() {
+            var ele = $("#mysearch");
+            if (ele.hasClass("ee")) {
+                ele.removeClass("ee");
+                $("#div_menu2 li").show();
+            } else {
+                ele.addClass("ee");
+            }
+        }
+
+        function searchmenus(obj) {
+            $("#div_menu2 li").hide();
+            //获得当前元素的值 
+            var vas = $(obj).val();
+            console.log($(".searchele"));
+             if (vas == "") {
+                 $("#div_menu2 li").show();
+             } else {
+                 //首先遍历所有的菜单 
+                 $(".searchele").each(function (index, ele) {
+                     var txt = $(ele).text();
+                     if (txt.indexOf(vas) >= 0) {
+                         //再判断他是属于哪一级 
+                         if ($(ele).parent().parent().parent().parent().parent().parent().parent()[0].localName == "li") {  //则说明是第四级
+                             var li = $(ele).parent().parent().parent().parent().parent().parent().parent();
+                             var li2 = $(ele).parent().parent().parent().parent().parent();
+                             var li3 = $(ele).parent().parent().parent();
+                             var li4 = $(ele).parent();
+                             li.show();
+                             li2.show();
+                             li3.show();
+                             li4.show();
+
+                         } else if ($(ele).parent().parent().parent().parent()[0].localName == "li") {   //则说明有第三级元素 
+                             var li2 = $(ele).parent().parent().parent().parent().parent();
+                             var li3 = $(ele).parent().parent().parent();
+                             var li4 = $(ele).parent();
+
+                             li2.show();
+                             li3.show();
+                             li4.show();
+
+                         } else if ($(ele).parent().parent().parent()[0].localName == "li") {   //第二级
+                             var li3 = $(ele).parent().parent().parent();
+                             var li4 = $(ele).parent();
+                             li3.show();
+                             li4.show();
+                         } else if ($(ele).parent()[0].localName == "li") {   //第一级                         
+                             var li4 = $(ele).parent();
+                             li4.show();
+                         }
+                        
+                     }
+                 })
+             }
+        }
+
+        function checkpassword(obj) {
+            $("#loginpassmsg").text("");
+            var oldpass = $(obj).val();
+            if (oldpass != "") {
+                if (oldpass != userinfo.userPassword) {
+                    $("#loginpassmsg").text("旧密码与原密码不一致!");
+                }
+            } else {
+                $("#loginpassmsg").text("旧密码不能为空!");
+            }
+        }
+        function checknewpass(obj) {
+            $("#newpassmsg").text("");
+            var newpass = $(obj).val();
+            if (newpass != "") {
+                if (newpass.length < 6) {
+                    newpassmsg
+                    $("#newpassmsg").text("新密码的长度不能低于6位数!");
+                } else {
+                    if (newpass == userinfo.userPassword) {
+                        $("#newpassmsg").text("新密码不能与旧密码相同!");
+                    }
+                }
+            } else {
+                $("#newpassmsg").text("新密码不能为空!");
+            }
+        }
+        function checkcompass(obj) {
+            $("#compassmsg").text("");
+            var newpass = $(obj).val();
+            var compass = $("#txtcompass").val();
+            if (compass != "") {
+                if (newpass != compass) {
+
+                    $("#compassmsg").text("确认密码与新密码不一致!");
+                }
+            } else {
+                $("#compassmsg").text("确认密码不能为空!");
+            }
+        }
+      
+        function savepassword() {
+         
+            $("#loginpassmsg").text("");
+            $("#newpassmsg").text("");
+            $("#compassmsg").text("");
+
+            if ($("#txtoldpass").val()=="") {
+                $("#loginpassmsg").text("旧密码不能为空!");
+                return;
+            }
+
+            if ($("#txtoldpass").val() != userinfo.userPassword) {
+                $("#loginpassmsg").text("旧密码与原始密码不一致!");
+                return;
+            }
+
+            if ($("#txtnewpass").val() == "") {
+                $("#newpassmsg").text("新密码不能为空!");
+                return;
+            }
+
+            if ($("#txtnewpass").val().length < 6) {
+                $("#newpassmsg").text("新密码长度不能小于6位数!");
+                return;
+            }
+
+            if ($("#txtoldpass").val() == $("#txtnewpass").val()) {
+                $("#newpassmsg").text("新密码不能与旧密码相同!");
+                return;
+            }
+
+            if ($("#txtcompass").val() == "") {
+                $("#compassmsg").text("确认密码不能为空!");
+                return;
+            }
+            if ($("#txtcompass").val() != $("#txtnewpass").val()) {
+                $("#compassmsg").text("确认密码与新密码不一致!");
+                return;
+            }
+
+            var newpwd=$("#txtnewpass").val();
+            //发送ajax请求 
+            $.post("/XiTong/Demo/UpdPwd", "pwd=" + newpwd, function (data) {
+                if (data == true) {
+                    $('#exampleModal').modal('hide');
+                    $('#mysuccessdialog').modal({
+                        keyboard: true,  //设置是否支持esc键关闭模态框
+                        backdrop: 'static'   //设置是否支持点击空白区域关闭模态框
+                    })
+                }
+            },"json")
+
+        }
+
+        function backtologinpage() {
+            window.location = "/XiTong/Demo/Login";
+        }
+        function exitsystem() {
+            //发送ajax请求 
+            $.getJSON("/XiTong/Demo/ExitLogin", "", function (data) {
+                if (data == true) {
+                    window.location = "/XiTong/Demo/Login";
+                }
+            })
+        }
+    </script>
+</head>
+@RenderBody()
+<body style="overflow:scroll;height:570px;" onload="showtime()">
+    <!--模态框-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">修改密码</h4>
+                </div>
+                <div class="modal-body">
+                     <div class="container">
+                      <div class="form-group">
+                          <div class="row">
+                              <div class="col-sm-3" style="text-align:right;font-weight:700;">
+                                   请输入旧密码：
+                              </div>
+                              <div class="col-sm-5">
+                                  <input id="txtoldpass" onblur="checkpassword(this)" class="form-control" />
+                              </div>
+                              <div class="col-sm-4">
+                                 <span id="loginpassmsg" style="font-size:14px;color:red;"></span>
+                              </div>
+                          </div>
+                      </div>
+                         <div class="form-group">
+                             <div class="row">
+                                 <div class="col-sm-3" style="text-align:right;font-weight:700;">
+                                     请输入新密码：
+                                 </div>
+                                 <div class="col-sm-5">
+                                     <input id="txtnewpass" onblur="checknewpass(this)" class="form-control" />
+                                 </div>
+                                 <div class="col-sm-4" style="font-size:14px;color:red;">
+                                     <span id="newpassmsg" style="font-size:14px;color:red;"></span>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="form-group">
+                             <div class="row">
+                                 <div class="col-sm-3" style="text-align:right;font-weight:700;">
+                                     请确认新密码：
+                                 </div>
+                                 <div class="col-sm-5">
+                                     <input id="txtcompass" onblur="checkcompass(this)" class="form-control" />
+                                 </div>
+                                 <div class="col-sm-4" style="font-size:14px;color:red;">
+                                     <span id="compassmsg" style="font-size:14px;color:red;"></span>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                    <button onclick="savepassword()" type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div class="modal fade" id="mysuccessdialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">修改成功提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size:15px;">密码修改成功,请重新登录!</p>
+                </div>
+                <div class="modal-footer" style="text-align:initial;">                
+                    <button onclick="backtologinpage()" style="margin-left:250px;" type="button" class="btn btn-primary">重新登录</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!---->
+    <div id="apps">
+            <div id="over_left">
+           <div style="width:100%;" id="paneldiv">
+               <div id="interfaceControlFrameMinimizeContainer">
+                   <a id="interfaceControlFrameMinimizeButton" title="Minimize" onclick="Minimize()">
+                       &nbsp;
+                   </a>
+                   <div id="interfaceControlFrameCloseContainer">
+                       <a title="Close" id="interfaceControlFrameCloseButton1" onclick="closePlayer();">&nbsp;</a>
+                   </div>
+               </div>
+               <div id="interfaceControlFrameHeaderContainer">
+                   <ul class="navul" id="interfaceControlFrameHeader">
+                       <li><a class="selected navli" pluginid="sitemapHost">Sitmap</a></li>
+                       <li><a class="navli" pluginid="pageNotesHost">Page Notes</a></li>
+                   </ul>
+               </div> 
+             <div class="divmenu">
+                 <div id="sitemapToolbar">
+                     <div style="height:30px;">
+                         <a id="footnotesButton" title="Toggle Footnotes" class="sitemapToolbarButton sitemapToolbarButtonSelected">&nbsp;</a>
+                         <a id="highlightInteractiveButton" title="Highlight interactive elements" class="sitemapToolbarButton">&nbsp;</a>
+                         <a id="variablesButton" title="View Variables" class="sitemapToolbarButton">&nbsp;</a>
+                         <a id="linksButton" title="Get Links" class="sitemapToolbarButton">&nbsp;</a>
+                         <a onclick="showinput()" id="searchButton" title="Search Pages" class="sitemapToolbarButton">&nbsp;</a>
+                     </div>
+                 </div>
+                 <input oninput="searchmenus(this)" style="border:1px solid #dddddd;width:160px;" id="mysearch" class="ee" placeholder="search" />
+                 <div id="div_menu2"></div>
+             </div>
+              
+           </div>
+              <div id="openmenu" class="ee" onclick="showdiv()">
+                  <img src="~/images/openmenus.png" />
+              </div>
+            </div>
+            <div id="over_right">
+               <div class="container">
+                  <div class="row">
+                      <div class="col-sm-3" >
+                        <p style="font-weight:700;font-size:36px;margin-top:20px;width:250px;">电力巡检系统</p>
+                      </div>
+                      <div class="col-sm-9" >
+                          <p class="Header_time" style="margin-top:15px;">
+                              <span id="systime" style="color:gray;font-size:15px;">
+                                  
+                              </span>
+                             
+                          </p>
+                          <p class="Header_main">
+                              <span class="Header_main_span">
+                                  欢迎
+                              </span>
+                              <span id="spanusercode">
+                                
+                              </span>
+                              <span  class="Header_main_span">
+                                  &nbsp;&nbsp;角色:
+                              </span>
+                              <span id="spanrolename" class="Header_main_span">
+                                
+                              </span>
+                          </p>
+                          <p class="Header_main">
+                              <span data-toggle="modal" data-target="#exampleModal" data-whatever="@@mdo" class="Header_main_span">【修改密码】</span>
+                              <span onclick="exitsystem()" class="Header_main_span">【退出】</span>
+                          </p>
+                      </div>
+                  </div>
+
+               </div>
+                <div id="app">
+                    @RenderSection("rightdiv")
+                </div>
+            </div>
+        </div>
+  
+</body>
+</html>
+
+@RenderSection("vuescript",false)
+

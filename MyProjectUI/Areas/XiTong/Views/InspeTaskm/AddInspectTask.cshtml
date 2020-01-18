@@ -1,0 +1,682 @@
+﻿
+@{
+    ViewBag.Title = "AddInspectTask";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+@section mycss{
+    <link href="~/Areas/XiTong/Content/itstyles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/axure_rp_page.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/jquery-ui-themes.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/styles.css" rel="stylesheet" />
+    <style>
+    .form_tab{
+        width:550px;
+      
+        height:520px;
+    }
+    .el-input__inner{
+        width:200px;
+    }
+    .el-textarea__inner{
+        width:200px;
+    }
+    ul{
+        padding:0px;
+        margin:0px;
+    }
+    ul li{
+        list-style:none;
+    }
+    ul li:hover{
+        cursor:pointer;
+    }
+    .ss{
+        padding:3px 10px;
+    background-color:#d7d7d7;
+    width:120px;
+    display:inline-block;
+    border-radius:4px;
+    }
+    .selectinspcul li{
+         line-height:25px;
+         margin-bottom:5px;
+         width:120px;
+    }
+  
+    .el-dialog__footer{
+        text-align:initial;
+    }
+      .itaskcss{
+            position:absolute;
+            z-index:222;
+            width:610px;
+            border:1px solid #dddddd;
+            border-radius:10px;
+            background-color:white;
+            margin-left:50px;
+            margin-top:-100px;
+            height:470px;
+           
+           
+        }
+        .overlay{
+             position: fixed;
+                        top: 0%;
+                        left: 0%;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #000;
+                        z-index: 110;
+                        opacity: .60;
+                       
+        }
+        .sss{
+            display:none;
+        }
+    </style>
+}
+
+@section myscript{
+
+}
+
+@section rightdiv{
+    <div id="txtinspctors" class="itaskcss sss">
+        <div slot="footer" class="dialog-footer" >
+            <p style="font-size:20px;margin-top:10px;margin-left:10px;">分配巡检员</p>
+            <p style="font-size:14px;font-weight:400;position:relative;left:50px;top:20px;">待选巡检员</p><p style="font-size:14px;font-weight:400;width:100px;margin-left:330px;">已选巡检员</p>
+            <div style="width:100%;height:300px;margin-left:50px;">
+                <div style="width:200px;border:1px solid black;float:left;height:300px;overflow:scroll;">
+                    <ul id="noyetuseul" class="selectinspcul" style="font-size:13px;font-weight:400;">
+                        <li class="ckitem" :id="item.id" @@click="isselected($event,item)" v-for="item in inspectors">
+                            {{item.userName}}
+                        </li>
+                    </ul>
+                </div>
+                <div style="float:left;width:80px;padding-left:20px;margin-top:40px;">
+                    <div @@click="selectall">
+                        <img src="~/Areas/XiTong/imgs/u448.png" />
+                    </div>
+                    <div @@click="noselectall">
+                        <img src="~/Areas/XiTong/imgs/u450.png" />
+                    </div>
+                </div>
+                <div style="width:200px;border:1px solid black;float:left;height:300px;overflow:scroll;">
+                    <ul id="yetusedul" class="selectinspcul" style="font-size:13px;font-weight:400;">
+                        <li v-for="item in inspectors2">
+                            <span>{{item.userName}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top:30px;text-align:right;margin-right:20px;margin-bottom:10px;">
+                <el-button @@click="hiddiv">取 消</el-button>
+                <el-button type="primary" @@click="comsave">保存</el-button>
+            </div>
+        </div>
+    </div>
+    <!--灰色透明的背景-->
+    <div class="overlay sss"></div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u16" class="ax_形状">
+        <img id="u16_img" class="img " src="~/images/u16.png" />
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+
+    <!-- 导航 (动态面板) -->
+    <div id="u18" class="ax_动态面板" data-label="导航">
+        <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+            <!-- Unnamed (形状) -->
+            <div id="u19" class="ax_形状">
+                <img id="u19_img" class="img " src="~/images/u62.png" />
+                <!-- Unnamed () -->
+                <div id="u20" class="text"></div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u21" class="ax_文本" data-label="1">
+                <img id="u21_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u22" class="text">
+                    <p><span>巡检任务制定与分配</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u23" class="ax_文本">
+                <img id="u23_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u24" class="text">
+                    <p><span>杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u25" class="ax_文本">
+                <img id="u25_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u26" class="text">
+                    <p><span>线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u27" class="ax_文本">
+                <img id="u27_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u28" class="text">
+                    <p><span>缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u29" class="ax_文本">
+                <img id="u29_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u30" class="text">
+                    <p><span>巡检任务</span><span>管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u31" class="ax_文本">
+                <img id="u31_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u32" class="text">
+                    <p><span>消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u33" class="ax_文本">
+                <img id="u33_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u34" class="text">
+                    <p><span>系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u35" class="ax_文本">
+                <img id="u35_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u36" class="text">
+                    <p><span>信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u37" class="ax_文本" data-label="1">
+                <img id="u37_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u38" class="text">
+                    <p><span>巡检任务</span><span>执行与回执</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u39" class="ax_文本">
+                <img id="u39_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u40" class="text">
+                    <p><span>我的工作平台</span></p>
+                </div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u41" class="ax_文本" data-label="1">
+                <img id="u41_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u42" class="text">
+                    <p><span>缺陷查询</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width:100%;background-color:#f4f4f4;margin-top:70px;height:101%;overflow:scroll;">
+        <div class="container">
+            <div class="row">
+                <p style="margin-left:40px;margin-top:15px;">
+                    巡检任务管理>>&nbsp;巡检任务制定与分配>>制定巡检任务
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1" style="margin-top:10px;">
+               <table class="form_tab">
+                   <tr>
+                       <td style="width:80px;">
+                           <b>任务编号:</b>
+                       </td>
+                       <td style="width:230px;">
+                           <el-input @@blur="checkTaskCode" id="taskcode" placeholder="请输入内容"
+                                     v-model="txttaskcode"
+                                     clearable>
+                           </el-input>
+                       </td>
+                       <td>
+                          <span id="taskcodemsg" style="color:red;font-size:14px;"></span>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           <b>任务名称:</b>
+                       </td>
+                       <td>
+                           <el-input id="taskname" placeholder="请输入内容"
+                                     v-model="txttaskname"
+                                     clearable>
+                           </el-input>
+                       </td>
+                       <td>
+                           <span id="tasknamemsg" style="color:red;font-size:14px;"></span>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           <b>巡检线路:</b>
+                       </td>
+                       <td>
+                           <el-select @@change="changeline" id="linecode" v-model="txtlinecode" clearable placeholder="请选择">
+                               <el-option v-for="item in linelist"
+                                          :key="item.id"
+                                          :label="item.lineName"
+                                          :value="item.lineCode">
+                               </el-option>
+                           </el-select>
+                       </td>
+                       <td>
+                           <span id="linecodemsg" style="color:red;font-size:14px;"></span>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           <b>巡检员:</b>
+                       </td>
+                       <td>
+                           <el-input style="float:left;" id="inspecname" placeholder="请输入内容"
+                                     v-model="txtinspecname"
+                                     clearable>
+                           </el-input>
+                           <span @@click="selectinspector"> <img style="position:relative;left:205px;top:-22px;" src="~/Areas/XiTong/imgs/u77.png" /></span>
+                       </td>
+                       <td>
+                           <span id="inspecnamemsg" style="color:red;font-size:14px;"></span>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           <b>起始杆号:</b>
+                       </td>
+                       <td>
+                           <el-input id="startpole" placeholder="请输入内容"
+                                     v-model="txtstartpolecode"
+                                     clearable>   
+                           </el-input>
+                       </td>
+                       <td>
+                           <span id="startpolemsg" style="color:red;font-size:14px;"></span>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           <b>终止杆号:</b>
+                       </td>
+                       <td>
+                           <el-input id="endpole" placeholder="请输入内容"
+                                     v-model="txtendpolecode"
+                                     clearable>
+                           </el-input>
+                       </td>
+                       <td>
+                           <span id="endpolemsg" style="color:red;font-size:14px;"></span>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           <b style="margin-left:10px;">下发人:</b>
+                       </td>
+                       <td>
+                         <span style="color:#A1A1A1;">                          
+                              @ViewData["usercode"]
+                         </span>
+                       </td>
+                       <td>
+                         
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           <b>下发日期:</b>
+                       </td>
+                       <td>
+                           <span id="inspectime" style="color:#A1A1A1;"></span>
+                       </td>
+                       <td>
+                           
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                        <b style="margin-left:20px;">备注:</b>
+                       </td>
+                       <td>
+                           <el-input type="textarea"
+                                     rows="2" 
+                                     id="desc"
+                                     placeholder="请输入内容"
+                                     v-model="txtdesc">
+                           </el-input>
+                       </td>
+                       <td>
+                           <span id="descmsg" style="color:red;font-size:14px;"></span>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td colspan="3">
+                           <div style="margin-left:100px;">
+                               <el-button @@click="transformpage">返回</el-button>
+                               <el-button @@click="addinspectask" type="primary">保存</el-button>
+                           </div>
+                       </td>
+                       
+                   </tr>
+               </table>
+               
+            </div>
+        </div>
+
+    </div>
+  
+}
+
+@section vuescript{
+    <script>
+         
+         var vue = new Vue({
+             el: "#app",
+             data: {
+                 linelist:[],
+                 issuedtime: "",
+                 txttaskcode: "",
+                 txttaskname: "",
+                 txtlineid:"",
+                 txtlinecode: "",
+                 txtlinename:"",
+                 txtinspecname: "",
+                 txtstartpole: "",
+                 txtendpole:"",
+                 txtstartpolecode: "",
+                 txtendpolecode: "",
+                 txtdesc: "",
+                 dialogFormVisible: false,
+                 inspectors: [],
+                 inspectors2: [],
+                 templist: [],
+                 inspectorcode: "",
+                 templist2: [],
+                 templist3:[]
+             },
+             methods: {
+                 myload: function () {
+                     //实例化日期类 
+                     var date = new Date();
+                     //获得年份 
+                     var year = date.getYear();
+                     //获得月
+                     var month = date.getMonth() + 1;
+                     //获得日
+                     var day = date.getDate();
+                     //获得时分秒 
+                     var hh = date.getHours();
+                     var mm = date.getMinutes();
+                     var ss = date.getSeconds();
+                     //补零
+                     if (mm < 10) {
+                         mm = "0" + mm;
+                     }
+                     if (ss < 10) {
+                         ss = "0" + ss;
+                     }
+                     year = year.toString().substr(1,2 );
+                    var date = "20" + year + "-" + month + "-" + day + " " + hh + ":" + mm + ":" + ss;
+                    $("#inspectime").text(date);
+
+                     //发送ajax请求 
+                    axios.post("/XiTong/InspeTaskm/GetlineCodes", null).then(function (response) {
+                        vue.linelist = response.data.lilist;
+                        vue.inspectors = response.data.pslist;
+                             
+                    })
+                  
+                 },
+                 hiddiv:function(){
+                     $("#txtinspctors").addClass("sss");
+                     $(".overlay").addClass("sss");
+                 },
+                 checkTaskCode: function () {
+                     $("#taskcodemsg").text("");
+                     $("#taskcode").removeClass("havecode");
+                     var param = new URLSearchParams();
+                     param.append("taskcode", this.txttaskcode);
+                     axios.post("/XiTong/InspeTaskm/CheckTaskCode", param).then(function (response) {
+                         if (response.data == false) {
+                             $("#taskcodemsg").text("当前任务编号已存在!");
+                             $("#taskcode")[0].focus();
+                             $("#taskcode").addClass("havecode");
+                         }
+                     })
+                 },
+                 addinspectask: function () {
+                     $("#taskcodemsg").text("");
+                     $("#tasknamemsg").text("");
+                     $("#linecodemsg").text("");
+                     $("#inspecnamemsg").text("");
+                     $("#startpolemsg").text("");
+                     $("#endpolemsg").text("");
+                     $("#descmsg").text("");
+
+                     if (this.txttaskcode == "") {
+                         $("#taskcodemsg").text("任务编号不能为空!");
+                         $("#taskcode")[0].focus();
+                         return;
+                     }
+                     if ($(".havecode").length > 0) {
+                         $("#taskcodemsg").text("当前任务编号已存在!");
+                         $("#taskcode")[0].focus();
+                         return;
+                     }
+                     if (this.txttaskname == "") {
+                         $("#tasknamemsg").text("任务名称不能为空!");
+                         $("#taskname")[0].focus();
+                         return;
+                     }
+                     if (this.txtlinecode == "") {
+                         $("#linecodemsg").text("请选择巡检线路!");
+                         $("#linecode")[0].focus();
+                         return;
+                     }
+                     if (this.txtstartpolecode == "") {
+                         $("#startpolemsg").text("起始杆号不能为空!");
+                         $("#startpole")[0].focus();
+                         return;
+                     }
+                     if (this.txtendpolecode == "") {
+                         $("#endpolemsg").text("终止杆号不能为空!");
+                         $("#endpolecode")[0].focus();
+                         return;
+                     }
+                     if (this.txtdesc == "") {
+                         $("#descmsg").text("备注信息不能为空!");
+                         $("#desc")[0].focus();
+                         return;
+                     }
+
+                     //创建参数对象 
+                     var param = new URLSearchParams();
+                     param.append("taskcode", this.txttaskcode);
+                     param.append("taskname", this.txttaskname);
+                     param.append("lineid", this.txtlineid);
+                     param.append("linecode", this.txtlinecode);
+                     param.append("linename", this.txtlinename);
+                     param.append("startpolecode", this.txtstartpolecode);
+                     param.append("endpolecode", this.txtendpolecode); 
+                     param.append("startpole", this.txtstartpole);
+                     param.append("endpole", this.txtendpole);
+                     param.append("desc", this.txtdesc);
+                     param.append("issuedtime", $("#inspectime").text());
+                     param.append("inspecname", this.txtinspecname);
+                     param.append("inspectorcode",this.inspectorcode);
+                     //发送axja
+                     axios.post("/XiTong/InspeTaskm/AddTaskinfo",param).then(function (response) {
+                         if (response.data == true) {
+                             window.location = "/XiTong/InspeTaskm/Index";
+                         }
+                     })
+                 },
+                 changeline: function (val) {                    
+                     for (var i = 0; i < this.linelist.length; i++) {
+                         if (this.linelist[i].lineCode == val) {
+                             this.txtlineid = this.linelist[i].id;
+                             this.txtstartpolecode = this.linelist[i].startPoleCode;
+                             this.txtendpolecode = this.linelist[i].endPoleCode;
+                             this.txtlinename = this.linelist[i].lineName;
+                             this.txtlinecode = this.linelist[i].lineCode;
+                             this.txtstartpole = this.linelist[i].startPole;
+                             this.txtendpole = this.linelist[i].endPole;
+                         }
+                     }
+                 },
+                 selectinspector: function () {                  
+                     //先清空inspectors2中的值
+                     this.inspectors2.splice(0, this.inspectors2.length);
+                     this.templist.splice(0, this.templist.length);
+                     //再给该集合赋予新的值 
+                     if (this.templist3.length > 0) {
+                         for (var i = 0; i < this.templist3.length; i++) {
+                             this.templist.push({ id: this.templist3[i].id, userCode: this.templist3[i].userCode, userName: this.templist3[i].userName });
+                         }
+                     }
+
+                     if (this.templist.length > 0) {
+                         var list = this.templist;
+                         for (var i = 0; i < list.length; i++) {
+                             this.inspectors2.push({ id: list[i].id, userCode: list[i].userCode, userName: list[i].userName });
+                         }
+                     }
+                      
+                     $(".ckitem").each(function (index,ele) {
+                         $(ele).removeClass("ss");
+                     })
+                     var list=this.inspectors2;
+                     for (var i = 0; i < list.length; i++) {
+                         $(".ckitem").each(function (index,ele) {
+                             if (list[i].id == $(ele).attr("id")) {
+                                 $(ele).addClass("ss");
+                             }
+                         })
+                     }
+
+                     $("#txtinspctors").removeClass("sss");
+                     $(".overlay").removeClass("sss");
+                 },
+                 isselected: function (event, item) {
+                     var ele = event.currentTarget;
+                     var list = this.templist;
+                     var list2 = this.inspectors2;
+                     if ($(ele).hasClass("ss")) {
+                         $(ele).removeClass("ss");                        
+                         for (var i = 0; i < list.length; i++) {
+                             if (item.id == list[i].id) {
+                                 this.templist.splice(i, 1);
+                                 for (var i = 0; i < list2.length; i++) {
+                                     if (item.id == list2[i].id) {
+                                         this.inspectors2.splice(i, 1);
+                                     }
+                                 }
+                             }
+                         }
+                     } else {
+                         $(ele).addClass("ss");                                          
+                         this.templist.push({ id: item.id, userCode: item.userCode, userName: item.userName });
+                         this.inspectors2.push({ id: item.id, userCode: item.userCode, userName: item.userName });
+                           
+                     }
+                   
+                 },
+                 comsave: function () {
+                     //隐藏div
+                     $("#txtinspctors").addClass("sss");
+                     $(".overlay").addClass("sss");
+
+                     this.inspectors2.length = 0;
+                     this.templist2.length = 0;
+                     this.templist3.length = 0;
+                     for (var v in this.templist) {
+                         vue.inspectors2.push(this.templist[v]);
+                         vue.templist2.push(this.templist[v]);
+                         vue.templist3.push(this.templist[v]);
+                     }
+                     
+                     var strs = "";
+                     var strs2 = "";
+                     for (var v in this.inspectors2) {
+                         strs += this.inspectors2[v].userName + ",";
+                         strs2 += this.inspectors2[v].userCode + ",";
+                     }
+                     var index = strs.lastIndexOf(',');
+                     var index2 = strs2.lastIndexOf(',');
+                     strs = strs.substr(0, index);
+                     strs2 = strs2.substr(0, index2);
+                     this.txtinspecname = strs;
+                     this.inspectorcode=strs2;
+                 },
+                 selectall:function(){
+                     this.templist.length = 0;
+                     this.inspectors2.length = 0;
+                     var list = this.inspectors;
+                     for (var i = 0; i < list.length; i++) {
+                         this.templist.push({ id: list[i].id, userCode: list[i].userCode, userName: list[i].userName });
+                         this.inspectors2.push({ id: list[i].id, userCode: list[i].userCode, userName: list[i].userName });
+                     }
+
+                     //添加选中样式 
+                     $(".ckitem").each(function (index, ele) {
+                         if (!$(ele).hasClass("ss")) {
+                             $(ele).addClass("ss");
+                         }
+                     })
+
+                 },
+                 noselectall: function () {
+                     this.templist.length = 0;
+                     this.inspectors2.splice(0, this.inspectors2.length);
+
+
+                     //取消选中样式 
+                     $(".ckitem").each(function (index, ele) {
+                         $(ele).removeClass("ss");
+                     })
+
+                 },
+                 transformpage: function () {
+                     window.location = "/XiTong/InspeTaskm/Index";
+
+                 }
+                
+             },
+             created: function () {
+                 this.$options.methods.myload();
+             }
+         })
+    </script>
+}
+
+
+
+

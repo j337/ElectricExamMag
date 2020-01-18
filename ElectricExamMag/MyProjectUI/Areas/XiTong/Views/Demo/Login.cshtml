@@ -1,0 +1,119 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+   
+    <link href="~/Areas/XiTong/Content/axure_rp_page.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/jquery-ui-themes.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/dlstyles.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script>
+        jQuery(function () {
+            $("#u8_img").click(function () {
+                //获得登录账号
+                var userid = $("#u2_input").val();
+                var userpwd = $("#u3_input").val();
+                if (userid == "" || userpwd == "") {
+                    $('#exampleModal').modal({
+                        keyboard: true,  //设置是否支持esc键关闭模态框
+                        backdrop: 'static'   //设置是否支持点击空白区域关闭模态框
+                    });
+                    $("#msg").text("用户名或密码不能为空!");
+                } else {
+                    //发送ajax请求 
+                    $.post("/XiTong/Demo/CheckLogin", "userid=" + userid + "&userpwd=" + userpwd, function (data) {
+                        if (data == true) {
+                            window.location = "/FlawManages/Flaw/Index2";
+                        } else {
+                            $('#exampleModal').modal({
+                                keyboard: true,  //设置是否支持esc键关闭模态框
+                                backdrop: 'static'   //设置是否支持点击空白区域关闭模态框
+                            });
+                            $("#msg").text("用户名或密码错误!");
+                        }
+                    },"json")
+                }
+
+            })
+
+            //注册重置的点击事件 
+            $("#u9_img").click(function () {
+                $("#u2_input").val("");
+                $("#u3_input").val("");
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- Unnamed (图片) -->
+    <div id="u0" class="ax_图片">
+        <img id="u0_img" class="img " src="~/Areas/XiTong/imgs/u0.jpg" />
+        <!-- Unnamed () -->
+        <div id="u1" class="text"></div>
+    </div>
+
+    <!-- textfield (文本框(单行)) -->
+    <div id="u2" class="ax_文本框_单行_">
+        <input id="u2_input" type="text"   data-label="textfield" />
+    </div>
+
+    <!-- textfield (文本框(单行)) -->
+    <div id="u3" class="ax_文本框_单行_">
+        <input id="u3_input" type="password"   data-label="textfield" />
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u4" class="ax_文本">
+        <img id="u4_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u5" class="text"></div>
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u6" class="ax_h2">
+        <img id="u6_img" class="img" src="~/Areas/XiTong/imgs/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u7" class="text">
+            <p><span>电 力 巡 检 系 统</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u8" class="ax_文本">
+        <img style="width:60px;margin-left:20px;" id="u8_img"  class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+        <img id="u9_img" style="width:60px;height:26px;margin-left:100px;" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u9" class="text"></div>
+    </div>
+
+    <div  class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div style="width:36%;" class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">信息提示</h4>
+                </div>
+                <div class="modal-body">
+                    <label id="msg" for="recipient-name" class="control-label"></label>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

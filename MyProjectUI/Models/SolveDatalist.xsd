@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SolveDatalist" targetNamespace="http://tempuri.org/SolveDatalist.xsd" xmlns:mstns="http://tempuri.org/SolveDatalist.xsd" xmlns="http://tempuri.org/SolveDatalist.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SolveDatalist" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SolveDatalist" msprop:Generator_UserDSName="SolveDatalist">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="solveTaskCode" msprop:Generator_ColumnVarNameInTable="columnsolveTaskCode" msprop:Generator_ColumnPropNameInRow="solveTaskCode" msprop:Generator_ColumnPropNameInTable="solveTaskCodeColumn" msprop:Generator_UserColumnName="solveTaskCode" type="xs:string" minOccurs="0" />
+              <xs:element name="solveTaskName" msprop:Generator_ColumnVarNameInTable="columnsolveTaskName" msprop:Generator_ColumnPropNameInRow="solveTaskName" msprop:Generator_ColumnPropNameInTable="solveTaskNameColumn" msprop:Generator_UserColumnName="solveTaskName" type="xs:string" minOccurs="0" />
+              <xs:element name="lineCode" msprop:Generator_ColumnVarNameInTable="columnlineCode" msprop:Generator_ColumnPropNameInRow="lineCode" msprop:Generator_ColumnPropNameInTable="lineCodeColumn" msprop:Generator_UserColumnName="lineCode" type="xs:string" minOccurs="0" />
+              <xs:element name="startPoleCode" msprop:Generator_ColumnVarNameInTable="columnstartPoleCode" msprop:Generator_ColumnPropNameInRow="startPoleCode" msprop:Generator_ColumnPropNameInTable="startPoleCodeColumn" msprop:Generator_UserColumnName="startPoleCode" type="xs:string" minOccurs="0" />
+              <xs:element name="endPoleCode" msprop:Generator_ColumnVarNameInTable="columnendPoleCode" msprop:Generator_ColumnPropNameInRow="endPoleCode" msprop:Generator_ColumnPropNameInTable="endPoleCodeColumn" msprop:Generator_UserColumnName="endPoleCode" type="xs:string" minOccurs="0" />
+              <xs:element name="poleCode" msprop:Generator_ColumnVarNameInTable="columnpoleCode" msprop:Generator_ColumnPropNameInRow="poleCode" msprop:Generator_ColumnPropNameInTable="poleCodeColumn" msprop:Generator_UserColumnName="poleCode" type="xs:string" minOccurs="0" />
+              <xs:element name="isBug" msprop:Generator_ColumnVarNameInTable="columnisBug" msprop:Generator_ColumnPropNameInRow="isBug" msprop:Generator_ColumnPropNameInTable="isBugColumn" msprop:Generator_UserColumnName="isBug" type="xs:string" minOccurs="0" />
+              <xs:element name="bugLevelName" msprop:Generator_ColumnVarNameInTable="columnbugLevelName" msprop:Generator_ColumnPropNameInRow="bugLevelName" msprop:Generator_ColumnPropNameInTable="bugLevelNameColumn" msprop:Generator_UserColumnName="bugLevelName" type="xs:string" minOccurs="0" />
+              <xs:element name="bugTypeName" msprop:Generator_ColumnVarNameInTable="columnbugTypeName" msprop:Generator_ColumnPropNameInRow="bugTypeName" msprop:Generator_ColumnPropNameInTable="bugTypeNameColumn" msprop:Generator_UserColumnName="bugTypeName" type="xs:string" minOccurs="0" />
+              <xs:element name="finishTime2" msprop:Generator_ColumnVarNameInTable="columnfinishTime2" msprop:Generator_ColumnPropNameInRow="finishTime2" msprop:Generator_ColumnPropNameInTable="finishTime2Column" msprop:Generator_UserColumnName="finishTime2" type="xs:string" minOccurs="0" />
+              <xs:element name="discoverTime2" msprop:Generator_ColumnVarNameInTable="columndiscoverTime2" msprop:Generator_ColumnPropNameInRow="discoverTime2" msprop:Generator_ColumnPropNameInTable="discoverTime2Column" msprop:Generator_UserColumnName="discoverTime2" type="xs:string" minOccurs="0" />
+              <xs:element name="bugDesc" msprop:Generator_ColumnVarNameInTable="columnbugDesc" msprop:Generator_ColumnPropNameInRow="bugDesc" msprop:Generator_ColumnPropNameInTable="bugDescColumn" msprop:Generator_UserColumnName="bugDesc" type="xs:string" minOccurs="0" />
+              <xs:element name="BugName" msprop:Generator_ColumnVarNameInTable="columnBugName" msprop:Generator_ColumnPropNameInRow="BugName" msprop:Generator_ColumnPropNameInTable="BugNameColumn" msprop:Generator_UserColumnName="BugName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

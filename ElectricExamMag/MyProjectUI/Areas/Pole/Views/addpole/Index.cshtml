@@ -1,0 +1,193 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+@using MyProjectUI.Models;
+@section mycss{
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/Pole/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/Pole/Content/axure_rp_page.css" rel="stylesheet" />
+    <script src="~/Areas/Pole/Content/files/data.js"></script>
+    <link href="~/Areas/Pole/Content/files/styles.css" rel="stylesheet" />
+    <script src="~/Areas/Pole/Cont/vue.js"></script>
+    <link href="~/Areas/Pole/Cont/index.css" rel="stylesheet" />
+    <script src="~/Areas/Pole/Cont/index.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.tmpl.min.js"></script>
+    <script src="~/Areas/Pole/Cont/axios.min.js"></script>
+}
+<style>
+    table th {
+        text-align: center;
+        border: 1px solid #DDDDDD;
+        background-color: #eeebeb;
+    }
+
+    table tr {
+        border: 1px solid #DDDDDD;
+    }
+
+    table td {
+        border: 1px solid #DDDDDD;
+    }
+</style>
+@section rightdiv{
+    <div id="u0" class="ax_形状" style="margin-left:200px;">
+        <img id="u0_img" class="img " src="~/Areas/Pole/images/u0.png" />
+        <!-- Unnamed () -->
+        <div id="u1" class="text"></div>
+    </div>
+    <!-- Unnamed (形状) -->
+    <div id="u2" class="ax_形状" style="margin-left:200px;">
+        <img id="u2_img" class="img " src="~/Areas/Pole/images/u2.png" />
+        <!-- Unnamed () -->
+        <div id="u3" class="text"></div>
+    </div>
+    <!-- Unnamed (形状) -->
+    <div id="u4" class="ax_形状" style="margin-left:200px;">
+        <img id="u4_img" class="img " src="~/Areas/Pole/images/u4.png" />
+        <!-- Unnamed () -->
+        <div id="u5" class="text"></div>
+    </div>
+    <!-- Unnamed (形状) -->
+    <div id="u16" class="ax_形状" style="margin-left:200px;">
+        <img id="u16_img" class="img " src="~/Areas/Pole/images/u16.png" />
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+
+
+    <div id="u6" class="ax_文本" style="margin-left:200px;">
+        <img id="u6_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u7" class="text">
+            <p><span>电力巡检</span><span>系统</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u8" class="ax_文本" style="margin-left:200px;">
+        <img id="u8_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u9" class="text">
+            <p><span>【</span><span><a href="/Pole/Tower/PoleLogin" style="color:black;text-decoration:none">退出</a></span><span>】</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u10" class="ax_文本" style="margin-left:200px;">
+        <img id="u10_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u11" class="text">
+            <p><span>2013年11月21日 周四 上午10：44</span></p>
+        </div>
+    </div>
+
+
+    <div id="u12" class="ax_文本" style="margin-left:200px;">
+        <img id="u12_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u13" class="text">
+            <p style="font-size:13px;"><span style="font-family:'Arial Negreta', 'Arial';font-weight:700;font-size:13px;color:#1E1E1E;">欢迎</span><span style="font-family:'Arial Normal', 'Arial';font-weight:400;font-size:12px;color:#333333;">admin</span><span style="font-family:'Arial Normal', 'Arial';font-weight:400;font-size:12px;color:#333333;">&nbsp; </span><span style="font-family:'Arial Negreta', 'Arial';font-weight:700;font-size:13px;color:#1E1E1E;">&nbsp;</span><span style="font-family:'Arial Negreta', 'Arial';font-weight:700;font-size:13px;color:#1E1E1E;">角色</span><span style="font-family:'Arial Negreta', 'Arial';font-weight:700;font-size:13px;color:#1E1E1E;">：</span><span style="font-family:'Arial Negreta', 'Arial';font-weight:700;font-size:13px;color:#1E1E1E;">&nbsp;</span><span style="font-family:'Arial Negreta', 'Arial';font-weight:700;font-size:13px;color:#1E1E1E;">系统</span><span style="font-family:'Arial Negreta', 'Arial';font-weight:700;font-size:13px;color:#1E1E1E;">管理员</span></p>
+        </div>
+    </div>
+
+    <div id="u14" class="ax_文本" style="margin-left:200px;">
+        <img id="u14_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u15" class="text">
+            <p><span>【</span><span><a href="#" style="color:black;text-decoration:none;">修改密码</a></span><span>】</span></p>
+        </div>
+    </div>
+
+    <div id="u18" class="ax_动态面板" data-label="导航" style="margin-left:200px;">
+        <div id="u18_state0" class="panel_state" data-label="系统管理">
+            <div id="u19" class="ax_形状">
+                <img id="u19_img" class="img " src="~/Areas/Pole/images/u62.png" />
+                <!-- Unnamed () -->
+                <div id="u20" class="text"></div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u21" class="ax_文本">
+                <img id="u21_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u22" class="text">
+                    <p><span style="cursor: pointer;">杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u23" class="ax_文本">
+                <img id="u23_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u24" class="text">
+                    <p><span style="cursor: pointer;">线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u25" class="ax_文本">
+                <img id="u25_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u26" class="text">
+                    <p><span style="cursor: pointer;">缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u27" class="ax_文本">
+                <img id="u27_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u28" class="text">
+                    <p><span style="cursor: pointer;">巡检任务</span><span style="cursor: pointer;">管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u29" class="ax_文本">
+                <img id="u29_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u30" class="text">
+                    <p><span style="cursor: pointer;">消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u31" class="ax_文本">
+                <img id="u31_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u32" class="text">
+                    <p><span style="cursor: pointer;">系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u33" class="ax_文本">
+                <img id="u33_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u34" class="text">
+                    <p><span style="cursor: pointer;">信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u35" class="ax_文本">
+                <img id="u35_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u36" class="text">
+                    <p><span style="cursor: pointer;">我的工作平台</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="u37" class="ax_文本" style="margin-left:200px;">
+        <img id="u37_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u38" class="text">
+            <p><span style="cursor: pointer;">电力巡检系统</span><span>&gt;&gt;</span><span>&nbsp; </span><span style="cursor: pointer;">杆塔管理</span></p>
+        </div>
+    </div>
+

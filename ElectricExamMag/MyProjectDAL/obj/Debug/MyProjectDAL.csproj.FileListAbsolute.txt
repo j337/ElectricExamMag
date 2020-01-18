@@ -1,0 +1,9 @@
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectDAL\bin\Debug\MyProjectDAL.dll
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectDAL\bin\Debug\MyProjectDAL.pdb
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectDAL\obj\Debug\MyProjectDAL.dll
+E:\结业项目\第二天SVN和项目选择\ElectricExamMag\MyProjectDAL\obj\Debug\MyProjectDAL.pdb
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectDAL\bin\Debug\MyProjectDAL.dll
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectDAL\bin\Debug\MyProjectDAL.pdb
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectDAL\obj\Debug\MyProjectDAL.csprojResolveAssemblyReference.cache
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectDAL\obj\Debug\MyProjectDAL.dll
+C:\Users\pc\Desktop\ElectricExamMag\ElectricExamMag\MyProjectDAL\obj\Debug\MyProjectDAL.pdb

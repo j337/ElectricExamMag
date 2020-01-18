@@ -1,0 +1,425 @@
+﻿@{
+    ViewBag.Title = "信息统计";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+@using MyProjectUI.Models;
+@section mycss{
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/InformationManage/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/InformationManage/Content/axure_rp_page.css" rel="stylesheet" />
+    <link href="~/Areas/InformationManage/Content/消缺记录统计/styles.css" rel="stylesheet" />
+    <script src="~/Areas/InformationManage/Cont/vue.js"></script>
+    <link href="~/Areas/InformationManage/Cont/index.css" rel="stylesheet" />
+    <script src="~/Areas/InformationManage/Cont/index.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.tmpl.min.js"></script>
+    <script src="~/Areas/InformationManage/Cont/axios.min.js"></script>
+}
+<style>
+    table th {
+        text-align: center;
+        border: 1px solid #DDDDDD;
+        background-color: #eeebeb;
+    }
+
+    table tr {
+        border: 1px solid #DDDDDD;
+        text-align: center;
+    }
+
+    table td {
+        border: 1px solid #DDDDDD;
+    }
+      #myexcel{
+        text-decoration:none;
+       color:white;
+        font-weight:700;
+    }
+    #myexcel:hover{
+        text-decoration:none;
+        color:white;
+        font-weight:700;
+    }
+    #myexcel:after{
+         text-decoration:none;
+        color:white;
+        font-weight:700;
+    }
+</style>
+@section rightdiv{
+    <div id="u16" class="ax_形状">
+        <img id="u16_img" class="img " src="~/Areas/InformationManage/images/u16.png" />
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+
+    <div id="u18" class="ax_动态面板" data-label="导航" style="margin-left:180px;">
+        <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+            <!-- Unnamed (形状) -->
+            <div id="u19" class="ax_形状">
+                <img id="u19_img" class="img " src="~/Areas/InformationManage/Content/巡检记录统计/u19.png" />
+                <!-- Unnamed () -->
+                <div id="u20" class="text"></div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u21" class="ax_文本" data-label="1">
+                <img id="u21_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u22" class="text">
+                    <p><a style="cursor: pointer;color:black;text-decoration:none;" href="/InformationManage/Information/Index">巡检记录统计</a></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u23" class="ax_文本">
+                <img id="u23_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u24" class="text">
+                    <p><span style="cursor: pointer;">杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u25" class="ax_文本">
+                <img id="u25_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u26" class="text">
+                    <p><span style="cursor: pointer;">线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u27" class="ax_文本">
+                <img id="u27_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u28" class="text">
+                    <p><span style="cursor: pointer;">缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u29" class="ax_文本">
+                <img id="u29_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u30" class="text">
+                    <p><span style="cursor: pointer;">巡检任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u31" class="ax_文本">
+                <img id="u31_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u32" class="text">
+                    <p><span style="cursor: pointer;">消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u33" class="ax_文本">
+                <img id="u33_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u34" class="text">
+                    <p><span style="cursor: pointer;">系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u35" class="ax_文本">
+                <img id="u35_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u36" class="text">
+                    <p><span style="cursor: pointer;">信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u37" class="ax_文本" data-label="1">
+                <img id="u37_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u38" class="text">
+                    <p><a style="cursor: pointer;color:black;text-decoration:none;" href="/InformationManage/Information/EliminateCount">消缺记录统计</a></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u39" class="ax_文本">
+                <img id="u39_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u40" class="text">
+                    <p><span style="cursor: pointer;">我的工作平台</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Unnamed (形状) -->
+    <div style="background-color:#f4f4f4;width:100%;height:560px;margin-top:50px;">
+        <div id="u41" class="ax_文本" style="margin-left:180px;">
+            <img id="u41_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u42" class="text">
+                <p><span style="cursor: pointer;">信息统计</span><span>&gt;&gt;</span><span>&nbsp;</span><span style="cursor: pointer;">消缺记录统计</span></p>
+            </div>
+        </div>
+        <!-- Unnamed (形状) -->
+        <!-- Unnamed (形状) -->
+        <div id="u204" class="ax_文本" style="margin-left:140px;">
+            <img id="u204_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u205" class="text" style="margin-top:5px;">
+                <p><span>任务编号：</span></p>
+            </div>
+        </div>
+        <!-- Unnamed (文本框(单行)) -->
+        <div id="u206" class="ax_文本框_单行_" style="margin-left:140px;margin-top:5px;">
+            <el-input v-model="sovercode"></el-input>
+        </div>
+        <div id="u207" class="ax_文本" style="margin-left:140px;">
+            <img id="u207_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u208" class="text">
+                <p><span>线路编号：</span></p>
+            </div>
+        </div>
+        <!-- Unnamed (文本框(单行)) -->
+        <div id="u209" class="ax_文本框_单行_" style="margin-left:140px;">
+            <el-input v-model="sovername"></el-input>
+        </div>
+        <!-- Unnamed (形状) -->
+        <div id="u228" class="ax_文本" style="margin-left:140px;">
+            <img id="u228_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u229" class="text">
+                <p style="padding-top:5px;"><span>有无故障：</span></p>
+            </div>
+        </div>
+        <div id="u254" class="ax_下拉列表框" style="margin-left:140px;">
+            <template>
+                <el-select clearable v-model="isbug" placeholder="请选择">
+                    <el-option v-for="itemed in optioneds"
+                               :key="itemed.value"
+                               :label="itemed.label"
+                               :value="itemed.value">
+                    </el-option>
+                </el-select>
+            </template>
+        </div>
+        <!-- Unnamed (形状) -->
+        <div id="u210" class="ax_文本" style="margin-left:140px;">
+            <img id="u210_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u211" class="text">
+                <p style="padding-top:7px;"><span>消缺时间：</span></p>
+            </div>
+        </div>
+        <!-- Date Field From (文本框(单行)) -->
+        <div id="u216" class="ax_文本框_单行_" style="margin-left:150px;">
+            <template>
+                <el-date-picker v-model="valuedata" style="width:135px;"
+                                type="date"
+                                placeholder="选择日期">
+                </el-date-picker>
+            </template>
+        </div>
+        <!-- Unnamed (形状) -->
+        <div id="u212" class="ax_文本" style="margin-left:200px;">
+            <img id="u212_img" class="img " src="~/Areas/InformationManage/images/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u213" class="text">
+                <p style="padding-top:4px;"><span>-</span></p>
+            </div>
+        </div>
+        <!-- Date Field To (文本框(单行)) -->
+        <div id="u219" class="ax_文本框_单行_" style="margin-left:200px;">
+            <template>
+                <el-date-picker v-model="valuedata1" style="width:135px;"
+                                type="date"
+                                placeholder="选择日期">
+                </el-date-picker>
+            </template>
+        </div>
+        <!-- Styled Button (形状) -->
+        <div @@click="selectbtn" id="u214" class="ax_形状" data-label="Styled Button" style="margin-left:190px;margin-top:10px;">
+            <img id="u214_img" class="img " src="~/Areas/InformationManage/Content/巡检记录统计/styled_button_u117.png" />
+            <!-- Unnamed () -->
+            <div id="u215" class="text">
+                <p style="cursor: pointer;"><span>查询</span></p>
+            </div>
+        </div>
+        <!-- Styled Button (形状) -->
+        <div id="u220" class="ax_形状" data-label="Styled Button" style="margin-left:180px;">
+            <img id="u220_img" class="img " src="~/Areas/InformationManage/Content/巡检记录统计/styled_button_u321.png" />
+            <!-- Unnamed () -->
+            <div id="u221" class="text">
+                <p><span>&nbsp; &nbsp; </span><span>打印</span></p>
+            </div>
+        </div>
+
+        <!-- Styled Button (形状) -->
+        <div id="u222" class="ax_形状" data-label="Styled Button" style="margin-left:180px;">
+            <img id="u222_img" class="img " src="~/Areas/InformationManage/Content/巡检记录统计/styled_button_u323.png" />
+            <!-- Unnamed () -->
+            <div id="u223" class="text">
+                <p><span>&nbsp; &nbsp; </span><span>@Html.ActionLink("导出Excel", "Excel2", "", new { id = "myexcel" })</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u224" class="ax_图片" style="margin-left:260px;">
+            <img id="u224_img" class="img " src="~/Areas/InformationManage/Content/巡检记录统计/u325.png" />
+            <!-- Unnamed () -->
+            <div id="u225" class="text"></div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u226" class="ax_图片" style="margin-left:340px;">
+            <img id="u226_img" class="img " src="~/Areas/InformationManage/Content/巡检记录统计/u327.png" />
+            <!-- Unnamed () -->
+            <div id="u227" class="text"></div>
+        </div>
+    </div>
+    <table class="table table-bordered" style="margin-top:-420px;">
+        <thead>
+            <tr>
+                <th>任务编号</th>
+                <th>任务名称</th>
+                <th>线路编号(起始杆号-终止杆号)</th>
+                <th>杆塔编号</th>
+                <th>有无故障</th>
+                <th>缺陷级别</th>
+                <th>缺陷类型</th>
+                <th>消缺时间</th>
+                <th>发现时间</th>
+                <th>缺陷描述</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="v in tolist">
+                <td class="hidden">{{v.id}}</td>
+                <td>{{v.solveTaskCode}}</td>
+                <td>{{v.solveTaskName}}</td>
+                <td>{{v.lineCode}}<span>({{v.startPoleCode}}-{{v.endPoleCode}})</span></td>
+                <td>{{v.poleCode}}</td>
+                <td>
+                    <span v-if="v.isBug==1">
+                        有
+                    </span>
+                    <span v-if="v.isBug==0">
+                        无
+                    </span>
+                </td>
+                <td>
+                   {{v.bugLevel}}
+                </td>
+                <td>
+               {{v.bugType}}
+                </td>
+                <td>{{v.issuedTime|issuedTime}}</td>
+                <td>{{v.discoverTime|discoverTime}}</td>
+                <td>{{v.bugDesc}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="TableDiv" style="text-align:center;">
+        <el-pagination @@size-change="handleSizeChange"
+                       @@current-change="handleCurrentChange"
+                       :current-page="currentPage"
+                       :page-sizes="[5, 10, 20, 40]"
+                       :page-size="6"
+                       layout="total, prev, pager, next"
+                       :total="count">
+        </el-pagination>
+    </div>
+}
+@section vuescript{
+    <script>
+        var myvues=new Vue({
+            el: "#app",
+            data: {
+                input1: '',
+                input2: '',
+                optioneds: [{
+                    value: '1',
+                    label: '有'
+                }, {
+                    value: '0',
+                    label: '无'
+                }],
+                value: '',
+                value1: '',
+                value2: '',
+                tolist: [],
+                count: 0,
+                currentPage: 1,
+                sovercode: "",
+                sovername: "",
+                isbug: "",
+                valuedata: "",
+                valuedata1: "",
+                sovercode1: "",
+                sovername1: "",
+                isbug1: "",
+                time1: "",
+                time2:""
+            },
+            methods: {
+                myload: function () {
+                    var param = new URLSearchParams();
+                    param.append("pageindex", 1);
+                    axios.post("/InformationManage/Information/EliminateCountData", param).then(function (respone) {
+                        myvues.tolist = respone.data.plist;
+                        myvues.count = respone.data.PageCount;
+                        console.log(myvues.tolist);
+                    });
+                },
+                selectbtn:function(){
+                    this.sovercode1 = this.sovercode;
+                    this.sovername1 = this.sovername;
+                    this.isbug1 = this.isbug;
+                    this.time1 = this.valuedata;
+                    this.time2 = this.valuedata1;
+
+                    var param = new URLSearchParams();
+                    param.append("sovercode", this.sovercode1);
+                    param.append("sovername", this.sovername1);
+                    param.append("isbug", this.isbug1);
+                    param.append("time1", this.time1);
+                    param.append("time2", this.time2);
+                    param.append("pageindex", 1);
+
+                    axios.post("/InformationManage/Information/SelectBtn", param).then(function (respone) {
+                        myvues.tolist = respone.data.plist;
+                        myvues.count = respone.data.PageCount;
+                        console.log(myvues.tolist);
+                    });
+                },
+                handleCurrentChange: function (val) {
+                    var param = new URLSearchParams();
+                    param.append("pageindex", val);
+                    axios.post("/InformationManage/Information/EliminateCountData", param).then(function (respone) {
+                        myvues.tolist = respone.data.plist;
+                        myvues.count = respone.data.PageCount;
+                        console.log(myvues.tolist);
+                    });
+                }
+            },
+            created: function () {
+                this.$options.methods.myload();
+            },
+            filters: {
+                issuedTime: function (value) {
+                    var st = value.split('T');
+                    return st[0] + "  " + st[1];
+                },
+                discoverTime: function (value) {
+                    var slist = value.split('T');
+                    var index = slist[1].indexOf('.');
+                    return slist[0] + "  " + slist[1].substr(0, index);
+                }
+            }
+        });
+    </script>
+}

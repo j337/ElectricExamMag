@@ -1,0 +1,683 @@
+﻿
+@{
+    ViewBag.Title = "消缺任务制定与分配";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@*添加一个编写css的区域*@
+@section mycss{
+<link href="~/Areas/extinction/Content/xqstyles.css" rel="stylesheet" />
+<link href="~/Areas/XiTong/Content/axure_rp_page.css" rel="stylesheet" />
+<link href="~/Areas/XiTong/Content/data/styles.css" rel="stylesheet" />
+<link href="~/Areas/XiTong/Content/jquery-ui-themes.css" rel="stylesheet" />
+<link href="~/Areas/XiTong/Content/styles.css" rel="stylesheet" />
+
+    <style>
+          .db{
+          color:#CCCCCC;
+      }
+      .cc{
+         color:#428bca;
+      }
+              .ss{
+     padding:3px 10px;
+    background-color:#d7d7d7;
+    width:120px;
+    display:inline-block;
+    border-radius:4px;
+    }
+        .dialog-footer{
+    margin-top:-50px;
+    text-align:initial;
+    border:1px solid #dddddd;
+           
+        }
+        #noyetuseul li{
+            margin-bottom:6px;
+        }
+                            .solvescss{
+            position:absolute;
+            z-index:222;
+            width:610px;
+            border:1px solid #dddddd;
+            border-radius:10px;
+            background-color:white;
+            margin-left:50px;
+            margin-top:-500px;
+            height:470px;
+           
+           
+        }
+        .overlay{
+             position: fixed;
+                        top: 0%;
+                        left: 0%;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #000;
+                        z-index: 110;
+                        opacity: .60;
+                       
+        }
+        .sss{
+            display:none;
+        }
+    </style>
+    }
+
+<!--添加一个编写script的区域-->
+@section myscript{
+    }
+@*//身体*@
+
+@section rightdiv{
+ 
+     <div id="u16" class="ax_形状">
+    <img id="u16_img" class="img " src="~/Areas/extinction/imgs/u16.png" />
+    <!-- Unnamed () -->
+    <div id="u17" class="text"></div>
+</div>
+<!-- 导航 (动态面板) -->
+<div id="u168" class="ax_动态面板" data-label="导航">
+    <div id="u168_state0" class="panel_state" data-label="系统管理">
+
+        <!-- Unnamed (形状) -->
+        <div id="u169" class="ax_形状">
+            <img id="u169_img" class="img " src="~/images/u62.png" />
+            <!-- Unnamed () -->
+            <div id="u170" class="text"></div>
+        </div>
+
+        <!-- 1 (形状) -->
+        <div id="u171" class="ax_文本" data-label="1">
+            <img id="u171_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u172" class="text">
+                <p><span>消缺</span><span>任务制定与分配</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u173" class="ax_文本">
+            <img id="u173_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u174" class="text">
+                <p><span>杆塔管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u175" class="ax_文本">
+            <img id="u175_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u176" class="text">
+                <p><span>线路管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u177" class="ax_文本">
+            <img id="u177_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u178" class="text">
+                <p><span>缺陷管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u179" class="ax_文本">
+            <img id="u179_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u180" class="text">
+                <p><span>巡检任务</span><span>管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u181" class="ax_文本">
+            <img id="u181_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u182" class="text">
+                <p><span>消缺任务管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u183" class="ax_文本">
+            <img id="u183_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u184" class="text">
+                <p><span>系统管理</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u185" class="ax_文本">
+            <img id="u185_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u186" class="text">
+                <p><span>信息统计</span></p>
+            </div>
+        </div>
+
+        <!-- 1 (形状) -->
+        <div id="u187" class="ax_文本" data-label="1">
+            <img id="u187_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u188" class="text">
+                <p><span>消缺</span><span>任务</span><span>执行与回执</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (形状) -->
+        <div id="u189" class="ax_文本">
+            <img id="u189_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u190" class="text">
+                <p><span>我的工作平台</span></p>
+            </div>
+        </div>
+
+        <!-- 1 (形状) -->
+        <div id="u191" class="ax_文本" data-label="1">
+            <img id="u191_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+            <!-- Unnamed () -->
+            <div id="u192" class="text">
+                <p><span>消缺查询</span></p>
+            </div>
+        </div>
+      
+
+    </div>
+</div>
+     <div class="container" style="border:1px solid #dddddd;background-color:#f4f4f4;margin-top:60px;height:430px;overflow:scroll;">
+         <div class="row">
+             <div class="col-sm-12">
+                <p style="margin-top:10px;">
+                    消缺任务管理>>消缺任务制定与分配 
+                </p>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-sm-10 col-sm-offset-1">
+                 <p style="margin-left:-50px;margin-top:15px;">
+                     <span style="float:left;font-size:14px;margin-top:10px;">任务编号:&nbsp;</span><el-input style="line-height:30px;width:200px;float:left;height:30px;" v-model="taskcode" placeholder="请输入内容"></el-input>
+                     <span style="float:left;font-size:14px;margin-top:10px;margin-left:20px;">工作单据:&nbsp;</span><el-select style="width:180px;" clearable v-model="worktypename" placeholder="请选择">
+                                                            <el-option v-for="item in options"
+                                                                       :key="item.configValueId"
+                                                                       :label="item.configValueName"
+                                                                       :value="item.configValueName">
+                                                            </el-option>
+                                                             </el-select>
+                     <span style="margin-left:20px;">任务状态:&nbsp;</span><el-select style="width:150px;" clearable v-model="taskstatus" placeholder="请选择">
+                         <el-option v-for="item in syslist"
+                                    :key="item.configValueId"
+                                    :label="item.configValueName"
+                                    :value="item.configValueName">
+                         </el-option>
+                     </el-select>
+                 </p>
+                 <p style="margin-left:-50px;margin-top:15px;">
+                     <span style="float:left;font-size:14px;margin-top:10px;">下发人:&nbsp;</span><el-input style="line-height:30px;width:200px;float:left;height:30px;" v-model="createby" placeholder="请输入内容"></el-input>
+                     <span style="float:left;font-size:14px;margin-top:10px;margin-left:20px;">下发时间:&nbsp;</span><el-date-picker style="float:left;" v-model="taskcreatetime"
+                    type="datetimerange"
+                    :picker-options="pickerOptions2"
+                    range-separator="至"
+                    start-placeholder="开始日期"
+                    end-placeholder="结束日期"
+                    align="right" value-format="yyyy-MM-dd HH:mm:ss">
+</el-date-picker>
+
+                 </p>
+                 <!-- Styled Button (形状) -->
+               
+                 <div @@click="checkdata" id="u228" class="ax_形状" data-label="Styled Button">
+                     <img id="u228_img" class="img " src="~/Areas/XiTong/imgs/styled_button_u117.png" />
+                     <!-- Unnamed () -->
+                     <div id="u229" class="text">
+                         <p><span>查询</span></p>
+                     </div>
+                 </div>
+              
+                 <div  @@click="transformtoadd" id="u342" class="ax_形状" data-label="Styled Button">
+                     <img id="u342_img" class="img " src="~/Areas/XiTong/imgs/styled_button_u377.png" />
+                     <!-- Unnamed () -->
+                     <div id="u343" class="text">
+                         <p><span>&nbsp; &nbsp;&nbsp; </span><span>制定</span><span>消缺</span><span>任务</span></p>
+                     </div>
+                 </div>
+                 <div id="u344" class="ax_图片">
+                     <img style="width:16px;height:16px;" id="u344_img" class="img " src="~/Areas/XiTong/imgs/u242.png" />
+                     <!-- Unnamed () -->
+                     <div id="u345" class="text"></div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-sm-12">
+                 <table class="table table-bordered table-hover table-striped" style="margin-top:10px;">
+                     <tr>
+                         <th>
+                             任务编号
+                         </th>
+                         <th>
+                             任务名称
+                         </th>
+                         <th>
+                             工作单据
+                         </th>
+                         <th>
+                            下发人
+                         </th>
+                         <th>
+                            下发时间
+                         </th>
+                         <th>
+                            任务状态
+                         </th>
+                       
+                         <th>
+                             任务完成时间
+                         </th>
+                         <th>
+                             任务是否取消
+                         </th>
+                       <th>
+                           操作
+                       </th>
+                     </tr>
+                     <tbody>
+                        <tr v-for="item in datalist">
+                            <td>
+                                {{item.solveTaskCode}}
+                            </td>
+                            <td>
+                                {{item.solveTaskName}}
+                            </td>
+                            <td>
+                                {{item.workDocTypeName}}
+                            </td>
+                            <td>
+                                {{item.issuedByName}}
+                            </td>
+                            <td>
+                                {{item.issuedTime|timeFilter}}
+                            </td>
+                            <td>
+                               <span style="color:#007FFF;" v-if="item.taskStatus==1">
+                                   待分配
+                               </span>
+                                <span style="color:blue;" v-if="item.taskStatus==2">
+                                    已分配
+                                </span>
+                                <span style="color:#FF33CC;" v-if="item.taskStatus==3">
+                                   执行中
+                                </span>
+                                <span style="color:green;" v-if="item.taskStatus==4">
+                                   已完成
+                                </span>
+                                <span style="color:orange;" v-if="item.taskStatus==5">
+                                    审查通过
+                                </span>
+                                <span style="color:red;" v-if="item.taskStatus==6">
+                                   驳回
+                                </span>
+                            </td>
+                            <td>
+                                {{item.finishTime|timeFilter}}
+                            </td>
+                            <td>
+                                <span v-if="item.isCancel==1">是</span>
+                                <span v-if="item.isCancel==0">否</span>
+                            </td>
+                           <td>
+                             <span @@click="showsolvedetailinfo(item.id)" class="cc">查看</span>&nbsp;|&nbsp;
+                               <span @@click="allocattasks(item.id)" class="cc" v-if="item.taskStatus==1">分配任务</span><span v-if="item.taskStatus!=1" class="db">分配任务</span>&nbsp;|&nbsp;
+                               <span @@click="updsolvertask(item.id)"  v-if="item.taskStatus==1" class="cc">修改&nbsp;|&nbsp;</span><span  v-if="item.taskStatus!=1&&item.taskStatus!=4" class="db">修改&nbsp;|&nbsp;</span>
+                                <span @@click="transfromtoTaskExmaine(item.id)" class="cc" v-if="item.taskStatus==4">审查 &nbsp;|&nbsp;</span>
+                                <span @@click="cancletask(item,$event)" v-if="item.taskStatus==1&&item.isCancel==0" class="cc">取消</span><span v-if="item.taskStatus!=1" class="db">取消</span>
+                           </td>
+                        </tr>
+                     </tbody>
+                 </table>
+                 <el-pagination @@size-change="handleSizeChange"
+                                @@current-change="handleCurrentChange"
+                                :current-page="pageindex"
+                                :page-sizes="[100, 200, 300, 400]"
+                                :page-size="6"
+                                layout="total, prev, pager, next, jumper"
+                                :total="pagecount">
+                 </el-pagination>
+             </div>
+         </div>
+     </div>
+  <!--模态框-->
+<div id="txtsolvediv" class="solvescss sss">
+    <p style="font-size:20px;margin-top:10px;margin-left:10px;">分配消缺员</p>
+        <p style="font-size:14px;font-weight:400;position:relative;left:50px;top:20px;">待选消缺员</p><p style="font-size:14px;font-weight:400;width:100px;margin-left:330px;">已选消缺员</p>
+        <div style="width:100%;height:300px;margin-left:50px;">
+            <div style="width:200px;border:1px solid black;float:left;height:300px;">
+                <ul id="noyetuseul" class="selectinspcul" style="font-size:13px;font-weight:400;">
+                    <li class="liitem" :id="item.id" @@click="isselected($event,item)" v-for="item in noselectsolver">
+                        {{item.userName}}
+                    </li>
+                </ul>
+            </div>
+            <div style="float:left;width:80px;padding-left:20px;margin-top:40px;">
+                <div @@click="selectall">
+                    <img src="~/Areas/XiTong/imgs/u448.png" />
+                </div>
+                <div @@click="noselectall">
+                    <img src="~/Areas/XiTong/imgs/u450.png" />
+                </div>
+            </div>
+            <div style="width:200px;border:1px solid black;float:left;height:300px;">
+                <ul id="yetusedul" class="selectinspcul" style="font-size:13px;font-weight:400;">
+                    <li v-for="item in solvetorlist2">
+                        <span>{{item.userName}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-top:30px;text-align:right;margin-right:20px;">
+            <el-button @@click="hidinspectdiv">取 消</el-button>
+            <el-button type="primary" @@click="comsave">保存</el-button>
+        </div>
+   
+</div>
+      <div class="overlay sss"></div>
+}
+@section vuescript{
+      <script>
+        var _this = this;
+        var vue=new Vue({
+            el:"#app",
+            data: {
+                dialogFormVisible:false,
+                taskcode: "",
+                linecode: "",
+                worktypename: "",
+                selectsolver: [],
+                noselectsolver: [],
+                solvetorlist2:[],
+                options: [],
+                datalist:[],
+                pagecount: 0,
+                createby: "",
+                taskcreatetime: "",
+                pickerOptions2: {
+                    shortcuts: [{
+                        text: '最近一周',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }, {
+                        text: '最近一个月',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }, {
+                        text: '最近三个月',
+                        onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                            picker.$emit('pick', [start, end]);
+                        }
+                    }]
+                },
+                taskcode2: "",
+                linecode2: "",
+                worktypename2: "",
+                createby2: "",
+                ptime1: "",
+                ptime2: "",
+                templist2: [],
+                taskid: "",
+                syslist: [],
+                taskstatus: "",
+                taskstatus2: "",
+                pageindex: "1"
+
+           },
+            methods: {
+                myload: function () {
+                    var param = new URLSearchParams();
+                    param.append("pageindex", 1);
+                    //发送ajax请求 
+                    axios.post("/extinction/Demo/GetSolvetData", param).then(function (response) {
+                        vue.datalist = response.data.taskmainlist;
+                        vue.options = response.data.worktypelist;
+                        vue.noselectsolver = response.data.userlist1;
+                        vue.syslist = response.data.syslist;
+                        vue.pagecount = response.data.datacount;
+                    })
+                },
+                checkdata:function(){
+                    this.taskcode2 = this.taskcode;
+                    this.createby2 = this.createby;
+                    this.worktypename2 = this.worktypename;
+                    this.taskstatus2 = this.taskstatus;
+                    //创建参数对象 
+                    var param = new URLSearchParams();
+                    //获得点击的之前的元素的ID值   即当前添加菜单节点的父节点
+                    param.append("pageindex", 1);
+                    param.append("taskcode", this.taskcode2);
+                    param.append("createby", this.createby2);
+                    param.append("worktypename", this.worktypename2);
+                    param.append("taskstatus", this.taskstatus2);
+                    if (this.taskcreatetime != null) {
+                        if (this.taskcreatetime.length > 0) {
+                            this.ptime1 = this.taskcreatetime[0];
+                            this.ptime2 = this.taskcreatetime[1];
+                            param.append("time1", this.ptime1);
+                            param.append("time2", this.ptime2);
+                        }
+                    }
+                    axios.post("/extinction/Demo/SelectData", param).then(function (response) {
+                        vue.datalist = response.data.taskmainlist;
+                        vue.pagecount = response.data.datacount;
+
+                    })
+                },
+                handleSizeChange(val) {
+                    console.log(`每页 ${val} 条`);
+                },
+                handleCurrentChange(val) {
+                    //创建参数对象 
+                    var param = new URLSearchParams();
+                    //获得点击的之前的元素的ID值   即当前添加菜单节点的父节点
+                    param.append("pageindex", val);
+                    param.append("taskcode", this.taskcode2);
+                    param.append("createby", this.createby2);
+                    param.append("worktypename", this.worktypename2);
+                    param.append("taskstatus", this.taskstatus2);
+                    if (this.taskcreatetime != null) {
+                        if (this.taskcreatetime.length > 0) {
+                            this.ptime1 = this.taskcreatetime[0];
+                            this.ptime2 = this.taskcreatetime[1];
+                            param.append("time1", this.ptime1);
+                            param.append("time2", this.ptime2);
+                        }
+                    }
+                    axios.post("/extinction/Demo/SelectData", param).then(function (response) {
+                        vue.datalist = response.data.taskmainlist;
+                        vue.pagecount = response.data.datacount;
+
+                    })
+                },
+                allocattasks: function (id) {
+                    this.taskid = id;
+                        $(".liitem").each(function (index, ele) {
+                            $(ele).removeClass("ss");
+                        })
+                        var list = this.solvetorlist2;
+                        for (var i = 0; i < list.length; i++) {
+                            $(".liitem").each(function (index, ele) {
+                                if (list[i].id == $(ele).attr("id")) {
+                                    $(ele).addClass("ss");
+                                }
+                            })
+                        }
+                        $("#txtsolvediv").removeClass("sss");
+                        $(".overlay").removeClass("sss");
+                },
+                hidinspectdiv: function () {
+                    this.templist2.length = 0;
+                    this.solvetorlist2.splice(0, this.solvetorlist2.length);
+                    //取消选中样式 
+                    $(".liitem").each(function (index, ele) {
+                        $(ele).removeClass("ss");
+                    })
+                    $("#txtsolvediv").addClass("sss");
+                    $(".overlay").addClass("sss");
+                },            
+        isselected: function (event, item) {
+            var ele = event.currentTarget;
+            var list = this.templist2;
+            var list2 = this.solvetorlist2;
+            if ($(ele).hasClass("ss")) {
+                $(ele).removeClass("ss");
+                for (var i = 0; i < list.length; i++) {
+                    if (item.id == list[i].id) {
+                        this.templist2.splice(i, 1);
+                        for (var i = 0; i < list2.length; i++) {
+                            if (item.id == list2[i].id) {
+                                this.solvetorlist2.splice(i, 1);
+                            }
+                        }
+                    }
+                }
+            } else {
+                $(ele).addClass("ss");
+                this.templist2.push({ id: item.id, userCode: item.userCode, userName: item.userName });
+                this.solvetorlist2.push({ id: item.id, userCode: item.userCode, userName: item.userName });
+
+
+            }
+
+
+        },
+        selectall: function () {
+            this.templist2.length = 0;
+            this.solvetorlist2.length = 0;
+            var list = this.noselectsolver;
+            for (var i = 0; i < list.length; i++) {
+                this.templist2.push({ id: list[i].id, userCode: list[i].userCode, userName: list[i].userName });
+                this.solvetorlist2.push({ id: list[i].id, userCode: list[i].userCode, userName: list[i].userName });
+            }
+
+            //添加选中样式 
+            $(".liitem").each(function (index, ele) {
+                if (!$(ele).hasClass("ss")) {
+                    $(ele).addClass("ss");
+                }
+            })
+
+        },
+        noselectall: function () {
+            this.templist2.length = 0;
+            this.solvetorlist2.splice(0, this.solvetorlist2.length);
+            //取消选中样式 
+            $(".liitem").each(function (index, ele) {
+                $(ele).removeClass("ss");
+            })
+
+        },
+        comsave: function () {
+            $("#txtsolvediv").addClass("sss");
+            $(".overlay").addClass("sss");
+
+            var strs = "";
+            for (var v in this.templist2) {
+                strs += this.templist2[v].id + ",";
+
+            }
+            var index = strs.lastIndexOf(',');
+            strs = strs.substr(0, index);
+            var param = new URLSearchParams();
+            param.append("taskid", this.taskid);
+            param.append("solvetors", strs);
+            axios.post("/extinction/SolveDetail/AddSolvetor", param).then(function (response) {
+                if (response.data == true) {
+                    vue.$message('任务分配成功!');
+                    vue.myload();
+
+                } else {
+                    vue.$message('任务分配失败!');
+                }
+                vue.dialogFormVisible = false;
+            })
+
+        },
+        cancletask: function (item, event) {
+            var ele = event.currentTarget;
+            var tr = $(ele).parent().parent();
+            var param = new URLSearchParams();
+            param.append("taskid", item.id);
+            param.append("iscancle", 1);
+            axios.post("/extinction/SolveDetail/CancleTask", param).then(function (response) {
+                if (response.data == true) {
+                    tr.remove();
+                    item.isCancle = 1;
+                    vue.$message("取消任务成功");
+                } else {
+                    vue.$message("取消任务失败,只能取消为分配的任务!");
+                }
+            })
+        },
+           transformtoadd:function(){
+                    window.location = "/extinction/Demo/AddSolveTask";
+                },
+                showsolvedetailinfo: function (id) {
+                    var param = new URLSearchParams();
+                    param.append("taskid", id);
+                    axios.post("/extinction/SolveDetail/SaveIdBySession", param).then(function (response) {
+                        window.location = "/extinction/SolveDetail/SolveDetailView";
+                    })
+                },
+                updsolvertask: function (id) {
+                    var param = new URLSearchParams();
+                    param.append("taskid", id);
+                    axios.post("/extinction/SolveDetail/SaveIdBySession", param).then(function (response) {
+                        window.location = "/extinction/SolveDetail/UpdSolveTaskView";
+                    })
+                },
+                transfromtoTaskExmaine: function (id) {
+                      var param = new URLSearchParams();
+                    param.append("taskid", id);
+                    axios.post("/extinction/SolveDetail/SaveIdBySession", param).then(function (response) {
+                        window.location = "/extinction/SolveDetail/TaskExmaine";
+                    })
+                }
+           }, created: function () {
+               this.$options.methods.myload();
+           },
+           filters: {
+               timeFilter: function (value) {
+                   //非空验证
+                   if (!value) {
+                       return '';
+                   } else {
+                       var strs = value.split('T');
+                       //获得最后一个点的索引
+                       var index = strs[1].indexOf('.');
+                       strs[1] = strs[1].substring(0, index);
+                       var str = "";
+
+                       return strs[0] + " " + strs[1];
+                   }
+               }
+           }
+        });
+</script>
+    }
+
+

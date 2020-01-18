@@ -1,0 +1,438 @@
+﻿
+@{
+    ViewBag.Title = "RejectUpdatePage";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+    <link href="~/Areas/extinction/Content/xqstyles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/axure_rp_page.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/jquery-ui-themes.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/styles.css" rel="stylesheet" />
+
+    <style>
+        .db {
+            color: #CCCCCC;
+        }
+
+        .cc {
+            color: #428bca;
+        }
+
+        .detailtab {
+            width: 100%;
+            border: 1px solid #dddddd;
+            border-collapse: collapse;
+            height: 280px;
+        }
+
+            .detailtab td {
+                border: 1px solid #dddddd;
+            }
+
+        .titletd {
+            width: 15%;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .contenttd {
+            width: 35%;
+            text-align: center;
+        }
+    </style>
+}
+
+<!--添加一个编写script的区域-->
+@section myscript{
+}
+
+@section rightdiv{
+
+    <div id="u16" class="ax_形状">
+        <img id="u16_img" class="img " src="~/Areas/extinction/imgs/u16.png" />
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+    <!-- 导航 (动态面板) -->
+    <div id="u168" class="ax_动态面板" data-label="导航">
+        <div id="u168_state0" class="panel_state" data-label="系统管理">
+
+            <!-- Unnamed (形状) -->
+            <div id="u169" class="ax_形状">
+                <img id="u169_img" class="img " src="~/images/u62.png" />
+                <!-- Unnamed () -->
+                <div id="u170" class="text"></div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u171" class="ax_文本" data-label="1">
+                <img id="u171_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u172" class="text">
+                    <p><span>消缺</span><span>任务制定与分配</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u173" class="ax_文本">
+                <img id="u173_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u174" class="text">
+                    <p><span>杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u175" class="ax_文本">
+                <img id="u175_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u176" class="text">
+                    <p><span>线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u177" class="ax_文本">
+                <img id="u177_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u178" class="text">
+                    <p><span>缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u179" class="ax_文本">
+                <img id="u179_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u180" class="text">
+                    <p><span>巡检任务</span><span>管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u181" class="ax_文本">
+                <img id="u181_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u182" class="text">
+                    <p><span>消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u183" class="ax_文本">
+                <img id="u183_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u184" class="text">
+                    <p><span>系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u185" class="ax_文本">
+                <img id="u185_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u186" class="text">
+                    <p><span>信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u187" class="ax_文本" data-label="1">
+                <img id="u187_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u188" class="text">
+                    <p><span>消缺</span><span>任务</span><span>执行与回执</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u189" class="ax_文本">
+                <img id="u189_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u190" class="text">
+                    <p><span>我的工作平台</span></p>
+                </div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u191" class="ax_文本" data-label="1">
+                <img id="u191_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u192" class="text">
+                    <p><span>消缺查询</span></p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="container" style="border:1px solid #dddddd;background-color:#f4f4f4;margin-top:60px;height:103%;overflow:scroll;">
+        <div class="row">
+            <div class="col-sm-12">
+                <p style="margin-top:15px;margin-left:10px;">
+                    消缺任务管理>>消缺任务执行与回执>>消缺任务回执录入修改
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1" style="border:1px solid gray;background-color:white;margin-top:10px;">
+                <div style="border:1px solid #dddddd;width:90%;margin-left:5%;margin-top:10px;">
+                    <table class="detailtab">
+                        <tr>
+                            <td class="titletd">
+                                任务编码
+                            </td>
+                            <td class="contenttd">
+                                {{taskmain.solveTaskCode}}
+                            </td>
+                            <td class="titletd">任务名称</td>
+                            <td class="contenttd">
+                                {{taskmain.solveTaskName}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="titletd">任务状态</td>
+                            <td class="contenttd">
+                                {{taskmain.taskStatusName}}
+                            </td>
+                            <td class="titletd">工作单据</td>
+                            <td class="contenttd">
+                                {{taskmain.workDocTypeName}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="titletd">任务下发人</td>
+                            <td class="contenttd">
+                                {{taskmain.issuedByName}}
+                            </td>
+                            <td class="titletd">任务下发时间</td>
+                            <td class="contenttd">
+                                {{taskmain.issuedTime}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="titletd">任务负责人</td>
+                            <td class="contenttd">
+                                {{taskmain.taskManagerName}}
+                            </td>
+                            <td class="titletd">任务描述</td>
+                            <td class="contenttd">
+                                {{taskmain.taskDesc}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="titletd">消缺员</td>
+                            <td class="contenttd">
+                                {{solvername}}
+                            </td>
+                            <td class="titletd">任务完成时间</td>
+                            <td class="contenttd">
+                                {{taskmain.finishTime|timeFilter}}
+                            </td>
+                        </tr>
+                        <tr style="height:60px;">
+                            <td class="titletd">负责人审查意见</td>
+                            <td style="width:200px;">
+                                <p style="width:220px;line-height:20px;float:left;height:60px;word-break:break-all;word-wrap:break-word;overflow:hidden;margin-left:10px;">
+                                    {{taskmain.managerSuggestion}}
+                                </p>
+
+                            </td>
+                            <td class="titletd">完成情况描述</td>
+                            <td class="contenttd">
+                                <textarea v-model="taskmain.taskFinishDesc" style="width:230px;height:50px;border:1px solid #dddddd;"></textarea>
+
+                            </td>
+                        </tr>
+                        <tr style="height:60px;">
+                            <td class="titletd">下发人审查意见</td>
+                            <td class="contenttd">
+                                <p style="width:220px;line-height:20px;float:left;height:60px;word-break:break-all;word-wrap:break-word;overflow:hidden;margin-left:10px;">
+                                    {{taskmain.issuedSuggestion}}
+                                </p>
+
+                            </td>
+                            <td class="titletd">审核是否通过</td>
+                            <td class="contenttd">
+                                <span v-if="taskmain.taskStatus==6">
+                                    不通过
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                    <p style="font-weight:bold;margin-top:15px;margin-left:15px;margin-bottom:15px;">缺陷信息列表</p>
+                    <table class="table table-bordered table-hover table-striped">
+                        <tr>
+
+                            <th>
+                                线路编号
+                            </th>
+                            <th>
+                                杆塔编号
+                            </th>
+                            <th>
+                                缺陷等级
+                            </th>
+                            <th>
+                                缺陷类型
+                            </th>
+                            <th>
+                                缺陷描述
+                            </th>
+                            <th>发现人</th>
+                            <th>
+                                发现时间
+                            </th>
+
+                        </tr>
+                        <tbody>
+                            <tr v-for="item in flawlist">
+
+                                <td>
+                                    {{item.lineCode}}
+                                </td>
+                                <td>
+                                    {{item.poleCode}}
+                                </td>
+                                <td>
+                                    {{item.bugLevelName}}
+                                </td>
+                                <td>
+                                    {{item.bugTypeName}}
+                                </td>
+                                <td>
+                                    {{item.bugDesc}}
+                                </td>
+                                <td>
+                                    {{item.discovererName}}
+                                </td>
+                                <td>
+                                    {{item.discoverTime|timeFilter}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="font-weight:bold;margin-top:15px;margin-left:15px;margin-bottom:15px;">工作间断延期记载</p>
+
+                    <p style="width:620px;line-height:20px;height:80px;word-break:break-all;word-wrap:break-word;overflow:hidden;margin-left:10px;">
+                        <el-input style="width:620px;height:80px;" type="textarea"
+                                  placeholder="请输入内容"
+                                  v-model="taskmain.taskNotes">
+                        </el-input>
+                    </p>
+                    <p style="font-weight:bold;margin-top:15px;margin-left:15px;margin-bottom:15px;">工作终结报告</p>
+                    <p style="width:620px;line-height:20px;height:80px;word-break:break-all;word-wrap:break-word;overflow:hidden;margin-left:10px;">
+                        <el-input style="width:620px;height:80px;" type="textarea"
+                                  placeholder="请输入内容"
+                                  v-model="taskmain.taskFinishReport">
+                        </el-input>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <el-button @@click="updsolverinfo" style="margin-top:15px;margin-left:50px;" type="primary" round>保存</el-button>
+        <el-button @@click="backtomainpage" style="margin-top:15px;margin-left:50px;" type="primary" round>返回</el-button>
+    </div>
+
+
+}
+@section vuescript{
+    <script>
+        var _this = this;
+        var vue=new Vue({
+            el:"#app",
+            data: {
+                flawlist: [],   //缺陷列表信息
+                taskmain: {},  //消缺主表信息
+                solverlist: [],
+                solvername: ""
+           },
+            methods: {
+                myload:function(){
+                    //发送ajax请求
+                    axios.post("/extinction/SolveDetail/GetTaskDetailinfo", null).then(function (response) {
+                        vue.flawlist = response.data.taskdetlist;
+                        vue.taskmain = response.data.taskmain;
+                        vue.solverlist = response.data.solverlist;
+
+                        var list = vue.solverlist;
+                        var str = "";
+                        for (var i = 0; i < list.length; i++) {
+                            str += list[i].solverName + ",";
+                        }
+                        var index = str.lastIndexOf(',');
+                        vue.solvername = str.substr(0, index);
+                    })
+
+                },
+                updsolverinfo: function () {
+                    var param = new URLSearchParams();
+
+                    param.append("taskid", this.taskmain.id);
+                    if (this.taskmain.taskFinishDesc != "") {
+                        param.append("taskfinishdesc", this.taskmain.taskFinishDesc);
+                    } else {
+                        param.append("taskfinishdesc", "无");
+                    }
+                    if (this.taskmain.taskNotes != "") {
+                        param.append("tasknotes", this.taskmain.taskNotes);
+                    } else {
+                        param.append("tasknotes", "无");
+                    }
+                    if (this.taskmain.taskFinishReport != "") {
+                        param.append("taskfinishreport", this.taskmain.taskFinishReport);
+                    } else {
+                        param.append("taskfinishreport", "无");
+                    }
+
+                    //发送ajax请求
+                    axios.post("/extinction/SolveTaskReceiptEnter/ReceiptEnterTask", param).then(function (response) {
+                        if (response.data == true) {
+                            vue.$message("修改回执录入信息成功!");
+                            window.location = "/extinction/SolveTaskReceiptEnter/Index";
+                        } else {
+                            vue.$message("修改回执录入信息失败!");
+
+                        }
+                    })
+                },
+                backtomainpage:function(){
+                    window.location = "/extinction/SolveTaskReceiptEnter/Index";
+                }
+
+           }, created: function () {
+               this.$options.methods.myload();
+           },
+           filters: {
+               timeFilter: function (value) {
+                   //非空验证
+                   if (!value) {
+                       return '';
+                   } else {
+                       var strs = value.split('T');
+                       //获得最后一个点的索引
+                       var index = strs[1].indexOf('.');
+                       strs[1] = strs[1].substring(0, index);
+                       var str = "";
+
+                       return strs[0] + " " + strs[1];
+                   }
+               }
+           }
+        });
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+

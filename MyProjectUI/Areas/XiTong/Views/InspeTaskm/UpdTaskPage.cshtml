@@ -1,0 +1,716 @@
+﻿
+@{
+    ViewBag.Title = "UpdTaskPage";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+
+@section mycss{
+    <link href="~/Areas/XiTong/Content/itstyles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/axure_rp_page.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/jquery-ui-themes.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/styles.css" rel="stylesheet" />
+    <style>
+        .form_tab {
+            width: 550px;
+          
+            height: 520px;
+        }
+
+        .el-input__inner {
+            width: 200px;
+        }
+
+        .el-textarea__inner {
+            width: 200px;
+        }
+
+        ul {
+            padding: 0px;
+            margin: 0px;
+        }
+
+            ul li {
+                list-style: none;
+               
+            }
+
+                ul li:hover {
+                    cursor: pointer;
+                }
+
+        .ss {
+            padding: 3px 10px;
+            background-color: #d7d7d7;
+            width: 120px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        .selectinspcul li {
+            line-height: 25px;
+            margin-bottom: 5px;
+            width: 120px;
+        }
+
+        .el-dialog__footer {
+            text-align: initial;
+        }
+             .itaskcss{
+            position:absolute;
+            z-index:222;
+            width:610px;
+            border:1px solid #dddddd;
+            border-radius:10px;
+            background-color:white;
+            margin-left:50px;
+            margin-top:-100px;
+            height:470px;
+           
+           
+        }
+        .overlay{
+             position: fixed;
+                        top: 0%;
+                        left: 0%;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #000;
+                        z-index: 110;
+                        opacity: .60;
+                       
+        }
+        .sss{
+            display:none;
+        }
+    </style>
+}
+
+@section myscript{
+
+}
+
+@section rightdiv{
+<div id="txtinspctors" class="itaskcss sss">
+    <div slot="footer" class="dialog-footer">
+        <p style="font-size:20px;margin-top:10px;margin-left:10px;">分配巡检员</p>
+        <p style="font-size:14px;font-weight:400;position:relative;left:50px;top:20px;">待选巡检员</p><p style="font-size:14px;font-weight:400;width:100px;margin-left:330px;">已选巡检员</p>
+        <div style="width:100%;height:300px;margin-left:50px;">
+            <div style="width:200px;border:1px solid black;float:left;height:300px;overflow:scroll;">
+                <ul id="noyetuseul" class="selectinspcul" style="font-size:13px;font-weight:400;">
+                    <li class="ckitem" :id="item.id" @@click="isselected($event,item)" v-for="item in userlist">
+                        {{item.userName}}
+                    </li>
+                </ul>
+            </div>
+            <div style="float:left;width:80px;padding-left:20px;margin-top:40px;">
+                <div @@click="selectall">
+                    <img src="~/Areas/XiTong/imgs/u448.png" />
+                </div>
+                <div @@click="noselectall">
+                    <img src="~/Areas/XiTong/imgs/u450.png" />
+                </div>
+            </div>
+            <div style="width:200px;border:1px solid black;float:left;height:300px;overflow:scroll;">
+                <ul id="yetusedul" class="selectinspcul" style="font-size:13px;font-weight:400;">
+                    <li v-for="item in inspectorlist2">
+                        <span>{{item.userName}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-top:30px;text-align:right;margin-right:20px;">
+            <el-button @@click="hidtaskdiv">取 消</el-button>
+            <el-button type="primary" @@click="comsave">保存</el-button>
+        </div>
+    </div>
+</div>
+<!--灰色透明的背景-->
+<div class="overlay sss"></div>
+    <!-- Unnamed (形状) -->
+    <div id="u16" class="ax_形状">
+        <img id="u16_img" class="img " src="~/images/u16.png" />
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+
+    <!-- 导航 (动态面板) -->
+    <div id="u18" class="ax_动态面板" data-label="导航">
+        <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+            <!-- Unnamed (形状) -->
+            <div id="u19" class="ax_形状">
+                <img id="u19_img" class="img " src="~/images/u62.png" />
+                <!-- Unnamed () -->
+                <div id="u20" class="text"></div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u21" class="ax_文本" data-label="1">
+                <img id="u21_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u22" class="text">
+                    <p><span>巡检任务制定与分配</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u23" class="ax_文本">
+                <img id="u23_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u24" class="text">
+                    <p><span>杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u25" class="ax_文本">
+                <img id="u25_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u26" class="text">
+                    <p><span>线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u27" class="ax_文本">
+                <img id="u27_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u28" class="text">
+                    <p><span>缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u29" class="ax_文本">
+                <img id="u29_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u30" class="text">
+                    <p><span>巡检任务</span><span>管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u31" class="ax_文本">
+                <img id="u31_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u32" class="text">
+                    <p><span>消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u33" class="ax_文本">
+                <img id="u33_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u34" class="text">
+                    <p><span>系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u35" class="ax_文本">
+                <img id="u35_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u36" class="text">
+                    <p><span>信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u37" class="ax_文本" data-label="1">
+                <img id="u37_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u38" class="text">
+                    <p><span>巡检任务</span><span>执行与回执</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u39" class="ax_文本">
+                <img id="u39_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u40" class="text">
+                    <p><span>我的工作平台</span></p>
+                </div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u41" class="ax_文本" data-label="1">
+                <img id="u41_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u42" class="text">
+                    <p><span>缺陷查询</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width:100%;background-color:#f4f4f4;margin-top:70px;height:100%;overflow:scroll;">
+        <div class="container">
+            <div class="row">
+                <p style="margin-left:40px;margin-top:15px;">
+                    巡检任务管理>>&nbsp;巡检任务制定与分配>>修改巡检任务
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <table class="form_tab">
+                    <tr>
+                        <td style="width:80px;">
+                            <b>任务编号:</b>
+                        </td>
+                        <td style="width:230px;">
+                            <el-input @@blur="checkTaskCode" id="taskcode" placeholder="请输入内容"
+                                      v-model="taskmain.inspectionTaskCode"
+                                      clearable>
+                            </el-input>
+                        </td>
+                        <td>
+                            <span id="taskcodemsg" style="color:red;font-size:14px;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>任务名称:</b>
+                        </td>
+                        <td>
+                            <el-input id="taskname" placeholder="请输入内容"
+                                      v-model="taskmain.inspectionTaskName"
+                                      clearable>
+                            </el-input>
+                        </td>
+                        <td>
+                            <span id="tasknamemsg" style="color:red;font-size:14px;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>巡检线路:</b>
+                        </td>
+                        <td>
+                            <el-select @@change="changeline" id="linecode" v-model="txtlinecode" clearable placeholder="请选择">
+                                <el-option v-for="item in linelist"
+                                           :key="item.id"
+                                           :label="item.lineName"
+                                           :value="item.id">
+                                </el-option>
+                            </el-select>
+                        </td>
+                        <td>
+                            <span id="linecodemsg" style="color:red;font-size:14px;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>巡检员:</b>
+                        </td>
+                        <td>
+                            <el-input style="float:left;" id="inspecname" placeholder="请输入内容"
+                                      v-model="txtinspecname"
+                                      clearable>
+                            </el-input>
+                            <span @@click="selectinspector"> <img style="position:relative;left:205px;top:-22px;" src="~/Areas/XiTong/imgs/u77.png" /></span>
+                        </td>
+                        <td>
+                            <span id="inspecnamemsg" style="color:red;font-size:14px;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>起始杆号:</b>
+                        </td>
+                        <td>
+                            <el-input id="startpole" placeholder="请输入内容"
+                                      v-model="taskmain.startPoleCode"
+                                      clearable>
+                            </el-input>
+                        </td>
+                        <td>
+                            <span id="startpolemsg" style="color:red;font-size:14px;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>终止杆号:</b>
+                        </td>
+                        <td>
+                            <el-input id="endpole" placeholder="请输入内容"
+                                      v-model="taskmain.endPoleCode"
+                                      clearable>
+                            </el-input>
+                        </td>
+                        <td>
+                            <span id="endpolemsg" style="color:red;font-size:14px;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b style="margin-left:10px;">下发人:</b>
+                        </td>
+                        <td>
+                            <span style="color:#A1A1A1;">
+                               {{taskmain.issuedByName}}
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>下发日期:</b>
+                        </td>
+                        <td>
+                            <span id="inspectime" style="color:#A1A1A1;">
+                                {{taskmain.issuedTime|timeFilter}}
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b style="margin-left:20px;">备注:</b>
+                        </td>
+                        <td>
+                            <el-input type="textarea"
+                                      rows="2"
+                                      id="desc"
+                                      placeholder="请输入内容"
+                                      v-model="taskmain.common">
+                            </el-input>
+                        </td>
+                        <td>
+                            <span id="descmsg" style="color:red;font-size:14px;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div style="margin-left:100px;">
+                                <el-button @@click="backtoindex">返回</el-button>
+                                <el-button @@click="updinspectask" type="primary">保存</el-button>
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+
+}
+
+@section vuescript{
+    <script>
+
+         var vue = new Vue({
+             el: "#app",
+             data: {
+                linelist:[],
+                 dialogFormVisible: false,
+                 inspectorlist: [],
+                 inspectorlist2:[],
+                 userlist: [],
+                 templist: [],
+                 taskmain: {},
+                 txtlinecode: "",
+                 txtinspecname: "",
+                 inspectorcode: "",
+                 oldtaskcode:"",
+                 templist2: [],
+                 templist3:[]
+
+             },
+             methods: {
+                 myload: function () {
+                     //发送ajax请求
+                     axios.post("/XiTong/InspeTaskm/GetUpdData", null).then(function (response) {
+                         vue.taskmain = response.data.taskmain;
+                         vue.linelist = response.data.lilist;                       
+                         vue.userlist = response.data.pslist;
+                         vue.txtlinecode = vue.taskmain.lineName;
+                         vue.oldtaskcode = vue.taskmain.inspectionTaskCode;  //保存原始的任务编码
+                         var list=vue.inspectorlist;
+                         var list2 = vue.templist;
+                         var list3 = vue.userlist
+                         var strs = "";
+                         var strs2 = "";
+                         for (var i = 0; i < list.length; i++) {
+                             for (var j = 0; j < list3.length; j++) {
+                                 if (list[i].inspectorCode == list3[j].userCode) {
+                                     vue.templist.push({ id: list3[j].id, userCode: list3[j].userCode, userName: list3[j].userName });
+                                     vue.inspectorlist2.push({ id: list3[j].id, userCode: list3[j].userCode, userName: list3[j].userName });
+                                     strs += list3[j].userName + ",";
+                                     strs2 += list3[j].userCode + ",";
+                                 }
+                             }
+                         }
+                         var index = strs.lastIndexOf(',');
+                         var index2 = strs.lastIndexOf(',');
+                         strs = strs.substr(0, index);
+                         strs2=strs2.substr(0,index2);
+                         vue.txtinspecname = strs;
+                         vue.inspectorcode = strs2;
+                     });
+                    
+                   
+                 },
+                 hidtaskdiv:function(){
+                     $("#txtinspctors").addClass("sss");
+                     $(".overlay").addClass("sss");
+                 },
+                 checkTaskCode: function () {
+                     $("#taskcodemsg").text("");
+                     $("#taskcode").removeClass("havecode");
+                     var param = new URLSearchParams();
+                     if (this.taskmain.inspectionTaskCode != this.oldtaskcode) {
+                     param.append("taskcode", this.taskmain.inspectionTaskCode);
+                     axios.post("/XiTong/InspeTaskm/CheckTaskCode", param).then(function (response) {
+                         if (response.data == false) {
+                             $("#taskcodemsg").text("当前任务编号已存在!");
+                             $("#taskcode")[0].focus();
+                             $("#taskcode").addClass("havecode");
+                         }
+                     })
+                     }
+                 },
+                 updinspectask: function () {
+                     $("#taskcodemsg").text("");
+                     $("#tasknamemsg").text("");
+                     $("#linecodemsg").text("");
+                     $("#inspecnamemsg").text("");
+                     $("#startpolemsg").text("");
+                     $("#endpolemsg").text("");
+                     $("#descmsg").text("");
+                     $("#inspecnamemsg").text("");
+                     if (this.taskmain.inspectionTaskCode == "") {
+                         $("#taskcodemsg").text("任务编号不能为空!");
+                         $("#taskcode")[0].focus();
+                         return;
+                     }
+                     if ($(".havecode").length > 0) {
+                         $("#taskcodemsg").text("当前任务编号已存在!");
+                         $("#taskcode")[0].focus();
+                         return;
+                     }
+                    
+                     if (this.txtinspecname == "") {
+                         $("#inspecnamemsg").text("请选择巡检员!");
+                         $("#inspecname")[0].focus();
+                         return;
+                     }
+                     if (this.taskmain.inspectionTaskName == "") {
+                         $("#tasknamemsg").text("任务名称不能为空!");
+                         $("#taskname")[0].focus();
+                         return;
+                     }
+                     if (this.txtlinecode == "") {
+                         $("#linecodemsg").text("请选择巡检线路!");
+                         $("#linecode")[0].focus();
+                         return;
+                     }
+                     if (this.taskmain.startPoleCode == "") {
+                         $("#startpolemsg").text("起始杆号不能为空!");
+                         $("#startpole")[0].focus();
+                         return;
+                     }
+                     if (this.taskmain.endPoleCode == "") {
+                         $("#endpolemsg").text("终止杆号不能为空!");
+                         $("#endpolecode")[0].focus();
+                         return;
+                     }
+                     if (this.taskmain.common == "") {
+                         $("#descmsg").text("备注信息不能为空!");
+                         $("#desc")[0].focus();
+                         return;
+                     }
+
+                     //创建参数对象
+                     var param = new URLSearchParams();
+                     param.append("taskid", this.taskmain.id);
+                     param.append("taskcode", this.taskmain.inspectionTaskCode);
+                     param.append("taskname", this.taskmain.inspectionTaskName);
+                     param.append("lineid", this.taskmain.lineId);
+                     param.append("linecode", this.taskmain.lineCode);
+                     param.append("linename", this.taskmain.lineName);
+                     param.append("startpolecode", this.taskmain.startPoleCode);
+                     param.append("endpolecode", this.taskmain.endPoleCode);
+                     param.append("startpole", this.taskmain.startPole);
+                     param.append("endpole", this.taskmain.endPole);
+                     param.append("desc", this.taskmain.common);
+                     param.append("issuedcode", this.taskmain.issuedByCode);
+                     param.append("issuedname", this.taskmain.issuedByName);
+                     param.append("createdBy", this.taskmain.createdBy);
+                     param.append("createdtime", this.taskmain.creationTime);
+                     param.append("issuedtime", this.taskmain.issuedTime);
+                     param.append("inspectorcode", this.inspectorcode);
+                     //发送axja
+                     axios.post("/XiTong/InspeTaskm/UpdTaskData", param).then(function (response) {
+                         if (response.data == true) {
+                             window.location = "/XiTong/InspeTaskm/Index";
+                         }
+                     })
+                 },
+                 changeline: function (val) {
+                     for (var i = 0; i < this.linelist.length; i++) {
+                         if (this.linelist[i].id == val) {
+                             this.taskmain.lineid = this.linelist[i].id;
+                             this.taskmain.startPoleCode = this.linelist[i].startPoleCode;
+                             this.taskmain.endPoleCode = this.linelist[i].endPoleCode;
+                             this.taskmain.lineName = this.linelist[i].lineName;
+                             this.taskmain.lineCode = this.linelist[i].lineCode;
+                             this.taskmain.startPole = this.linelist[i].startPole;
+                             this.taskmain.endPole = this.linelist[i].endPole;
+                         }
+                     }
+                 },
+                 selectinspector: function () {
+                     //先清空inspectors2中的值
+                     this.inspectorlist2.splice(0, this.inspectorlist2.length);
+                     this.templist.splice(0, this.templist.length);
+                     //再给该集合赋予新的值 
+                     if (this.templist3.length > 0) {
+                         for (var i = 0; i < this.templist3.length; i++) {
+                             this.templist.push({ id: this.templist3[i].id, userCode: this.templist3[i].userCode, userName: this.templist3[i].userName });
+                         }
+                     }
+
+                     if (this.templist.length > 0) {
+                         var list = this.templist;
+                         for (var i = 0; i < list.length; i++) {
+                             this.inspectorlist2.push({ id: list[i].id, userCode: list[i].userCode, userName: list[i].userName });
+                         }
+                     }
+
+                     $(".ckitem").each(function (index, ele) {
+                         $(ele).removeClass("ss");
+                     })
+                     var list = this.inspectorlist2;
+                     for (var i = 0; i < list.length; i++) {
+                         $(".ckitem").each(function (index, ele) {
+                             if (list[i].id == $(ele).attr("id")) {
+                                 $(ele).addClass("ss");
+                             }
+                         })
+                     }
+                   
+
+                     $("#txtinspctors").removeClass("sss");
+                     $(".overlay").removeClass("sss");
+                 },
+                 isselected: function (event, item) {
+
+                     var ele = event.currentTarget;
+                     var list = this.templist;
+                     var list2 = this.inspectorlist2;
+                     if ($(ele).hasClass("ss")) {
+                         $(ele).removeClass("ss");
+                         for (var i = 0; i < list.length; i++) {
+                             if (item.id == list[i].id) {
+                                 this.templist.splice(i, 1);
+                                 for (var i = 0; i < list2.length; i++) {
+                                     if (item.id == list2[i].id) {
+                                         this.inspectorlist2.splice(i, 1);
+                                     }
+                                 }
+                             }
+                         }
+                     } else {
+                         $(ele).addClass("ss");
+                         this.templist.push({ id: item.id, userCode: item.userCode, userName: item.userName });
+                         this.inspectorlist2.push({ id: item.id, userCode: item.userCode, userName: item.userName });
+
+                     }
+
+
+                 },
+                 selectall: function () {
+                     this.templist.length = 0;
+                     this.inspectorlist2.length = 0;
+                     var list = this.userlist;
+                     for (var i = 0; i < list.length; i++) {
+                         this.templist.push({ id: list[i].id, userCode: list[i].userCode, userName: list[i].userName });
+                         this.inspectorlist2.push({ id: list[i].id, userCode: list[i].userCode, userName: list[i].userName });
+                     }
+
+                     //添加选中样式 
+                     $(".ckitem").each(function (index, ele) {
+                         if (!$(ele).hasClass("ss")) {
+                             $(ele).addClass("ss");
+                         }
+                     })
+
+                 },
+                 noselectall: function () {
+                     this.templist.length = 0;
+                     this.inspectorlist2.splice(0, this.inspectorlist2.length);
+
+
+                     //取消选中样式 
+                     $(".ckitem").each(function (index, ele) {
+                         $(ele).removeClass("ss");
+                     })
+
+                 },
+                 comsave: function () {
+                     $("#txtinspctors").addClass("sss");
+                     $(".overlay").addClass("sss");
+
+                     this.inspectorlist2.length = 0;
+                     this.templist2.length = 0;
+                     this.templist3.length = 0;
+                     for (var v in this.templist) {
+                         vue.inspectorlist2.push(this.templist[v]);
+                         vue.templist2.push(this.templist[v]);
+                         vue.templist3.push(this.templist[v]);
+                     }
+
+                     var strs = "";
+                     var strs2 = "";
+                     for (var v in this.inspectorlist2) {
+                         strs += this.inspectorlist2[v].userName + ",";
+                         strs2 += this.inspectorlist2[v].userCode + ",";
+                     }
+                     var index = strs.lastIndexOf(',');
+                     var index2 = strs2.lastIndexOf(',');
+                     strs = strs.substr(0, index);
+                     strs2 = strs2.substr(0, index2);
+                     this.txtinspecname = strs;
+                     this.inspectorcode = strs2;
+                   
+
+                 },
+                 backtoindex: function () {
+                     window.location = "/XiTong/InspeTaskm/Index";
+                 }
+
+             },
+             created: function () {
+                 this.$options.methods.myload();
+                
+             },
+             filters: {
+                 timeFilter: function (value) {
+                     //非空验证
+                     if (!value) {
+                         return '';
+                     } else {
+                         var strs = value.split('T');
+                         //获得最后一个点的索引
+                         var index = strs[1].indexOf('.');
+                         strs[1] = strs[1].substring(0, index);
+                         var str = "";
+
+                         return strs[0] + " " + strs[1];
+                     }
+                 }
+             }
+         })
+    </script>
+}
+
+
+
+

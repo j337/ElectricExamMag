@@ -1,0 +1,77 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Areas/Circuitmanage/Content/styles.css" rel="stylesheet" />
+    <link href="~/Areas/Circuitmanage/Content/axure_rp_page.css" rel="stylesheet" />
+    <link href="~/Areas/Circuitmanage/Content/jquery-ui-themes.css" rel="stylesheet" />
+    <link href="~/Areas/Circuitmanage/Content/data/styles.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <!-- Unnamed (图片) -->
+    <div id="u0" class="ax_图片">
+        <img id="u0_img" class="img " src="~/Areas/Circuitmanage/imgs/u0.jpg" />
+        <!-- Unnamed () -->
+        <div id="u1" class="text"></div>
+    </div>
+
+    <!-- textfield (文本框(单行)) -->
+    <div id="u2" class="ax_文本框_单行_">
+        <input id="u2_input" type="text" data-label="textfield" />
+    </div>
+
+    <!-- textfield (文本框(单行)) -->
+    <div id="u3" class="ax_文本框_单行_">
+        <input id="u3_input" type="password" data-label="textfield" />
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u4" class="ax_文本">
+        <img id="u4_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u5" class="text"></div>
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u6" class="ax_h2">
+        <img id="u6_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u7" class="text">
+            <p><span>电 力 巡 检 系 统</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u8" class="ax_文本">
+        <img id="u8_img" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+        <img id="u9_img" onclick="chong()" class="img " src="~/Areas/Circuitmanage/imgs/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u9" class="text"></div>
+    </div>
+    <script>
+        jQuery(function () {
+            $("#u8_img").click(function () {
+                var u2_input = $("#u2_input").val();
+                var u3_input = $("#u3_input").val();
+                $.post("/Circuitmanage/Demo/MyLogin", "u2_input=" + u2_input + "&u3_input=" + u3_input, function (data, ts) {
+                    if (data == "true") {
+                        alert("登录成功");
+                        window.location = "/Circuitmanage/Circuit/index";
+                    } else {
+                        alert("登录失败");
+                        $("#u3_input").val("");
+                    }
+                }, "text")
+            })
+        })
+    </script>
+</body>
+</html>

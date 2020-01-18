@@ -1,0 +1,540 @@
+﻿@{
+    ViewBag.Title = "杆搭管理";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+@using MyProjectUI.Models;
+@section mycss{
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/Pole/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/Pole/Content/axure_rp_page.css" rel="stylesheet" />
+    <script src="~/Areas/Pole/Content/files/data.js"></script>
+    <link href="~/Areas/Pole/Content/files/styles.css" rel="stylesheet" />
+    <script src="~/Areas/Pole/Cont/vue.js"></script>
+    <link href="~/Areas/Pole/Cont/index.css" rel="stylesheet" />
+    <script src="~/Areas/Pole/Cont/index.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.tmpl.min.js"></script>  
+    <script src="~/Areas/Pole/Cont/axios.min.js"></script>
+    }
+<style>
+    table th{
+        text-align:center;
+        border:1px solid #DDDDDD;
+        background-color:#eeebeb;
+    }
+    table tr{
+        border:1px solid #DDDDDD;
+    }
+    table td{
+        border:1px solid #DDDDDD;
+    }
+</style>
+@section rightdiv{
+   
+    <!-- Unnamed (形状) -->
+    <div id="u16" class="ax_形状" style="margin-left:150px;">
+        <img id="u16_img" class="img " src="~/Areas/Pole/images/u16.png" />
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+    <div id="u18" class="ax_动态面板" data-label="导航" style="margin-left:150px;">
+        <div id="u18_state0" class="panel_state" data-label="系统管理">
+            <div id="u19" class="ax_形状">
+                <img id="u19_img" class="img " src="~/Areas/Pole/images/u62.png" />
+                <!-- Unnamed () -->
+                <div id="u20" class="text"></div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u21" class="ax_文本">
+                <img id="u21_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u22" class="text">
+                    <p><span style="cursor: pointer;">杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u23" class="ax_文本">
+                <img id="u23_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u24" class="text">
+                    <p><span style="cursor: pointer;">线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u25" class="ax_文本">
+                <img id="u25_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u26" class="text">
+                    <p><span style="cursor: pointer;">缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u27" class="ax_文本">
+                <img id="u27_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u28" class="text">
+                    <p><span style="cursor: pointer;">巡检任务</span><span style="cursor: pointer;">管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u29" class="ax_文本">
+                <img id="u29_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u30" class="text">
+                    <p><span style="cursor: pointer;">消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u31" class="ax_文本">
+                <img id="u31_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u32" class="text">
+                    <p><span style="cursor: pointer;">系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u33" class="ax_文本">
+                <img id="u33_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u34" class="text">
+                    <p><span style="cursor: pointer;">信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u35" class="ax_文本">
+                <img id="u35_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u36" class="text">
+                    <p><span style="cursor: pointer;">我的工作平台</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="u37" class="ax_文本" style="margin-left:150px;">
+        <img id="u37_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u38" class="text">
+           <p><span style="cursor: pointer;">电力巡检系统</span><span>&gt;&gt;</span><span>&nbsp; </span><span style="cursor: pointer;">杆塔管理</span></p>
+        </div>
+    </div>
+    <!-- Styled Button (形状) -->
+    <div id="u39" class="ax_形状" style="margin-left:340px;margin-top:5px">
+        <img id="u39_img" class="img " src="~/Areas/Pole/Content/images/styled_button_u117.png"/>
+        <!-- Unnamed () -->
+        <div id="u40" class="text" style="cursor: pointer;" @@click="sel">
+            <p><span @@click="alert('alal')">查询</span></p>
+        </div>
+    </div>
+
+     <div id="u190" class="ax_形状" data-label="Styled Button" style="margin-left:150px;cursor:pointer;">
+        <img id="u190_img" class="img " src="~/Areas/Pole/Content/images/styled_button_u240.png" />
+        <!-- Unnamed () -->
+        <div id="u191" class="text" style="cursor: pointer;">
+            <p><span  @@click="dialogVisible = true">添加杆塔</span></p>
+            <el-dialog title="添加杆塔"
+                       :visible.sync="dialogVisible"
+                       width="30%"
+                       :before-close="handleClose">
+                            <label style="padding-top:10px">杆塔编号:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <el-input @@blur="checkpolecode" style="width:220px" v-model="poleCodetxt" placeholder="请输入杆塔编号"></el-input>
+                            <br /><span id="msgpolecode" style="color:red"></span>
+                <br /><br />
+                        <label style="padding-top:10px;margin-left:-110px">启用状态:</label>
+                            <template>
+                                <el-radio v-model="radio" label="1">启用</el-radio>
+                                <el-radio v-model="radio" label="0">停用</el-radio>
+                            </template>
+                
+                    <span slot="footer" class="dialog-footer">
+                        <el-button @@click="dialogVisible = false">取 消</el-button>
+                        <el-button type="primary" @@click="save">确 定</el-button>
+                    </span>
+</el-dialog>
+            <el-dialog title="修改杆塔"
+                       :visible.sync="dialogVisible2"
+                       width="30%"
+                       :before-close="handleClose2">
+                <label style="padding-top:10px">杆塔编号:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <el-input @@blur="checkpolecode2" style="width:220px" v-model="polelist.poleCode" placeholder="请输入杆塔编号"></el-input>
+                <br /><span id="msgpolecode2" style="color:red"></span>
+                <br /><br />
+                <label style="padding-top:10px;margin-left:-110px">启用状态:</label>
+                <el-radio-group v-model="polelist.isStart">
+                    <el-radio :label="1">启用</el-radio>
+                    <el-radio :label="0">停用</el-radio>
+                </el-radio-group>
+
+                <span slot="footer" class="dialog-footer">
+                    <el-button @@click="dialogVisible2 = false">取 消</el-button>
+                    <el-button type="primary" @@click="update">确 定</el-button>
+                </span>
+            </el-dialog>
+        </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u192" class="ax_图片" style="margin-left:150px;">
+        <img id="u192_img" class="img " src="~/Areas/Pole/Content/images/u242.png" />
+        <!-- Unnamed () -->
+        <div id="u193" class="text"></div>
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u41" class="ax_文本" style="margin-left:150px;">
+        <img id="u41_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u42" class="text">
+            <p><span>所属线路</span><span>：</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (形状) -->
+    <div id="u43" class="ax_文本" style="margin-left:320px;">
+        <img id="u43_img" class="img " src="~/Areas/Pole/images/transparent.gif" />
+        <!-- Unnamed () -->
+        <div id="u44" class="text">
+            <p><span>是否启用：</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (下拉列表框) -->
+    <div id="u45" class="ax_下拉列表框" style="margin-left:310px;margin-top:2px">
+        <select id="u45_input">
+            <option value="11">--请选择--</option>
+            <option value="1">启用</option>
+            <option value="0">停用</option>
+        </select>
+    </div>
+
+    <!-- Unnamed (下拉列表框) -->
+    <div id="u46" class="ax_下拉列表框" style="margin-left:150px;margin-top:2px">
+        <select id="u46_input">
+            <option value="all">未选择</option>
+          <option :value="item.id" v-for="item in datalist">
+              {{item.lineCode}}{{item.lineName}}
+          </option>
+        </select>
+    </div>
+    <div id="u47" class="ax_表格" data-label="table" style="margin-left:150px;">
+        <table class="table" style="border:2px solid #DDDDDD">
+            <thead>
+               <tr>
+                   <th>杆塔编号</th>
+                   <th>所属路线</th>
+                   <th>状态(启用/停用)</th>
+                   <th>操作</th>
+               </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in rolelist">
+                  <td class="hidden">
+                      {{item.id}}
+                  </td>
+                  <td>
+                      {{item.poleCode}}
+                  </td>
+                  <td>
+                      {{item.lineName}}
+                  </td>
+                  <td>
+                     <span v-if="item.isStart==1">
+                        启用
+                     </span>
+                      <span v-if="item.isStart==0">
+                         停用
+                      </span>
+                  </td>
+                  <td>
+                      <a style="text-decoration:none;">
+                      <span v-if="item.isStart==1" @@click="cli(item,$event)">停用</span>
+                      <span v-if="item.isStart==0" @@click="cli(item,$event)">启用</span>
+                      </a>
+                      |
+                      <a href="#" @@click="myedit(item.id,item)">修改</a>|
+                      <a style="text-decoration:none;" href="#" @@click="comdel(item,$event)">删除</a>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+        <el-dialog title="提示"
+                   :visible.sync="dialogVisible3"
+                   width="30%"
+                   :before-close="handleClose">
+            <span>是否删除?</span>
+            <span slot="footer" class="dialog-footer">
+                <el-button @@click="dialogVisible3 = false">取 消</el-button>
+                <el-button type="primary" @@click="del">确 定</el-button>
+            </span>
+        </el-dialog>
+        <el-pagination @@size-change="handleSizeChange"
+                       @@current-change="handleCurrentChange"
+                       :current-page="currentPage"
+                       :page-sizes="[5, 10, 20, 40]"
+                       :page-size="5"
+                       layout="total, prev, pager, next"
+                       :total="count">
+        </el-pagination>
+    </div>
+   
+}
+
+@section vuescript{
+      <script>
+        var vue= new Vue({
+              el:"#app",
+              data: {
+                  currentPage4: 1,
+                  radio:"1",
+                  rolelist: [],
+                  Circuit: {},
+                  currentPage: 1, //初始页
+                  count: 0,
+                  dialogVisible: false,
+                  dialogVisible2: false,
+                  dialogVisible3:false,
+                  datalist: [],
+                  poleCodetxt: "",
+                  lineName: "all",
+                  isStart: "11",
+                  polelist: {},
+                  poleCodecheck: "",
+                  items:"",
+              },
+              methods: {
+                  myload: function () {
+                      var param = new URLSearchParams();
+                      param.append("pageindex", 1);
+                      axios.post("/Pole/Tower/GetData",param).then(function (response) {
+                          vue.rolelist = response.data.polelist;
+                          vue.count = response.data.polecount;
+                          vue.datalist = response.data.datalist;
+                      });
+                  },
+                  comdel: function (item, event) {
+                      eles = event.currentTarget;
+                      this.id = item.id;
+                      this.dialogVisible3 = true;
+                  },
+                  del: function () {
+                          var tr = $(eles).parent().parent();
+                          var param = new URLSearchParams();
+                          param.append("pid", this.id);
+                          axios.post("/Pole/Tower/DelData", param).then(function (response) {
+                              if (response.data == true) {
+                                  vue.dialogVisible3 = false;
+                                  vue.$message("删除成功~")
+                                  tr.remove();
+                                  
+                              }
+                              else {
+                                  vue.$message("删除失败!");
+                              }
+                          });
+                      
+                  },
+                  cli: function (item, event) {
+                      //获取当前元素 
+                      var ele = event.currentTarget;
+                      var ele2 = $($(ele).parent().parent().children()[2]).text();
+                      var count = item.isStart;
+                      var param = new URLSearchParams();
+                      param.append("poleid", item.id);
+                      //alert(ele2);
+                      if (count == 1) {
+                          param.append("isStart", 0);
+                          axios.post("/Pole/Tower/upd", param).then(function (response) {
+                              if (response.data == true) {
+                                  vue.$message("停用成功~")
+                                  item.isStart = 0;
+                              }
+                          })
+                      } else {
+                          param.append("isStart", 1);
+                          axios.post("/Pole/Tower/upd", param).then(function (response) {
+                              if (response.data == true) {
+                                  vue.$message("启用成功~")
+                                  item.isStart = 1;
+                              }
+                          })
+                      }
+                  },
+                  checkpolecode: function () {
+                      if (this.poleCodetxt != "") {
+                          var param = new URLSearchParams();
+                          param.append("poleCode", this.poleCodetxt);
+                          axios.post("/Pole/Tower/CheckpoleCode", param).then(function (response) {
+                              if (response.data == true) {
+                                  $("#msgpolecode").text("该杆塔编号已存在");
+                                  $("#msgpolecode").addClass("f");
+                              } else {
+                                  $("#msgpolecode").text("");
+                                  $("#msgpolecode").removeClass("f");
+                              }
+                          })
+                      } else {
+                          $("#msgpolecode").text("杆塔编号不能为空");
+                      }
+                  },
+                  checkpolecode2: function () {
+                      if (this.polelist.poleCode != "") {
+                          if (this.polelist.poleCode != this.poleCodecheck) {
+                              var param = new URLSearchParams();
+                              param.append("poleCode", this.polelist.poleCode);
+                              axios.post("/Pole/Tower/CheckpoleCode", param).then(function (response) {
+                                  if (response.data == true) {
+                                      $("#msgpolecode2").text("该杆塔编号已存在");
+                                      $("#msgpolecode2").addClass("f2");
+                                  } else {
+                                      $("#msgpolecode2").text("");
+                                      $("#msgpolecode2").removeClass("f2");
+                                  }
+                              })
+                          } else {
+                              $("#msgpolecode2").text("");
+                              $("#msgpolecode2").removeClass("f2");
+                          }
+                      } else {
+                          $("#msgpolecode2").text("杆塔编号不能为空");
+                      }
+                  },
+                  handleClose(done) {
+                      this.$confirm('确认关闭？')
+                        .then(_ => {
+                            done();
+                        })
+                        .catch(_ => { });
+                  },
+                  handleClose2(done) {
+                      this.$confirm('确认关闭？')
+                        .then(_ => {
+                            done();
+                        })
+                        .catch(_ => { });
+                  },
+                  save: function () {
+                      var lineName = $("#u46_input").val();
+                      if (lineName != "all") {
+                          if (this.poleCodetxt != "") {
+                              if ($(".f").length > 0) {
+                                  vue.$message("杆塔编号不能重复");
+                              } else {
+                                  var param = new URLSearchParams();
+                                  param.append("poleCode", this.poleCodetxt);
+                                  param.append("isStart", this.radio);
+                                  param.append("lid", lineName);
+                                  axios.post("/Pole/Tower/add", param).then(function (response) {
+                                      if (response.data == true) {
+                                          vue.$message("添加成功");
+                                          vue.dialogVisible = false;
+                                          vue.poleCodetxt = "";
+                                          vue.myload();
+                                      }
+                                  })
+                              }
+                              
+                          } else {
+                              vue.$message("杆塔编号不能为空")
+                          }
+                      } else {
+                          vue.$message("请选择线路!");
+                          this.dialogVisible = false;
+                      }
+                      
+                  },
+                  update: function () {
+                      if (this.poleCode != "") {
+                          if ($(".f2").length > 0) {
+                              vue.$message("杆塔编号不能重复");
+                          } else {
+                              var param = new URLSearchParams();
+                              param.append("poleCode", this.polelist.poleCode);
+                              param.append("isStart", this.polelist.isStart);
+                              axios.post("/Pole/Tower/update", param).then(function (response) {
+                                  if (response.data == true) {
+                                      vue.$message("修改成功");
+                                      vue.dialogVisible2 = false;
+                                      vue.items.poleCode = vue.polelist.poleCode;
+                                      vue.items.isStart = vue.polelist.isStart;
+                                  }
+                              })
+                          }
+                          
+                      } else {
+                          vue.$message("杆塔编号不能为空")
+                      }
+                  },
+                  sel: function () {
+                      this.lineName = $("#u46_input").val();
+                      this.isStart = $("#u45_input").val();
+                      if (this.lineName != "all" || this.isStart != "11") {
+                          var param = new URLSearchParams();
+                          param.append("lineName", this.lineName);
+                          param.append("isStart", this.isStart);
+                          param.append("pageindex", 1);
+                          axios.post("/Pole/Tower/sel", param).then(function (response) {
+                              vue.rolelist = response.data.polelist;
+                              vue.count = response.data.polecount;
+                              vue.datalist = response.data.datalist;
+                          })
+                      } else {
+                          var param = new URLSearchParams();
+                          param.append("pageindex", 1);
+                          axios.post("/Pole/Tower/GetData", param).then(function (response) {
+                              vue.rolelist = response.data.polelist;
+                              vue.count = response.data.polecount;
+                              vue.datalist = response.data.datalist;
+                          });
+                      }
+                      
+                  },
+                  handleCurrentChange(val) {
+                     
+                      var param = new URLSearchParams();
+                      if (this.lineName != "") {
+                          param.append("lineName", this.lineName);
+                      }
+                      if (this.isStart != "") {
+                          param.append("isStart", this.isStart);
+                      }
+                      param.append("pageindex", val);
+                      axios.post("/Pole/Tower/sel", param).then(function (response) {
+                          vue.rolelist = response.data.polelist;
+                          vue.count = response.data.polecount;
+                          vue.datalist = response.data.datalist;
+                      })
+
+                  },
+                  handleSizeChange(val) {
+                        console.log(`每页 ${val} 条`);
+                  },
+                  myedit: function (pid, item) {
+                      this.items = item;
+                      var param = new URLSearchParams();
+                      param.append("pid", pid);
+                      axios.post("/Pole/Tower/poledata", param).then(function (response) {
+                          vue.polelist = response.data;
+                          vue.dialogVisible2 = true;
+                          vue.poleCodecheck = vue.polelist.poleCode;
+                      })
+                      
+                  },
+              },
+              
+              created: function () {
+                  this.$options.methods.myload();
+                  this.$options.methods.myedit();
+              }
+          });
+</script>
+    }

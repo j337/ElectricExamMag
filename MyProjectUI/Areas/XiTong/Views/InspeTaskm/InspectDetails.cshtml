@@ -1,0 +1,382 @@
+﻿
+@{
+    ViewBag.Title = "InspectDetails";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+    <link href="~/Areas/XiTong/Content/itstyles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/axure_rp_page.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/data/styles.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/jquery-ui-themes.css" rel="stylesheet" />
+    <link href="~/Areas/XiTong/Content/styles.css" rel="stylesheet" />
+    <style>
+        a {
+            text-decoration: none;
+        }
+        ul{
+            margin:0px;
+            padding:0px;
+        }
+        ul li{
+            list-style:none;
+        }
+
+        .db {
+            color: #CCCCCC;
+        }
+        .taskdetails_top span{
+            margin-right:35px;
+        }
+        .taskdetails_top{
+            line-height:30px;
+            font-size:13px;
+            font-weight:400;
+            width:105%;
+        }
+        #tabdata_right{
+            width:450px;
+            margin-left:20px;
+            margin-top:15px;
+
+        }
+        #tabdata_right td{
+            height:30px;
+        }
+        .poleul li{
+            font-size:13px;
+            font-weight:400;
+            line-height:26px;
+             cursor:pointer;
+        }
+        .selected{
+           padding:3px 3px;
+           
+            background-color:#bcbcbc;
+        }
+    </style>
+}
+
+@section myscript{
+
+}
+
+@section rightdiv{
+    <!-- Unnamed (形状) -->
+    <div id="u16" class="ax_形状">
+        <img id="u16_img" class="img " src="~/images/u16.png" />
+        <!-- Unnamed () -->
+        <div id="u17" class="text"></div>
+    </div>
+
+    <!-- 导航 (动态面板) -->
+    <div id="u18" class="ax_动态面板" data-label="导航">
+        <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+            <!-- Unnamed (形状) -->
+            <div id="u19" class="ax_形状">
+                <img id="u19_img" class="img " src="~/images/u62.png" />
+                <!-- Unnamed () -->
+                <div id="u20" class="text"></div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u21" class="ax_文本" data-label="1">
+                <img id="u21_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u22" class="text">
+                    <p><span>巡检任务制定与分配</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u23" class="ax_文本">
+                <img id="u23_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u24" class="text">
+                    <p><span>杆塔管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u25" class="ax_文本">
+                <img id="u25_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u26" class="text">
+                    <p><span>线路管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u27" class="ax_文本">
+                <img id="u27_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u28" class="text">
+                    <p><span>缺陷管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u29" class="ax_文本">
+                <img id="u29_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u30" class="text">
+                    <p><span>巡检任务</span><span>管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u31" class="ax_文本">
+                <img id="u31_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u32" class="text">
+                    <p><span>消缺任务管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u33" class="ax_文本">
+                <img id="u33_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u34" class="text">
+                    <p><span>系统管理</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u35" class="ax_文本">
+                <img id="u35_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u36" class="text">
+                    <p><span>信息统计</span></p>
+                </div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u37" class="ax_文本" data-label="1">
+                <img id="u37_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u38" class="text">
+                    <p><span>巡检任务</span><span>执行与回执</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (形状) -->
+            <div id="u39" class="ax_文本">
+                <img id="u39_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u40" class="text">
+                    <p><span>我的工作平台</span></p>
+                </div>
+            </div>
+
+            <!-- 1 (形状) -->
+            <div id="u41" class="ax_文本" data-label="1">
+                <img id="u41_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                <!-- Unnamed () -->
+                <div id="u42" class="text">
+                    <p><span>缺陷查询</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width:100%;background-color:#f4f4f4;margin-top:70px;height:100%;overflow:scroll;">
+        <div class="container">
+            <div class="row">
+                <p style="margin-left:40px;margin-top:15px;">
+                    巡检任务管理>>巡检任务制定与分配>>查看巡检任务
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1" style="border:1px solid black;background-color:white;margin-top:10px;">
+          <p class="taskdetails_top">
+              <span><b>任务编号:</b>&nbsp;&nbsp;{{inspectordeta.taskcode}}</span>
+              <span><b>任务名称:</b>&nbsp;&nbsp;{{inspectordeta.taskname}}</span>
+              <span><b>巡检线路:</b>&nbsp;&nbsp;{{inspectordeta.linename}}</span>
+              <span><b>起始杆号:</b>&nbsp;&nbsp;{{inspectordeta.startpole}}</span>
+              <span><b>终止杆号:</b>&nbsp;&nbsp;{{inspectordeta.endpole}}</span>
+          </p>
+                <p class="taskdetails_top">
+                    <span><b>下发人:</b>&nbsp;&nbsp;{{inspectordeta.createuser}}</span>
+                    <span><b>下发时间:</b>&nbsp;&nbsp; {{inspectordeta.createtime|timeFilter}}  </span>
+                    <span><b>任务状态:</b>&nbsp;&nbsp;{{inspectordeta.taskstatus}}</span>
+                    <span><b>任务完成时间:</b>&nbsp;&nbsp;{{inspectordeta.finishtime|timeFilter}}</span>
+                   
+                </p>
+                <p class="taskdetails_top">
+                    <span><b>备注信息:</b>&nbsp;&nbsp;{{inspectordeta.common}}</span>
+                   
+
+                </p>
+                <p class="taskdetails_top">
+                    <span><b>巡检员:</b>&nbsp;&nbsp;{{inspectors}}</span>
+                  
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1" style="margin-top:10px;width:104%;">
+               <div style="border:1px solid black;width:182px;float:left;height:260px;background-color:white;margin-left:-13px;">
+                  <p style="margin-left:50px;margin-top:30px;">{{inspectordeta.linename}}</p>
+                   <ul class="poleul" style="margin-left:65px;font-size:14px;">
+                      
+                   </ul>
+               </div>
+                <img src="~/Areas/XiTong/imgs/u34.png" style="float:left;margin-left:10px;margin-top:90px;" />
+                <div style="border:1px solid black;width:626px;float:left;margin-left:12px;height:260px;background-color:white;">
+                   <table v-if="taskdet!=null" id="tabdata_right">
+                       <tr>
+                           <td>
+                               <b>线路编号:</b>{{taskdet.linecode}}
+                           </td>
+                           <td><b>杆塔编号:</b>{{taskdet.polecode}} </td>
+                       </tr>
+                    
+                       <tr>
+                           <td>
+                               <b>有无故障: </b><span v-if="taskdet.isbug==1">有</span><span v-if="taskdet.isbug==0">无</span>
+                           </td>
+                           <td><b>完好率: </b>{{taskdet.intactRate}}%</td>
+                       </tr>
+                     
+                       <tr>
+                           <td>
+                               <b>缺陷类型:</b>{{taskdet.bugTypeName}}
+                           </td>
+                           <td>
+                               <b>缺陷级别:</b>{{taskdet.bugLevelName}}
+                           </td>
+                       </tr>
+                   
+                       <tr>
+                           <td colspan="2"><b>缺陷描述:</b>{{taskdet.bugDesc}}</td>
+                          
+                       </tr>
+                       <tr>
+                           <td colspan="2"><b>巡检时间:</b>{{taskdet.inspectTime|timeFilter}}<span v-if="taskdet.inspectTime==null">尚未巡检</span></td>
+
+                       </tr>
+                       <tr>
+                           <td colspan="2"><b>巡检员:</b>{{inspectors}}</td>
+                       </tr>
+                       <tr>
+                           <td >
+                               <b>缺陷发现人:</b><span v-if="taskdet.discovererName==null">暂未巡检</span><span v-if="taskdet.discovererName!=null">{{taskdet.discovererName}}</span>
+                           </td>
+                           <td>
+                               <b>发现时间:</b><span v-if="taskdet.discoverTime==null">暂未巡检</span><span v-if="taskdet.discoverTime!=null">{{taskdet.discoverTime|timeFilter}}</span>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                             <b>下发人员:</b>{{taskdet.issuedByName}}
+                           </td>
+                           <td>
+                               <b>下发时间：</b>{{taskdet.issuedTime|timeFilter}}
+                           </td>
+                       </tr>
+                   </table>
+                    <p v-if="taskdet==null" style="color:#666;font-size:16px;margin-top:100px;margin-left:200px;">暂无数据</p>
+                </div>
+               
+            </div>
+            <el-button @@click="transpage" style="margin-top:15px;margin-left:90px;" type="primary" round>返回</el-button>
+        </div>
+    </div>
+}
+
+@section vuescript{
+    <script>
+         var pageindex = 1;
+         var vue = new Vue({
+             el: "#app",
+             data: {
+                 polelist: [],
+                 inspectordeta: {},
+                 taskdet: {},
+                 insdet: [],
+                 inspectors:""
+
+             },
+             methods: {
+                 myload: function () {                 
+                     axios.post("/XiTong/InspeTaskm/GetDetailData", null).then(function (response) {
+                         vue.inspectordeta = response.data.inspectordetails;
+                         vue.polelist = response.data.polelist;
+                         if (response.data.bugdet != null) {
+                             vue.taskdet = response.data.bugdet;
+                         }
+                        
+                         if (response.data.insdet!=null) {
+                             vue.insdet = response.data.insdet;
+                             var strs = "";
+                             for (var i = 0; i < vue.insdet.length; i++) {
+                                 strs += vue.insdet[i].inspectorName + ",";
+                             }
+                             var index = strs.lastIndexOf(',');
+                             strs = strs.substr(0, index);
+                             vue.inspectors = strs;
+                         } else {
+                             vue.inspectors = "暂未分配巡检员";
+                         }
+
+           
+                         for (var i = 0; i < vue.polelist.length; i++) {
+                             var li = "<li><span id='"+vue.polelist[i].id+"' class='poles'>" + vue.polelist[i].poleCode + "</span></li>";
+                             $(".poleul").append(li);
+                         }
+                         $(".poles:first").addClass("selected");
+                         //span的点击事件 来获得所点击的杆塔编号 
+                         $(".poles").click(function () {
+                             $(".poles").each(function (index,ele) {
+                                 $(ele).removeClass("selected");
+                             })
+                             $(this).addClass("selected");
+                             //获得点击的那个元素的id值 
+                             var id = $(this).attr("id");
+                             var param = new URLSearchParams();
+                             param.append("poleid", id);
+                             axios.post("/XiTong/InspeTaskm/GetPoleData", param).then(function (response2) {
+                                 vue.taskdet = response2.data.bugdet;
+                             })
+                         })
+                     })
+                    
+                 },
+                 transpage: function () {
+                     window.location = "/XiTong/InspeTaskm/Index";
+                 }
+             },
+             mounted: function () {
+                 this.$options.methods.myload();
+              
+             },
+             filters: {
+                 timeFilter: function (value) {
+                     //非空验证
+                     if (!value) {
+                         return '';
+                     } else {
+                         var strs = value.split('T');
+                         //获得最后一个点的索引
+                         var index = strs[1].indexOf('.');
+                         strs[1] = strs[1].substring(0, index);
+                         var str = "";
+
+                         return strs[0] + " " + strs[1];
+                     }
+                 }
+             }
+         })
+    </script>
+}
+
+
+
+
+
+
+

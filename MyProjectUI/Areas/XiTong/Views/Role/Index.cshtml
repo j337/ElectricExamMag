@@ -1,0 +1,776 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyShareView.cshtml";
+}
+
+@section mycss{
+<link href="~/Areas/XiTong/Content/rmstyles.css" rel="stylesheet" /> 
+<link href="~/Areas/XiTong/Content/axure_rp_page.css" rel="stylesheet" />
+<link href="~/Areas/XiTong/Content/data/styles.css" rel="stylesheet" />
+<link href="~/Areas/XiTong/Content/jquery-ui-themes.css" rel="stylesheet" />
+<link href="~/Areas/XiTong/Content/styles.css" rel="stylesheet" />
+    <style>
+        #rolestatus{
+            width: 85px;
+            height: 22px;
+            font-family: 'Arial';
+            font-size: 13px;
+            color:
+            #000000;
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+        .role_tab{
+            margin-top:10px;
+        }
+        
+        .msg{
+            font-size:15px;
+            color:red;
+           
+        }
+        .rolecss{
+            position:absolute;
+            z-index:222;
+            width:650px;
+            border:1px solid #dddddd;
+            border-radius:10px;
+            background-color:white;
+            margin-left:50px;
+            margin-top:-500px;
+            height:300px;
+        }
+        .overlay{
+             position: fixed;
+                        top: 0%;
+                        left: 0%;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #000;
+                        z-index: 110;
+                        opacity: .60;
+                       
+        }
+        .sss{
+            display:none;
+        }
+        .dialog-footer{
+            text-align:right;
+            margin-right:20px;
+        }
+        .delrolecss{
+              position:absolute;
+            z-index:222;
+            width:400px;
+            border:1px solid #dddddd;
+            border-radius:10px;
+            background-color:white;
+            margin-left:150px;
+            margin-top:-500px;
+            height:200px;
+        }
+    </style>
+
+}
+@section myscript{
+    }
+@section rightdiv{
+      <!-- Unnamed (形状) -->
+       <div id="u16" class="ax_形状">
+           <img id="u16_img" class="img " src="~/images/u16.png" />
+           <!-- Unnamed () -->
+           <div id="u17" class="text"></div>
+       </div>
+
+       <div id="u18" class="ax_动态面板" data-label="导航">
+           <div id="u18_state0" class="panel_state" data-label="系统管理">
+
+               <!-- Unnamed (形状) -->
+               <div id="u19" class="ax_形状">
+                   <img id="u19_img" class="img " src="~/images/u62.png" />
+                   <!-- Unnamed () -->
+                   <div id="u20" class="text"></div>
+               </div>
+
+               <!-- 1 (形状) -->
+               <div id="u21" class="ax_文本" data-label="1">
+                   <img id="u21_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u22" class="text">
+                       <p><span @@click="transtorolepage">角色管理</span></p>
+                   </div>
+               </div>
+
+               <!-- 2 (形状) -->
+               <div id="u23" class="ax_文本" data-label="2">
+                   <img id="u23_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u24" class="text">
+                       <p><span @@click="transtouserpage">用户管理</span></p>
+                   </div>
+               </div>
+
+               <!-- 3 (形状) -->
+               <div id="u25" class="ax_文本" data-label="3">
+                   <img id="u25_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u26" class="text">
+                       <p><span @@click="transtopresspage">角色权限配置</span></p>
+                   </div>
+               </div>
+
+               <!-- 4 (形状) -->
+               <div id="u27" class="ax_文本" data-label="4">
+                   <img id="u27_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u28" class="text">
+                       <p><span @@click="transtosyspage">系统配置</span></p>
+                   </div>
+               </div>
+
+               <!-- Unnamed (形状) -->
+               <div id="u29" class="ax_文本">
+                   <img id="u29_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u30" class="text">
+                       <p><span>杆塔管理</span></p>
+                   </div>
+               </div>
+
+               <!-- Unnamed (形状) -->
+               <div id="u31" class="ax_文本">
+                   <img id="u31_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u32" class="text">
+                       <p><span>线路管理</span></p>
+                   </div>
+               </div>
+
+               <!-- Unnamed (形状) -->
+               <div id="u33" class="ax_文本">
+                   <img id="u33_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u34" class="text">
+                       <p><span>缺陷管理</span></p>
+                   </div>
+               </div>
+
+               <!-- Unnamed (形状) -->
+               <div id="u35" class="ax_文本">
+                   <img id="u35_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u36" class="text">
+                       <p><span>巡检任务</span><span>管理</span></p>
+                   </div>
+               </div>
+
+               <!-- Unnamed (形状) -->
+               <div id="u37" class="ax_文本">
+                   <img id="u37_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u38" class="text">
+                       <p><span>消缺任务管理</span></p>
+                   </div>
+               </div>
+
+               <!-- Unnamed (形状) -->
+               <div id="u39" class="ax_文本">
+                   <img id="u39_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u40" class="text">
+                       <p><span>系统管理</span></p>
+                   </div>
+               </div>
+
+               <!-- Unnamed (形状) -->
+               <div id="u41" class="ax_文本">
+                   <img id="u41_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u42" class="text">
+                       <p><span>信息统计</span></p>
+                   </div>
+               </div>
+
+               <!-- Unnamed (形状) -->
+               <div id="u43" class="ax_文本">
+                   <img id="u43_img" class="img " src="~/Areas/XiTong/imgs/transparent.gif" />
+                   <!-- Unnamed () -->
+                   <div id="u44" class="text">
+                       <p><span>我的工作平台</span></p>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+       <div style="width:100%;background-color:#f4f4f4;margin-top:70px;height:100%;overflow:scroll;">
+           <div class="container">
+               <div class="row">
+                   <p style="margin-left:40px;margin-top:15px;">
+                       系统管理>>&nbsp;角色管理
+                   </p>
+               </div>
+               <div class="row">
+                   <div class="col-sm-10 col-sm-offset-1">
+                      <p style="margin-top:20px;float:left;">
+                          角色名称:&nbsp;<input  style="width:100px;border:1px solid #dddddd;"type="text" id="txtrolename"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                          启用状态:&nbsp;<select id="rolestatus" style="border:1px solid #dddddd;">
+                          <option value="no">
+                              --请选择--
+                          </option>
+                             <option value="1">
+                                 启用
+                             </option>
+                          <option value="0">未启用</option>
+                          </select>
+                      </p>
+                       <div  id="u47" class="ax_形状" data-label="Styled Button">
+                           <img  id="u47_img" class="img " src="~/Areas/XiTong/imgs/styled_button_u117.png"/>
+                           <!-- Unnamed () -->
+                           <div id="u48" class="text">
+                               <p><span @@click="selectrole">查询</span></p>
+                           </div>
+                       </div>
+                       <div id="u240" class="ax_形状" data-label="Styled Button">
+                           <img  id="u240_img" class="img " src="~/Areas/XiTong/imgs/styled_button_u240.png" />
+                           <!-- Unnamed () -->
+                           <div @@click="showadddiv" id="u241" class="text">
+                               <p><span >添加角色</span></p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="row">
+                   <div class="col-sm-10 col-sm-offset-1">
+                       <table class="table table-bordered table-hover table-striped role_tab">
+                         <tr>
+                             <th>
+                                 角色编号
+                             </th>
+                             <th>
+                                 角色名称
+                             </th>
+                             <th>
+                                 创建人
+                             </th>
+                             <th>
+                                 更新时间
+                             </th>
+                             <th>
+                                 状态(启用/未启用)
+                             </th>
+                             <th>
+                                 操作
+                             </th>
+                         </tr>
+                          <tbody>
+                              <tr v-for="item in rolelist">
+                                  <td>
+                                     {{item.id}}
+                                  </td>
+                                  <td>
+                                      {{item.roleName}}
+                                  </td>
+                                  <td>
+                                      {{item.createdBy}}
+                                  </td>
+                                  <td>
+                                      {{item.lastUpdateTime|timeFilter}}
+                                  </td>
+                                  <td>
+                                      <span v-if="item.isStart==1">
+                                          <input @@click="changestatus(item,$event)" type="checkbox" checked="checked" />启用
+                                      </span>
+                                      <span v-if="item.isStart==0">
+                                          <input @@click="changestatus(item,$event)" type="checkbox" />启用
+                                      </span>
+                                  </td>
+                                  <td>
+                                      <a @@click="showupddialog(item)">修改</a>&nbsp;|&nbsp;<a @@click="comdel(item,$event)">删除</a>
+                                  </td>
+                              </tr>
+                          </tbody>
+                       </table>   
+                       <p v-if="rolelist.length==0" style="width:100px;margin-left:200px;font-size:15px;color:#666;border:1px solid #dddddd;">
+                           暂无数据
+                       </p>              
+                       <el-pagination @@size-change="handleSizeChange"
+                                      @@current-change="handleCurrentChange"
+                                      :current-page="currentPage4"
+                                      :page-sizes="[100, 200, 300, 400]"
+                                      :page-size="6"
+                                      layout="total, prev, pager, next, jumper"
+                                      :total="count">
+                       </el-pagination>
+                      
+                    
+    
+                        <!--end-->
+
+                   </div>
+               </div>
+           </div>
+       </div>
+
+    <!--添加角色div-->
+    <div id="addrolediv" class="rolecss sss">
+        <p style="font-size:20px;color:#666;margin-left:10px;margin-top:5px;">添加角色</p>
+        <table class="table">
+            <tr>
+                <td style="padding-top:20px;"><b>角色编号:</b></td>
+                <td><el-input @@blur="checkroleid" v-model="roleid" style="width:200px;" auto-complete="off"></el-input></td>
+                <td style="width:220px;padding-top:20px;"><div id="msgid" class="msg">&nbsp;</div></td>
+            </tr>
+            <tr>
+                <td style="padding-top:20px;"><b style="margin-top:10px;">角色名称:</b></td>
+                <td><el-input @@blur="checkrolename" v-model="rolename" style="width:200px;" auto-complete="off"></el-input></td>
+                <td><p id="msgname" class="msg">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td><b style="margin-top:10px;">启用状态:</b></td>
+                <td>
+                    <el-radio v-model="radio" label="1">启用</el-radio>
+                    <el-radio v-model="radio" label="0">不启用</el-radio>
+                </td>
+                <td style="padding-top:20px;"><div id="msgradio" class="msg">&nbsp;</div></td>
+            </tr>
+        </table>
+        <div slot="footer" class="dialog-footer" style="text-align:right;margin-right:30px;">
+            <el-button @@click="hidadddiv">取 消</el-button>
+            <el-button type="primary" @@click="addrole">确 定</el-button>
+        </div>
+    </div>
+    <!--修改div-->
+    <div id="updrolediv"  class="rolecss sss">
+        <p style="font-size:20px;color:#666;margin-left:10px;margin-top:5px;">修改角色</p>
+        <table class="table">
+            <tr>
+                <td style="padding-top:15px;"><b>角色编号:</b></td>
+                <td style="padding-top:15px;">
+                    <label>
+                        {{updid}}
+                    </label>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="padding-top:20px;"><b>角色名称:</b></td>
+                <td><el-input @@blur="checkupdname" v-model="updname" style="width:200px;" auto-complete="off"></el-input></td>
+                <td style="padding-top:20px;"><p id="updmsgname" class="msg">&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td><b style="margin-top:10px;">启用状态:</b></td>
+                <td>
+                    <el-radio-group v-model="updradio">
+                        <el-radio :label="1">启用</el-radio>
+                        <el-radio :label="0">不启用</el-radio>
+
+                    </el-radio-group>
+                </td>
+                <td style="width:220px;padding-top:20px;"><div id="msgradio" class="msg">&nbsp;</div></td>
+            </tr>
+        </table>
+        <div slot="footer" class="dialog-footer">
+            <el-button @@click="hidupddiv">取 消</el-button>
+            <el-button type="primary" @@click="updrole">确 定</el-button>
+        </div>
+    </div>
+    <!--删除提示-->
+    <div id="delrolediv" class="sss delrolecss">
+        <p style="height:40px;line-height:40px;font-size:16px;color:black;margin-left:10px;margin-top:5px;">
+            删除提示
+        </p>
+        <p style="height:40px;line-height:40px;font-size:15px;color:#666;margin-left:30px;margin-top:5px;">是否确定删除该角色?</p>
+        <div slot="footer" class="dialog-footer" style="margin-top:30px;">
+            <el-button @@click="hiddeldiv">取 消</el-button>
+            <el-button type="primary" @@click="selecthaveuser">确 定</el-button>
+        </div>
+    </div>
+
+<div id="nodelrolediv" class="sss delrolecss">
+    <p style="height:40px;line-height:40px;font-size:16px;color:black;margin-left:10px;margin-top:5px;">
+        删除提示
+    </p>
+    <p style="height:40px;line-height:40px;font-size:15px;color:#666;margin-left:30px;margin-top:5px;">该角色已被其他用户所引用,不可删除!</p>
+    <div slot="footer" class="dialog-footer" style="margin-top:30px;">
+        <el-button @@click="hidnodeldiv">取 消</el-button>
+        <el-button type="primary" @@click="hidnodeldiv">确 定</el-button>
+    </div>
+</div>
+    <!--背景颜色变黑-->
+    <div class="overlay sss">
+
+    </div>
+}
+@section vuescript{
+   
+<script>
+    var eles;
+    var pageindex = 1;
+    var _this = this;
+    var rolename1="";
+    var status="";
+   var vue= new Vue({
+        el: "#app",
+        data: {
+            rolelist: [],
+            currentPage4: 1,
+            count: 0,
+            dialogFormVisible: false,
+            dialogFormVisible2: false,
+            dialogVisible: false,
+            dialogVisible2:false,
+            form: {            
+                delivery: false
+            },
+            formLabelWidth: '120px',
+            radio:"1",
+            roleid: "",
+            rolename: "",
+            updid: "",
+            updname: "",
+            updradio: "",
+            rid: "",
+            roleinfo:{}
+        },
+        methods: {
+            myload: function () {
+                var param = new URLSearchParams();
+                param.append("pageindex", pageindex);
+                axios.post("/XiTong/Role/GetData", param).then(function (response) {
+                    vue.rolelist = response.data.rolelist;
+                    vue.count = response.data.rolecount;
+                })
+            },
+            selectrole: function () {
+               
+                if ($("#txtrolename").val() != "" || $("#rolestatus").val() != "no") {
+                    rolename1 = $("#txtrolename").val();
+                    status = $("#rolestatus").val();
+                    //创建参数对象 
+                    var param = new URLSearchParams();
+                    //添加参数 
+                    param.append("rolename",rolename1);
+                    param.append("status",status);
+                    param.append("pageindex", pageindex);
+                    //发送ajax请求 
+                    axios.post("/XiTong/Role/SelectData", param).then(function (response) {
+                        vue.rolelist = response.data.rolelist;
+                        vue.count = response.data.rolecount;
+                        vue.currentPage4 = 1;
+                       
+                    })
+                } else {
+                    rolename1 = "";
+                    status = "";
+                    this.myload();
+                }
+            },
+            handleSizeChange(val) {
+                console.log(`每页 ${val} 条`);
+            },
+            handleCurrentChange(val) {           
+                //创建参数对象 
+                var param = new URLSearchParams();
+                //添加参数 
+                if (rolename1 != "") {
+                    param.append("rolename", rolename1);
+
+                }
+                if (status != "") {
+                    param.append("status", status);
+
+                }
+                param.append("pageindex", val);
+                //发送ajax请求 
+                axios.post("/XiTong/Role/SelectData", param).then(function (response) {
+                    vue.rolelist = response.data.rolelist;
+                    vue.count = response.data.rolecount;
+                    
+                   
+                })
+
+
+            },
+            checkroleid: function () {
+                $("#msgid").removeClass("haveid");
+                $("#msgid").text(" ");
+                //非空判断 
+                if (this.roleid != "") {
+                    //获取roleid的值 
+                    //并发送ajax请求 
+                    var param = new URLSearchParams();
+                    param.append("roleid", this.roleid);
+                    axios.post("/XiTong/Role/CheckInfo", param).then(function (response) {
+                        if (response.data == false) {
+                            $("#msgid").text("该角色编号已存在");
+                            $("#msgid").addClass("haveid");
+                        }
+                    })
+                } else {
+                    $("#msgid").text("角色ID不能为空!");
+                }
+            },
+            checkrolename: function () {
+                $("#msgname").removeClass("havename");
+                $("#msgname").text(" ");
+                //非空判断 
+                if (this.rolename != "") {
+                    //获取roleid的值 
+                    //并发送ajax请求 
+                    var param = new URLSearchParams();
+                    param.append("rolename", this.rolename);
+                    axios.post("/XiTong/Role/CheckInfo", param).then(function (response) {
+                        if (response.data == false) {
+                            $("#msgname").text("该角色编号已存在");
+                            $("#msgname").addClass("havename");
+                        }
+                    })
+                } else {
+                    $("#msgname").text("角色名称不能为空!");
+                }
+            },
+            addrole: function () {
+                $("#msgid").text("");
+                $("#msgname").text("");
+                $("#msgradio").text("");
+                if (this.roleid == "") {
+                    $("#msgid").text("角色ID不能为空!");
+                    return;
+                }
+                if (this.rolename == "") {
+                    $("#msgname").text("角色名称不能为空!");
+                    return;
+                }
+                if (this.radio == "") {
+                    $("#msgradio").text("请选择角色启用状态!");
+                    return;
+                }
+                if ($(".haveid").length > 0) {
+                    $("#msgid").text("该角色编号已存在!");
+                    return;
+                }
+                if ($(".havename").length > 0) {
+                    $("#msgname").text("该角色名称已存在!");
+                    return;
+                }
+                //创建参数对象 
+                var param = new URLSearchParams();
+                //添加参数 
+                param.append("roleid", this.roleid);
+                param.append("rolename", this.rolename);
+                param.append("status", this.radio);
+                //发送ajax请求 
+                axios.post("/XiTong/Role/AddRole", param).then(function (response) {
+                    if (response.data == true) {
+                        vue.$message({ message: '添加角色信息成功~', type: 'success', duration: 1000 });
+                        $("#addrolediv").addClass("sss");
+                        $(".overlay").addClass("sss");
+                        vue.roleid = "";
+                        vue.rolename = "";
+                        vue.radio = "1";
+                        if (vue.count <= 6) {
+                            vue.myload();
+                        }
+                    } else {
+                        vue.$message({ message: '添加角色信息失败~', type: 'success', duration: 1000 });
+                    }
+                })
+
+            },
+            checkupdname: function () {
+                console.log(this.updradio);
+                $("#updmsgname").removeClass("haveuname");
+                $("#updmsgname").text(" ");
+                //非空判断 
+                if (this.updname != "") {
+                    //获取roleid的值 
+                    //并发送ajax请求 
+                    var param = new URLSearchParams();
+                    param.append("roleid", this.updid);
+                    param.append("rolename", this.updname);
+                    axios.post("/XiTong/Role/UpdCheck", param).then(function (response) {
+                        if (response.data == false) {
+                            $("#updmsgname").text("该角色编号已存在");
+                            $("#updmsgname").addClass("haveuname");
+                        }
+                    })
+                } else {
+                    $("#updmsgname").text("角色名称不能为空!");
+                }
+            },
+            showadddiv:function(){
+                $("#addrolediv").removeClass("sss");
+                $(".overlay").removeClass("sss");
+            },
+            hidadddiv:function(){
+                $("#addrolediv").addClass("sss");
+                $(".overlay").addClass("sss");
+            },
+            hidupddiv:function(){
+                $("#updrolediv").addClass("sss");
+                $(".overlay").addClass("sss");
+            },
+            hiddeldiv:function(){
+                $("#delrolediv").addClass("sss");
+                $(".overlay").addClass("sss");
+            },
+            hidnodeldiv:function(){
+                $("#nodelrolediv").addClass("sss");
+                $(".overlay").addClass("sss");
+            },
+            showupddialog: function (item) {
+                this.roleinfo = item;
+                this.updid = item.id;
+                this.updname = item.roleName;
+                this.updradio = item.isStart;
+              
+                $("#updrolediv").removeClass("sss");
+                $(".overlay").removeClass("sss");
+            },
+            updrole: function () {
+                     
+                $("#updmsgname").text("");
+                $("#updmsgradio").text("");
+               
+                if (this.updname == "") {
+                    $("#updmsgname").text("角色名称不能为空!");
+                    return;
+                }
+    
+                if ($(".haveuname").length > 0) {
+                    $("#updmsgname").text("该角色名称已存在!");
+                    return;
+                }
+           
+                //创建参数对象 
+                var param = new URLSearchParams();
+                //添加参数 
+                param.append("roleid", this.updid);
+                param.append("rolename", this.updname);
+                param.append("status", this.updradio);
+                //发送ajax请求 
+                axios.post("/XiTong/Role/UpdRole", param).then(function (response) {
+                    if (response.data == true) {                    
+                       // vue.$message('修改角色信息成功~');
+                        $("#updrolediv").addClass("sss");
+                        $(".overlay").addClass("sss");
+                        vue.roleinfo.roleName = vue.updname;
+                        vue.roleinfo.isStart = vue.updradio;
+                      
+                      
+                    } else {
+                        vue.$message('修改角色信息失败~');
+                    }
+                })
+
+            },
+            changestatus: function (item, event) {
+
+                var ele = event.currentTarget;
+                console.log(ele);
+                var param = new URLSearchParams();
+                if (ele.checked == true) {
+                    
+                    param.append("roleid", item.id);
+                    param.append("status",1);
+                    axios.post("/XiTong/Role/ChangeStatus", param).then(function (response) {
+                        if (response.data == true) {
+                            
+                            vue.$message({ message: '该角色已启用~', type: 'success', duration: 1000 });
+                        }
+                    })
+                } else {
+                   
+                    param.append("roleid", item.id);
+                    param.append("status", 0);
+                    axios.post("/XiTong/Role/ChangeStatus", param).then(function (response) {
+                        if (response.data == true) {
+                        
+                            vue.$message({ message: '该角色已禁用~', type: 'success', duration: 1000 });
+                        }
+                    })
+                }
+                 
+            },
+            comdel: function (item, event) {
+                eles = event.currentTarget;
+                this.rid = item.id;
+                $("#delrolediv").removeClass("sss");
+                $(".overlay").removeClass("sss");
+            },
+            selecthaveuser: function () {
+             
+                var param = new URLSearchParams();
+                //添加参数 
+                param.append("roleid", this.rid);
+                //发送ajax请求 
+                axios.post("/XiTong/Role/SelectHaveUser", param).then(function (response) {
+                    if (response.data == true) {
+                        $("#delrolediv").addClass("sss");                     
+                        $("#nodelrolediv").removeClass("sss");
+                        $(".overlay").removeClass("sss");
+                    } else {
+                        //发送ajax请求 
+                        axios.post("/XiTong/Role/DelData", param).then(function (response) {
+                            if (response.data == true) {
+                                if (vue.count <= 7) {
+                                    vue.myload();
+                                } else {
+                                    for (var i = 0; i < vue.rolelist.length; i++) {
+                                        if (vue.rolelist[i].id == vue.rid) {
+                                            vue.rolelist.splice(i, 1);
+                                            vue.count--;
+                                        }
+                                    }
+
+                                }
+                             
+                                $("#delrolediv").addClass("sss");
+                                $(".overlay").addClass("sss");
+                               // vue.$message("删除角色成功~");
+                            }
+                        })
+                    }
+                })
+            },
+            transtosyspage: function () {
+                window.location = "/XiTong/Sysconfig/Index";
+            },
+            transtorolepage: function () {
+                window.location = "/XiTong/Role/Index";
+            },
+            transtopresspage: function () {
+                window.location = "/XiTong/Premiss/Index";
+            },
+            transtouserpage: function () {
+                window.location = "/XiTong/User/Index";
+            }
+        }, created: function () {
+            this.$options.methods.myload();
+           
+        },
+        filters: {
+            timeFilter: function (value) {
+                //非空验证 
+                if (!value) {
+                    return '';
+                } else {
+                    var strs = value.split('T');
+                    //获得最后一个点的索引 
+                    var index = strs[1].indexOf('.');
+                    strs[1] = strs[1].substring(0, index);
+                    
+                    return strs[0] + " " + strs[1];
+                }
+            }
+        }
+    })
+</script>
+    }
+
+
+
+
